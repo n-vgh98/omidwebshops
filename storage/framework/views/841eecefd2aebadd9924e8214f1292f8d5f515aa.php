@@ -54,97 +54,190 @@
                     <div class="panel-body">
                         <?php if($isServerSide): ?>
                             <form method="get" class="form-search">
-                                 <?php echo e(__('product.name_product')); ?> :
-                                <div id="search-input">
 
-                                    <div class="col-2">
-                                        <select id="filter1" name="filtername" class=" select2 select2-hidden-accessible" aria-hidden="true">
-                                            <option value="contains" <?php if($search->filter == "contains"): ?> selected <?php endif; ?>><?php echo e(__('product.contains')); ?></option>
-                                            <option value="equals" <?php if($search->filter == "equals"): ?> selected <?php endif; ?>><?php echo e(__('product.equal')); ?></option>
-                                        </select>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-1">
+                                            <label>نام محصول :</label>
+                                            <div id="search-input">
+
+                                                <div class="col-2">
+                                                    <select id="filter1" name="filtername" class=" select2 select2-hidden-accessible" aria-hidden="true">
+                                                        <option value="contains" <?php if($search->filter == "contains"): ?> selected <?php endif; ?>>شامل</option>
+                                                        <option value="equals" <?php if($search->filter == "equals"): ?> selected <?php endif; ?>>مساوی</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input-group col-md-12">
+                                                    <input type="text" class="form-control" placeholder="<?php echo e(__('voyager::generic.search')); ?>" name="sname" value="<?php echo e($searchnameproduct->value); ?>">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="voyager-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="input-group col-md-12">
-                                        <input type="text" class="form-control" placeholder="<?php echo e(__('voyager::generic.search')); ?>" name="sname" value="<?php echo e($searchnameproduct->value); ?>">
-                                        <button class="btn btn-info btn-lg" type="submit">
-                                            <i class="voyager-search"></i>
-                                        </button>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label> دسته بندی سطح 1</label>
+                                            <div id="search-input">
+                                                <div class="col-2">
+                                                    <select id="catagory1" name="keycatagory1" class=" select2 select2-hidden-accessible" aria-hidden="true">
+                                                        <option value="all"  <?php if( (empty($searchcatagory1->key))): ?> selected <?php endif; ?>>همه موارد</option>
+                                                        <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php if($cat1->parent_id ==null && $cat1->name !='صفحه اصلی'): ?>
+                                                                <option value="<?php echo e($cat1->id); ?>"  <?php if($searchcatagory1->key == $cat1->id): ?> selected <?php endif; ?> ><?php echo e($cat1->name); ?></option>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input-group col-md-12">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="voyager-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label> دسته بندی سطح 2</label>
+                                            <div id="search-input">
+                                                <div class="col-2">
+                                                    <select id="catagory2" name="keycatagory2" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
+                                                        <?php
+                                                            $objid = $catagories->first();
+                                                            $id = $objid->id;
+                                                            $parentid = $objid->parent_id;
+                                                            $first=true;
+                                                        ?>
+                                                        <option value="all"  <?php if( (empty($searchcatagory2->key))): ?> selected <?php endif; ?>>همه موارد</option>
+                                                        <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                                                            <?php if($cat2->parent_id ==$id): ?>
+                                                                <?php if($first) $id3 = $cat2->id;$first=false; ?>
+                                                                <option value="<?php echo e($cat2->id); ?>" <?php if($searchcatagory2->key == $cat2->id ): ?> selected <?php endif; ?>><?php echo e($cat2->name); ?></option>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="input-group col-md-12">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="voyager-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label> دسته بندی سطح 3</label>
+                                            <div id="search-input">
+                                                <div class="col-2">
+                                                    <select id="catagory3" name="keycatagory3" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
+                                                        <option value="all"  <?php if( (empty($searchcatagory3->key))): ?> selected <?php endif; ?>>همه موارد</option>
+                                                        <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat3): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php if($cat3->parent_id ==$id3): ?>
+                                                                <option value="<?php echo e($cat3->id); ?>" <?php if($searchcatagory3->key == $cat3->id ): ?> selected <?php endif; ?>><?php echo e($cat3->name); ?></option>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input-group col-md-12">
+                                                    <button class="btn btn-info btn-lg" type="submit">
+                                                        <i class="voyager-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php if(Request::has('sort_order') && Request::has('order_by')): ?>
+                                            <input type="hidden" name="sort_order" value="<?php echo e(Request::get('sort_order')); ?>">
+                                            <input type="hidden" name="order_by" value="<?php echo e(Request::get('order_by')); ?>">
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                                <?php echo e(__('product.catagory1')); ?>
+                                 
+                                
 
-                                <div id="search-input">
+                                    
+                                        
+                                            
+                                            
+                                        
+                                    
+                                    
+                                        
+                                        
+                                            
+                                        
+                                    
+                                
+                                
+                                
 
-                                    <div class="col-2">
+                                    
 
-                                        <select id="catagory1" name="keycatagory1" class=" select2 select2-hidden-accessible" aria-hidden="true">
-                                            <option value="all"  <?php if( (empty($searchcatagory1->key))): ?> selected <?php endif; ?>><?php echo e(__('product.all_item')); ?></option>
-                                            <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if($cat1->parent_id ==null && $cat1->name !=__('generic.home')): ?>
-                                                    <option value="<?php echo e($cat1->id); ?>"  <?php if($searchcatagory1->key == $cat1->id): ?> selected <?php endif; ?> ><?php echo e($cat1->getTranslatedAttribute('name')); ?></option>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </div>
+                                        
+                                            
+                                            
+                                                
+                                                    
+                                                
+                                            
+                                        
+                                    
 
-                                    <div class="input-group col-md-12">
-                                        <button class="btn btn-info btn-lg" type="submit">
-                                            <i class="voyager-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <?php echo e(__('product.catagory2')); ?>
+                                    
+                                        
+                                            
+                                        
+                                    
+                                
+                                
+                                
+                                    
+                                        
+                                            
+                                            
+                                            
 
-                                <div id="search-input">
-                                    <div class="col-2">
-                                        <select id="catagory2" name="keycatagory2" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
-                                            <?php
-                                                $objid = $catagories->first();
-                                                $id = $objid->id;
-                                                $parentid = $objid->parent_id;
-                                                $first=true;
-                                            ?>
-                                            <option value="all"  <?php if( (empty($searchcatagory2->key))): ?> selected <?php endif; ?>><?php echo e(__('product.all_item')); ?></option>
-                                            <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                
+                                                    
+                                                    
+                                                
+                                            
 
-                                                <?php if($cat2->parent_id ==$id): ?>
-                                                    <?php if($first) $id3 = $cat2->id;$first=false; ?>
-                                                    <option value="<?php echo e($cat2->id); ?>" <?php if($searchcatagory2->key == $cat2->id ): ?> selected <?php endif; ?>><?php echo e($cat2->getTranslatedAttribute('name')); ?></option>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        
+                                    
 
-                                        </select>
-                                    </div>
+                                    
+                                        
+                                            
+                                        
+                                    
+                                
+                                
+                                
+                                    
+                                        
+                                            
+                                            
+                                                
+                                                    
+                                                
+                                            
+                                        
+                                    
 
-                                    <div class="input-group col-md-12">
-                                        <button class="btn btn-info btn-lg" type="submit">
-                                            <i class="voyager-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <?php echo e(__('product.catagory3')); ?>
-
-                                <div id="search-input">
-                                    <div class="col-2">
-                                        <select id="catagory3" name="keycatagory3" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
-                                            <option value="all"  <?php if( (empty($searchcatagory3->key))): ?> selected <?php endif; ?>> <?php echo e(__('product.all_item')); ?></option>
-                                            <?php $__currentLoopData = $catagories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat3): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if($cat3->parent_id ==$id3): ?>
-                                                    <option value="<?php echo e($cat3->id); ?>" <?php if($searchcatagory3->key == $cat3->id ): ?> selected <?php endif; ?>><?php echo e($cat3->getTranslatedAttribute('name')); ?></option>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </div>
-
-                                    <div class="input-group col-md-12">
-                                        <button class="btn btn-info btn-lg" type="submit">
-                                            <i class="voyager-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <?php if(Request::has('sort_order') && Request::has('order_by')): ?>
-                                    <input type="hidden" name="sort_order" value="<?php echo e(Request::get('sort_order')); ?>">
-                                    <input type="hidden" name="order_by" value="<?php echo e(Request::get('order_by')); ?>">
-                                <?php endif; ?>
+                                    
+                                        
+                                            
+                                        
+                                    
+                                
+                                
+                                    
+                                    
+                                
                             </form>
                         <?php endif; ?>
                         <div class="table-responsive">
