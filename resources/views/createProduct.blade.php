@@ -1,4 +1,3 @@
-
 @extends('voyager::master')
 @php
     if(session()->has('locale') )
@@ -29,7 +28,7 @@
 
                 <div class="panel panel-bordered">
                     <!-- form start -->
-                    <form  method="post" action="/admin/productsContinue"   enctype="multipart/form-data" id="createproductform" class="form-edit-add">
+                    <form  method="post" action="/admin/productsContinue"   enctype="multipart/form-data"  class="form-edit-add">
                         <!-- PUT Method if we are editing -->
                         <!-- CSRF TOKEN -->
                         @csrf
@@ -217,7 +216,7 @@
                             </div>
                             <!-- GET filters -->
 
-                            <div class="col-md-12 ">
+                            <div class="col-md-12 form-group ">
 
                                @include('filters')
                             </div>

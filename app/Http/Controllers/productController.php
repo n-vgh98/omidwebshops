@@ -11,6 +11,7 @@ use App\Productfilter;
 use App\Productimage;
 use App\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category;
@@ -144,8 +145,9 @@ class productController extends Controller
     // perform global serarch in search box in header of site
     public function  searchProduct(Request $request)
     {
+
        $search = $request->valueSearch;
-      $products = Product::where('name',"like","%$search%")->orWhere('catagory1',"like" ,"%$search%")->orWhere('catagory2',"like", "%$search%")->orWhere('catagory3',"like" ,"%$search%")->get();
+           $products = Product::where('name',"like","%$search%")->orWhere('catagory1',"like" ,"%$search%")->orWhere('catagory2',"like", "%$search%")->orWhere('catagory3',"like" ,"%$search%")->get();
        // $products = Product::where('name',"like","%$search%")->get();
       // return view('products')->with(['products' =>$products , 'brands' => $brands]);
         return view('search',['products' => $products]);

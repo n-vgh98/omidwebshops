@@ -1,3 +1,9 @@
+<?php
+    if(session()->has('locale'))
+        {
+            \Illuminate\Support\Facades\App::setLocale(session('locale'));
+        }
+?>
 <?php $__env->startSection('page_title', $dataType->getTranslatedAttribute('display_name_plural') . ' ' . __('voyager::bread.order')); ?>
 
 <?php $__env->startSection('page_header'); ?>
@@ -29,7 +35,7 @@
                                             <img src="<?php if( !filter_var($result->{$display_column}, FILTER_VALIDATE_URL)): ?><?php echo e(Voyager::image( $result->{$display_column} )); ?><?php else: ?><?php echo e($result->{$display_column}); ?><?php endif; ?>" style="height:100px">
                                         </span>
                                     <?php else: ?>
-                                        <span><?php echo e($result->{$display_column}); ?></span>
+                                        <span><?php echo e($result->getTranslatedAttribute($display_column)); ?></span>
                                     <?php endif; ?>
                                 </div>
                             </li>
@@ -49,7 +55,7 @@
 <script>
 $(document).ready(function () {
     $('.dd').nestable({
-        maxDepth: 1
+        maxDepth: 3
     });
 
     /**

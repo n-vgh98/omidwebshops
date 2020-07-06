@@ -27,7 +27,7 @@
 
                 <div class="panel panel-bordered">
                     <!-- form start -->
-                    <form  method="post" action="/admin/productsContinue"   enctype="multipart/form-data" id="createproductform" class="form-edit-add">
+                    <form  method="post" action="/admin/productsContinue"   enctype="multipart/form-data"  class="form-edit-add">
                         <!-- PUT Method if we are editing -->
                         <!-- CSRF TOKEN -->
                         <?php echo csrf_field(); ?>
@@ -215,7 +215,7 @@
                             </div>
                             <!-- GET filters -->
 
-                            <div class="col-md-12 ">
+                            <div class="col-md-12 form-group ">
 
                                <?php echo $__env->make('filters', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>

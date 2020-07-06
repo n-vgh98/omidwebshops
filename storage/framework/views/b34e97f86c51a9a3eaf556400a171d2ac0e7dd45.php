@@ -272,9 +272,8 @@ $(document).ready(function () {
   //  $("#orginalimagezoomed").elevateZoom();
 
 
-
 //initiate the plugin and pass the id of the div containing gallery images
-    $("#orginalimagezoomed").elevateZoom({gallery:'thumbnailimageblock', cursor: "crosshair", galleryActiveClass: 'active', imageCrossfade: true,zoomWindowPosition:10 });
+    $("#orginalimagezoomed").elevateZoom({gallery:'thumbnailimageblock', cursor: "crosshair", galleryActiveClass: 'active', imageCrossfade: true,zoomWindowPosition:<?php if(__('generic.is_rtl') == 'true') echo 10 ;else echo 2  ?> });
 
 //pass the images to Fancybox
     $("#orginalimagezoomed").bind("click", function(e) {

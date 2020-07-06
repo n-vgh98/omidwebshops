@@ -1,33 +1,19 @@
-<?php $__env->startSection('title','تماس با ما'); ?>
-
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <div class="container">
-        <div class="row ">
-            <div class="col-12 justify-content-center bg-white">
-                <h5 class="text-center mt-2">
-                    کاربر گرامی، پیش از ارسال ایمیل یا تماس تلفنی بخش <a href="/fqa"> سؤالات متداول</a> را مطالعه فرمایید.
-                </h5>
-                <p>
-                    تلفن تماس : 0917568785555
-                </p>
-                <p>
-                    زمان پاسخگویی  :شنبه تا چهارشنبه (9:00 الی 18:00) ـ پنج شنبه (9:00 الی 17:00)
-                </p>
-                <p>
-                    آدرس : شیراز،  شهرک گلستان،  کد پستی 1493637119
-                </p>
-                <p>
-                    پست الکترونیک :info@omidwebshop.ir
-                </p>
+<?php $__env->startSection('title',__('generic.contact_us') ); ?>
+    <div class="container bg-white" >
+        <div class="row" >
+            <div class="col-12 justify-content-center ">
+                <?php echo $contact_us[0]->getTranslatedAttribute('contact_us'); ?>
+
+
             </div>
-        </div>
     </div>
 
-    <div class="container">
+    <div class="container bg-white">
 
-        <div class="row bg-white">
-            <h5 class="text-center my-3">از دیدن پیام شما خوشحال خواهیم شد و در اسرع وقت پاسخگو خواهیم بود</h5>
+        <div class="row ">
+            <h5 class="text-center my-3"><?php echo e(__('generic.message_user_glad')); ?></h5>
            <div class="col-6 ">
                <form method="post" action="/sendMessage">
                    <?php echo csrf_field(); ?>
@@ -49,11 +35,11 @@
 
                    <?php endif; ?>
 
-                   <div class="form-group"><input class="form-control" type="text" name="name" placeholder=" نام و نام خانوادگی" /></div>
-                   <div class="form-group"><input class="form-control" type="email" name="email" placeholder="ایمیل" /></div>
-                   <div class="form-group"><input class="form-control" type="text" name="mobile" placeholder="شماره تلفن" /></div>
-                   <div class="form-group"><textarea class="form-control" name="message" placeholder="پیام خود را بنویسید" rows="8"></textarea></div>
-                   <div class="form-group"><button class="btn btn-primary" type="submit">ارسال </button></div>
+                   <div class="form-group"><input class="form-control" type="text" name="name" placeholder="<?php echo e(__('profile.name')); ?>" /></div>
+                   <div class="form-group"><input class="form-control" type="email" name="email" placeholder="<?php echo e(__('profile.email')); ?>" /></div>
+                   <div class="form-group"><input class="form-control" type="text" name="mobile" placeholder="<?php echo e(__('profile.mobile')); ?>" /></div>
+                   <div class="form-group"><textarea class="form-control" name="message" placeholder="<?php echo e(__('generic.write_your_message')); ?>" rows="8"></textarea></div>
+                   <div class="form-group"><button class="btn btn-primary" type="submit"><?php echo e(__('generic.send_message')); ?> </button></div>
                </form>
            </div>
         </div>
