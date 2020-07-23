@@ -1,0 +1,394 @@
+.rtlElement{
+    direction: rtl;
+}
+@media (min-width:768px) and (max-width: 1024px) {
+    .sizeLogo{
+        width: 100px;
+    }
+
+    /*css far&en*/
+
+    .s-toggler{
+        width: 190px;
+        height: 28px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18,83,155,0.15);
+        position: relative;
+    }
+
+    .s-toggler p{
+        color: white;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 21px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1){
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2){
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box{
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 83px;
+        height: 21px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover{
+        background: #0f8afd;
+    }
+
+    .option-box:active{
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled{
+        left:calc(100% - 99px);
+    }
+
+    .s-toggler-toggled p:nth-child(1){
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2){
+        color: white !important;
+    }
+
+    /*css far&en*/
+
+    .sizLogin2{
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 45px;
+        text-align: center;
+
+    }
+    .sizLogin1{
+        border-radius: 66px 0px 0px 66px !important;
+        width: 53px;
+        height: 45px;
+        text-align: center;
+
+    }
+    .sizeSabadKharid{
+        border-radius: 66px !important;
+        height: 45px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+    .btnmenu{
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+    .btnSafheASLI{
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+    .cardPishnahadRoz{
+        margin-top: 13px !important;
+        border-radius: 25px;
+    }
+    .brdrRdius{
+        height: 377px;
+        border-radius: 15px !important;
+    }
+    .cardTagP{
+        font-size: small;
+    }
+    .fontSizeKHadamat{
+        font-size: smaller;
+    }
+    .witheInestagram{
+        width: 28px;
+        margin-top: 196% !important;
+    }
+
+}
+@media (min-width: 1050px) {
+    .sizeLogo{
+        width: 150px;
+    }
+
+
+    /*css far&en*/
+
+    .s-toggler{
+        width: 222px;
+        height: 35px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18,83,155,0.15);
+        position: relative;
+    }
+
+    .s-toggler p{
+        color: white;
+        font-family: Roboto;
+        font-size: 18px;
+        line-height: 21px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1){
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2){
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box{
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 98px;
+        height: 25px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover{
+        background: #0f8afd;
+    }
+
+    .option-box:active{
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled{
+        left:calc(100% - 110px);
+    }
+
+    .s-toggler-toggled p:nth-child(1){
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2){
+        color: white !important;
+    }
+
+    /*css far&en*/
+
+    .sizLogin2 {
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 61px;
+        text-align: center;
+    }
+    .sizLogin1{
+        border-radius: 66px 0px 0px 66px !important;
+        width: 61px;
+        height: 61px;
+        text-align: center;
+    }
+    .sizeSabadKharid{
+        border-radius: 66px !important;
+        height: 61px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+
+    .hSearch{
+        height: 61px;
+    }
+    .btnmenu{
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+    .btnSafheASLI{
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+    .cardPishnahadRoz{
+        margin-top: 17px !important;
+        border-radius: 25px !important;
+    }
+    .brdrRdius{
+        height: 465px;
+        border-radius: 15px !important;
+    }
+    .witheInestagram{
+        width: 40px;
+        margin-top: 55% !important;
+    }
+}
+.btnSearch{
+    border-radius: 45px !important;
+    border-color: gray !important;
+    direction: rtl;
+}
+
+.paddingHeader1{
+    border-bottom: solid;
+    border-color: darkblue;
+    padding-bottom: 2px;
+}
+.colorLOGIN{
+    background-color: #4a6f97;
+    color: white;
+}
+.colorCreate{
+    background-color: #0e4d92;
+    color: white;
+}
+.faseleSabadkharidBeBala{
+    margin-top: 5% !important;
+}
+
+.bgMenu{
+    background-color: #4a6f97;
+}
+.bgList{
+    background-color: #0e4d92;
+    font-size: 0px;
+    border-radius: 0px 0px 9px 0px;
+}
+.colorList{
+    color: white;
+    font-size: smaller !important;
+    margin-block-start: 0 !important;
+}
+.h6colorList{
+    padding: 2%;
+    text-align: right;
+}
+.h6colorList:hover{
+    background-color: white;
+    color: darkred;
+}
+.h6colorList2{
+    color: darkblue;
+}
+.boxshadowLIST{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.hiddenitem{
+    display: none;
+}
+
+.withePIC{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.borderMENU{
+    border-top: 3px solid darkblue;
+    border-right: 3px solid darkblue;
+    border-radius: 10px 0px 10px 10px;
+}
+.menu2Border{
+    text-align: center;
+    font-size: 0px;
+}
+
+.bgElemanWhite{
+    background-color: white;
+}
+.PaddingTopMenu{
+    padding-top: 1% !important;
+}
+.cardRadius1{
+    border-radius: 0px 0px 25px 25px !important;
+}
+.imgSCROLER{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.shadowBaxs{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.pishnahadROOz{
+    padding-top: 1%;
+    padding-bottom: 3%;
+    border-radius: 10px 10px 0px 0px;
+}
+.witheCartPishnahadeROZ{
+    width: 100%;
+}
+.khadamatcss{
+    width: 50px;
+}
+.matginKHadamat{
+    margin-top: 2%;
+}
+.khadamatPading{
+    padding: 1%;
+}
+.paddingScrolers{
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+}
+.porforoshtarinha{
+    border-radius: 15px !important;
+    margin-top: 2%;
+}
+.khodePorfroshtarinha{
+    border-radius: 15px 15px 0px 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.sizeBaner{
+    width: 100%;
+    border-radius: 10px;
+}
+.sizeBaner:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.footerAdress{
+    padding-right: 7% !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}
+.marginTOPbaner{
+    margin-top: 2%;
+}
+.colorFooter{
+    color: white;
+}
+.marginFOOTER{
+    margin-top: 2%;
+}

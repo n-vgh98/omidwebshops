@@ -1,0 +1,1150 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="fontawesome-free-5.13.1-web/css/all.css"/>
+    <!--    <link rel="stylesheet"href="fontawesome-free-5.13.1-web/js/all.js"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body class="bgsafheAsli">
+<!-- header   pc  -->
+<div class="container-fluid bgElemanWhite">
+    <div class="row PaddingTopMenu paddingHeader1">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-7 s-toggler">
+                    <p>فارسی</p>
+                    <p>English</p>
+                    <input type="hidden" name="option-choose" id="toggleInput">
+                    <div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>
+                </div>
+            </div>
+            <div class="row faseleSabadkharidBeBala">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-4 p-0">
+                    <button type="button" class="btn   m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i> سبد
+                        خرید
+                    </button>
+
+                    <!--                        <button type="button" class="btn btn-outline-danger m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i> سبد خرید</button>-->
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 text-right p-0">
+                    <button type="button" class="btn colorLOGIN sizLogin1">ورود</button>
+                </div>
+                <div class="col-lg-2 text-left p-0">
+                    <button type="button" class="btn colorCreate sizLogin2">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 align-items-center mt-auto mb-auto">
+            <div class="row p-0">
+                <input class="col-lg-12 form-control mt-auto btnSearch hSearch" type="search"
+                       placeholder="جست و جو محصولات ..." aria-label="Search">
+            </div>
+        </div>
+        <div class="col-lg-2 text-center">
+            <img class="sizeLogo" href="#" src="jpg/logo.jpg"/>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row rtlElement bgMenu">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-1"></div>
+
+                <div class="col-xl-2 col-lg-3 p-0 text-center">
+                    <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">
+                        <h6>محصولات و خدمات</h6>
+                    </button>
+                </div>
+                <div class="col-2 p-0 text-center">
+                    <button type="button" class="btnmenu ">
+                        <h6>درباره ی ما</h6>
+                    </button>
+                </div>
+                <div class="col-2 p-0 text-center">
+                    <button type="button" class="btnmenu ">
+                        <h6>ارتباط با ما</h6>
+                    </button>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--    menu-->
+<div class="container hiddenitem " id="listMenu">
+    <div class="row rtlElement boxshadowLIST withePIC borderMENU" id="borderList"
+         style="background-image:url('pic/3.jpg'); ">
+        <div class="col-lg-3 text-right bgList p-0 pt-2">
+            <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem1()">لوازم بزرگ
+                آشپزخانه</h6></a>
+            <br/>
+            <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem2()">تجهیزات حمام و
+                دستشویی</h6></a>
+            <br/>
+            <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem3()">تهیه ی و نگهداری
+                نوشیدنی</h6></a>
+            <br/>
+            <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem4()">آماده سازی غذا</h6></a>
+            <br/>
+            <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem5()">لوازم منزل</h6></a>
+        </div>
+        <div class="col-lg-9 p-0">
+            <div class="row" id="Items1" style="display: none">
+                <div class="row">
+                    <div class="col-lg-4 m-0 p-2 menu2Border ">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                    </div>
+                    <div class="col-lg-4 m-0 p-2 menu2Border ">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                        <br/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row " id="Items2" style="display: none">
+                <div class="row">
+                    <div class="col-lg-4 m-0 p-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                    </div>
+                    <div class="col-lg-4 m-0 p-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                    </div>
+                    <div class="col-lg-4 m-0 p-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                        <br/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row " id="Items3" style="display: none">
+                <div class="col-lg-4 m-2 menu2Border">
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                    <br/>
+                </div>
+            </div>
+            <div class="row " id="Items4" style="display: none">
+                <div class="col-lg-4 m-2 menu2Border">
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                    <br/>
+                </div>
+            </div>
+            <div class="row " id="Items5" style="display: none">
+                <div class="col-lg-4 m-2 menu2Border">
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                    <br/>
+                    <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    menu-->
+
+
+<!-- header   pc  -->
+
+
+<!--page asli-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="carouselExampleControls" class="carousel slide cardPishnahadRoz shadowBaxs" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item brdrRdius active">
+                        <img class="d-block w-100 brdrRdius" src="./pic/1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item brdrRdius">
+                        <img class="d-block w-100 brdrRdius" src="./pic/1.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item brdrRdius">
+                        <img class="d-block w-100 brdrRdius" src="./pic/1.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 cardPishnahadRoz">
+            <div class="container-float ">
+                <div class="row shadowBaxs  m-0">
+                    <h5 class="col-lg-12 colorLOGIN m-0 pishnahadROOz">پیشنهاد روز</h5>
+
+                    <div id="carouselExampleSlidesOnly" class="carousel slide witheCartPishnahadeROZ"
+                         data-ride="carousel">
+                        <div class="carousel-inner cardRadius1">
+                            <div class="carousel-item active">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
+                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
+                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
+                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--    khadamat-->
+<div class="container-fluid">
+    <div class="row colorLOGIN matginKHadamat">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2 text-center khadamatPading">
+            <img class="khadamatcss" src="pic/khadamat3.svg">
+            <h6 class="fontSizeKHadamat">ضمانت اصل بودن کالا</h6>
+        </div>
+        <div class="col-lg-2 text-center khadamatPading">
+            <img class="khadamatcss" src="pic/khadamat4.svg">
+            <h6 class="fontSizeKHadamat">گارانتی کالا</h6>
+        </div>
+        <div class="col-lg-2 text-center khadamatPading">
+            <img class="khadamatcss" src="pic/khadamat2.svg">
+            <h6 class="fontSizeKHadamat">پرداخت در محل</h6>
+        </div>
+        <div class="col-lg-2 text-center khadamatPading">
+            <img class="khadamatcss" src="pic/khadamat1.svg">
+            <h6 class="fontSizeKHadamat">ارسال سریع</h6>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<!--    khadamat-->
+
+<!--forosh-->
+<div class="container-fluid">
+    <div class="row shadowBaxs porforoshtarinha mr-0 ml-0">
+        <div class="col-lg-12 p-0">
+            <div class="d-block colorCreate khodePorfroshtarinha"><h5>پرفروشترین ها</h5></div>
+            <div  class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner mt-2 mb-2">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                               aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row shadowBaxs porforoshtarinha mr-0 ml-0">
+        <div class="col-lg-12 p-0">
+            <div class="d-block colorCreate khodePorfroshtarinha"><h5>تخفیف دار ها</h5></div>
+            <div  class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner mt-2 mb-2">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row colorLOGIN marginTOPbaner">
+        <div class="col-lg-6 pt-3 pb-3">
+            <img class="sizeBaner" src="pic/baner.jpg">
+        </div>
+        <div class="col-lg-6 pt-3 pb-3">
+            <img class="sizeBaner" src="pic/baner2.jpg">
+        </div>
+    </div>
+
+    <div class="row shadowBaxs porforoshtarinha mr-0 ml-0">
+        <div class="col-lg-12 p-0">
+            <div class="d-block colorCreate khodePorfroshtarinha"><h5>محبوب ترین ها</h5></div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner mt-2 mb-2">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 paddingScrolers">
+                                <div class="card" style="width: 100% !important;">
+                                    <img class="card-img-top" src="./pic/cart1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
+                                        <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                       aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--forosh-->
+
+<!--footer-->
+<div class="container-fluid marginTOPbaner shadowBaxs 	d-none d-lg-block d-xl-none">
+    <div class="row " style="background-image: url('pic/Untitled.png')">
+        <div class="col-lg-5 text-right footerAdress">
+            <h4>:فروشگاه اینترنتی لوازم خانگی</h4>
+            <h6>شرکت ما فعالیت خود را از سال 1383 شروع کرده و یکی از موفق ترین فروشگاه ها در زمینه فروش لوازم خانگی می باشد.</h6>
+        </div>
+        <div class="col-lg-7 ">
+            <div class="row rtlElement marginFOOTER">
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6 > خدمات ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">ورود - ثبت نام</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter"> راهنمای خرید</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> مشاوره تلفنی</a></p>
+                </div>
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6 >شناخت ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">درباره ما</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter">تماس با ما</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter">سؤالات متداول</a> </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <a href="#" class="col-lg-2"><img src="pic/instagram1.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/teleram.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/whatsapp.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/facebook.svg" class="witheInestagram"/></a>
+                        <div class="col-lg-1"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid marginTOPbaner shadowBaxs  d-none d-xl-block">
+    <div class="row " style="background-image: url('pic/Untitled2.png')">
+        <div class="col-lg-5 text-right footerAdress">
+            <h4>:فروشگاه اینترنتی لوازم خانگی</h4>
+            <h6>شرکت ما فعالیت خود را از سال 1383 شروع کرده و یکی از موفق ترین فروشگاه ها در زمینه فروش لوازم خانگی می باشد.</h6>
+        </div>
+        <div class="col-lg-7 ">
+            <div class="row rtlElement marginFOOTER">
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6 > خدمات ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">ورود - ثبت نام</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter"> راهنمای خرید</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> مشاوره تلفنی</a></p>
+                </div>
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6 >شناخت ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">درباره ما</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter">تماس با ما</a> </p>
+                    <p class="m-0"><a href="#" class="colorFooter">سؤالات متداول</a> </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <a href="#" class="col-lg-2"><img src="pic/instagram1.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/teleram.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/whatsapp.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/facebook.svg" class="witheInestagram"/></a>
+                        <div class="col-lg-1"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+
+
+<!--page asli-->
+
+
+</body>
+
+<script>
+    // محصولات و خدمات
+    let listMenu = document.getElementById("listMenu");
+    let btnMahsolat = document.getElementById("btnMahsolat");
+    let showORhidden = false;
+    showControl = () => {
+        showORhidden = !showORhidden;
+        console.log(showORhidden);
+        if (showORhidden === true) {
+            console.log("block");
+            listMenu.style.display = "block";
+            btnMahsolat.style.border = "darkblue";
+            btnMahsolat.style.backgroundColor = "darkblue";
+        } else {
+            console.log("none");
+            listMenu.style.display = "none";
+            btnMahsolat.style.border = "#4a6f97";
+            btnMahsolat.style.backgroundColor = "#4a6f97";
+        }
+    }
+    // محصولات و خدمات
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+    let showControlItem1 = false;
+    let showControlItem2 = false;
+    let showControlItem3 = false;
+    let showControlItem4 = false;
+    let showControlItem5 = false;
+
+    function hiddenItem1() {
+
+        if (showControlItem1 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem2 = showControlItem1;
+        showControlItem3 = showControlItem1;
+        showControlItem4 = showControlItem1;
+        showControlItem5 = showControlItem1;
+        showControlItem1 = !showControlItem1;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem2() {
+
+        if (showControlItem2 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items2").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+        }
+        showControlItem3 = showControlItem2;
+        showControlItem4 = showControlItem2;
+        showControlItem1 = showControlItem2;
+        showControlItem5 = showControlItem2;
+        showControlItem2 = !showControlItem2;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem3() {
+
+        if (showControlItem3 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem4 = showControlItem3;
+        showControlItem1 = showControlItem3;
+        showControlItem2 = showControlItem3;
+        showControlItem5 = showControlItem3;
+        showControlItem3 = !showControlItem3;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem4() {
+        if (showControlItem4 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem1 = showControlItem4;
+        showControlItem2 = showControlItem4;
+        showControlItem3 = showControlItem4;
+        showControlItem5 = showControlItem4;
+        showControlItem4 = !showControlItem4;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    function hiddenItem5() {
+        if (showControlItem5 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem1 = showControlItem5;
+        showControlItem2 = showControlItem5;
+        showControlItem3 = showControlItem5;
+        showControlItem4 = showControlItem5;
+        showControlItem5 = !showControlItem5;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+
+
+    function toggleToggler(elm, inputID) {
+        const input = document.getElementById(inputID);
+        elm.classList.toggle('option-box-toggled');
+        elm.parentElement.classList.toggle('s-toggler-toggled');
+        if (elm.classList.contains('option-box-toggled')) {
+            input.value = 'option2';
+        } else {
+            input.value = 'option';
+        }
+    }
+
+
+</script>
+
+</html>
