@@ -4,7 +4,6 @@ if(session()->has('locale'))
     {
         \Illuminate\Support\Facades\App::setLocale(session('locale'));
     }
-    App::setLocale('en');
 ?>
     <div class="page-content">
         <h1 class="text-center"><?php echo e(__('voyager::compass.welcome')); ?></h1>
@@ -408,4 +407,4 @@ if(session()->has('locale'))
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\xampp\htdocs\shop-laravel2lang\vendor\tcg\voyager\src/../resources/views/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\xampp\htdocs\shop-laravel2lang\vendor\tcg\voyager\src/../resources/views/main.blade.php ENDPATH**/ ?>

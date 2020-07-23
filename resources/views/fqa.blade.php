@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 @section('content')
-@include('header')
+@include('frontend.header')
 @section('title',__('generic.fqa'))
 <div class="container bg-white border">
     <div class="row">
@@ -23,7 +23,6 @@
         </div>
     </div>
 </div>
-    @include('ersal')
-    @include('footer')
+    @include('frontend.footer')
 @endsection
 

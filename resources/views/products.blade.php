@@ -8,11 +8,11 @@
 
 
 @endphp
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 @section('content')
-    @include('header')
-    <div class="container-fluid">
+    @include('frontend.header')
+    <div class="container-fluid" style="direction: rtl">
         <div class="row">
             <div class="empty my-5">
                <?php
@@ -25,75 +25,77 @@
                 if(count($cat3_translated) > 0)  $cat3_translated = $cat3_translated[0]->getTranslatedAttribute('name');
                 ?>
             </div>
-            <div class="col-sm-2 col-4  overflow-hidden" >
-                <div class="range my-4 bg-white">
+            {{--<div class="col-sm-2 col-4  overflow-hidden" >--}}
+                {{--<div class="range my-4 bg-white">--}}
 
-                        <label for="customrangeprice"> {{__('generic.price')}}</label>
-                        <div class="position-relative">
-                            <span class="position-absolute overflow-hidden rangelable" style="right:80%;top: 40%;font-size: small"> {{__('generic.vahed_pool')}}1</span>
-                            <span class="position-absolute rangelable" style="right:0;top: 40%;font-size: small">{{number_format(20000000)}}{{__('generic.vahed_pool')}}</span>
+                        {{--<label for="customrangeprice"> {{__('generic.price')}}</label>--}}
+                        {{--<div class="position-relative">--}}
+                            {{--<span class="position-absolute overflow-hidden rangelable" style="right:80%;top: 40%;font-size: small"> {{__('generic.vahed_pool')}}1</span>--}}
+                            {{--<span class="position-absolute rangelable" style="right:0;top: 40%;font-size: small">{{number_format(20000000)}}{{__('generic.vahed_pool')}}</span>--}}
 
-                             <input class="custom-range" type="range" name="priceRange" id="customrangeprice" min="1" max="20000000"
-                                    value="<?php foreach ($requestold->query() as $key => $value)
+                             {{--<input class="custom-range" type="range" name="priceRange" id="customrangeprice" min="1" max="20000000"--}}
+                                    {{--value="--}}
+            <?php foreach ($requestold->query() as $key => $value)
                                         {
                                             if($key == 'priceRange')
                                             {
                                              echo $value;
                                             }
                                         }
-                                        ?>" >
-                        </div>
-                </div>
+                                        ?>
+            {{--" >--}}
+                        {{--</div>--}}
+                {{--</div>--}}
 
-                <form method="post" >
-                    @isset($avalablefilter)
-                        @foreach($avalablefilter as $af)
-                            <div class=" my-3">
-                                <div style="cursor: pointer;" id="filtername{{$loop->iteration}}" onclick="togglefilter({{$loop->iteration}})">
-                                    <div class="sidefilter p-2" for="">
-                                        {{$af->getTranslatedAttribute('name')}} <span class="fa fa-caret-down float-{{__('voyager::generic.is_rtl') == 'true' ? 'left' : 'right'}}" style="margin-left:1em;color:black"></span>
-                                    </div>
-                                </div>
-                               <div class="chckboxfilters bg-white " id="chckboxfilters{{$loop->iteration}}" style="display: block">
-                                   <input type="hidden" name="{{$af->name.'[]'}}" value="{{$af->name}}">
-                                   @foreach($avaliblefiltervalue as $afv)
-                                       @if($afv->filter_id == $af->id)
-                                           <div class="form-check">
-                                               <label class="form-check-label mx-1">
-                                                   <input type="checkbox"  class="form-check-input" value="{{$afv->value}}" name="{{$af->slug.'[]'}}"
-                                                   <?php
-                                                       foreach ($requestold->query() as $key => $value)
-                                                       {
-                                                           if($key == $af->slug)
-                                                           {
-                                                               foreach ($value as $v)
-                                                                   if($v == $afv->value)
-                                                                       echo 'checked';
-                                                           }
-                                                       }
-                                                       ?>>
-                                                   {{$afv->getTranslatedAttribute('value')}}
-                                               </label>
-                                           </div>
-                                       @endif
-                                   @endforeach
-                               </div>
-                            </div>
-                        @endforeach
-                    @endisset
-                </form>
+                {{--<form method="post" >--}}
+                    {{--@isset($avalablefilter)--}}
+                        {{--@foreach($avalablefilter as $af)--}}
+                            {{--<div class=" my-3">--}}
+                                {{--<div style="cursor: pointer;" id="filtername{{$loop->iteration}}" onclick="togglefilter({{$loop->iteration}})">--}}
+                                    {{--<div class="sidefilter p-2" for="">--}}
+                                        {{--{{$af->getTranslatedAttribute('name')}} <span class="fa fa-caret-down float-{{__('voyager::generic.is_rtl') == 'true' ? 'left' : 'right'}}" style="margin-left:1em;color:black"></span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                               {{--<div class="chckboxfilters bg-white " id="chckboxfilters{{$loop->iteration}}" style="display: block">--}}
+                                   {{--<input type="hidden" name="{{$af->name.'[]'}}" value="{{$af->name}}">--}}
+                                   {{--@foreach($avaliblefiltervalue as $afv)--}}
+                                       {{--@if($afv->filter_id == $af->id)--}}
+                                           {{--<div class="form-check">--}}
+                                               {{--<label class="form-check-label mx-1">--}}
+                                                   {{--<input type="checkbox"  class="form-check-input" value="{{$afv->value}}" name="{{$af->slug.'[]'}}"--}}
+                                                   {{--<?php--}}
+                                                       {{--foreach ($requestold->query() as $key => $value)--}}
+                                                       {{--{--}}
+                                                           {{--if($key == $af->slug)--}}
+                                                           {{--{--}}
+                                                               {{--foreach ($value as $v)--}}
+                                                                   {{--if($v == $afv->value)--}}
+                                                                       {{--echo 'checked';--}}
+                                                           {{--}--}}
+                                                       {{--}--}}
+                                                       {{--?>>--}}
+                                                   {{--{{$afv->getTranslatedAttribute('value')}}--}}
+                                               {{--</label>--}}
+                                           {{--</div>--}}
+                                       {{--@endif--}}
+                                   {{--@endforeach--}}
+                               {{--</div>--}}
+                            {{--</div>--}}
+                        {{--@endforeach--}}
+                    {{--@endisset--}}
+                {{--</form>--}}
 
-                <!--
-               <div class="dastebandi my-5">
-                   <h4>دسته بندی ها</h4>
-                   <div class="list-group">
-                       <a href="#" class="list-group-item list-group-item-action text-danger">ارایش صورت</a>
-                       <a href="#" class="list-group-item list-group-item-action text-danger">کرم صورت</a>
-                       <a href="#" class="list-group-item list-group-item-action text-danger">ضد افتاب صورت</a>
-                   </div>
-               </div>
-                -->
-            </div>
+                {{--<!----}}
+               {{--<div class="dastebandi my-5">--}}
+                   {{--<h4>دسته بندی ها</h4>--}}
+                   {{--<div class="list-group">--}}
+                       {{--<a href="#" class="list-group-item list-group-item-action text-danger">ارایش صورت</a>--}}
+                       {{--<a href="#" class="list-group-item list-group-item-action text-danger">کرم صورت</a>--}}
+                       {{--<a href="#" class="list-group-item list-group-item-action text-danger">ضد افتاب صورت</a>--}}
+                   {{--</div>--}}
+               {{--</div>--}}
+                {{---->--}}
+            {{--</div>--}}
             <div class="col-sm-10 col-8">
                 @if($products->count()>0)
 
@@ -149,6 +151,7 @@
         </ul>
     </div>
     -->
+    @include('frontend.footer')
     @else
         <div class="container">
             <div class="row justify-content-center">
@@ -160,8 +163,10 @@
             </div>
         </div>
         @endif
-    @include('ersal')
-    @include('footer')
+
+
+
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(':checkbox').change(function () {
@@ -277,6 +282,6 @@
 
         @endisset
     </script>
-@section('title', $cat1_translated)
+{{--@section('title', $cat1_translated)--}}
 @endsection
 

@@ -374,4 +374,4 @@
     <script src="assets/js/script.min.js"></script>
 </body>
 
-</html><?php /**PATH F:\xampp\htdocs\shop-laravel\resources\views/profile/index.blade.php ENDPATH**/ ?>
+</html><?php /**PATH F:\xampp\htdocs\shop-laravel\resources\views/profile/main.blade.php ENDPATH**/ ?>

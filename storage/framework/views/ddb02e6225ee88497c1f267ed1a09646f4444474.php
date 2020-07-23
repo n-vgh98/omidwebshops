@@ -16,7 +16,6 @@ if(session()->has('locale') )
 {
     App::setLocale(session('locale'));
 }
-
 $root->load('translations');
 $catagories->load('translations');
 ?>
@@ -27,7 +26,7 @@ $catagories->load('translations');
     <div class="row">
         <div  class="col-2">
             <div class="">
-            <a href="/" title="<?php echo e(__('generic.logo')); ?>" >
+            <a href="/" title="لوگو" >
                 <img src="<?php echo e(asset('images/shortcutIcon.png')); ?>" alt="<?php echo e(__('generic.logo')); ?>"  class="img-fluid my-auto"/>
                 </a>
             </div>

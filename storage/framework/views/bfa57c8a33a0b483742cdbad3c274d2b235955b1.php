@@ -101,9 +101,7 @@ $catagories->load('translations');
 
      	<!-- navbar -->
         <ul class="navbar-nav nav-pills">
-            <?php
 
-            ?>
             <?php $__currentLoopData = $root; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
         	<li class="nav-item dropdown position-static">

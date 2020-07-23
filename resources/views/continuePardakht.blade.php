@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 
 @section('content')
-    @include('header')
+    @include('frontend.header')
     <div class="container bg-white mt-3">
         <div class="row justify-content-center">
             <div class="col-4">
@@ -172,8 +172,7 @@
 
             </div>
 
-    @include('ersal')
-    @include('footer')
+    @include('frontend.footer')
     <script>
         function Func() {
             var city = document.getElementById('city');

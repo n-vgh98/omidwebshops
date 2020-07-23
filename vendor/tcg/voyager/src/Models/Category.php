@@ -27,13 +27,5 @@ class Category extends Model
     {
         return $this->belongsTo(self::class);
     }
-    public function children()
-    {
-        return $this->hasMany(self::class, 'parent_id', 'id');
-    }
-    public function parent_items()
-    {
-        return $this->hasMany(self::class,'id')->whereNull('parent_id');
-    }
 
 }

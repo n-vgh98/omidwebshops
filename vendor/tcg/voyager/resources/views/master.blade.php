@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ \Illuminate\Support\Facades\App::getLocale()  }}" dir="{{ __('voyager::generic.is_rtl') == 'true' ? 'rtl' : 'ltr' }}">
 <head>
@@ -17,6 +16,9 @@
     @else
         <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
     @endif
+
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}">
 
@@ -26,13 +28,7 @@
         <link rel="stylesheet" href="{{ voyager_asset('css/rtl.css') }}">
         <link rel="stylesheet" href="{{ asset('style/voyagervodystyle.css') }}">
     @endif
-<?php
-if(session()->has('locale') )
-{
-    App::setLocale(session('locale'));
 
-}
-?>
     <!-- Few Dynamic Styles -->
     <style type="text/css">
         .voyager .side-menu .navbar-header {

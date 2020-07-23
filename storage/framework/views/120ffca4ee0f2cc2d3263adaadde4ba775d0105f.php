@@ -78,12 +78,7 @@
                                 <div class="form-group <?php if($row->type == 'hidden'): ?> hidden <?php endif; ?> col-md-<?php echo e($display_options->width ?? 12); ?> <?php echo e($errors->has($row->field) ? 'has-error' : ''); ?>" <?php if(isset($display_options->id)): ?><?php echo e("id=$display_options->id"); ?><?php endif; ?>>
                                     <?php echo e($row->slugify); ?>
 
-                                    <label class="control-label" for="name">
-                                        <?php if($row->field != 'slug'): ?>
-                                        <?php echo e($row->getTranslatedAttribute('display_name')); ?>
-
-                                        <?php endif; ?>
-                                    </label>
+                                    <label class="control-label" for="name"><?php echo e($row->getTranslatedAttribute('display_name')); ?></label>
                                     <?php echo $__env->make('voyager::multilingual.input-hidden-bread-edit-add', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     <?php if(isset($row->details->view)): ?>
                                         <?php echo $__env->make($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add'), 'view' => ($edit ? 'edit' : 'add'), 'options' => $row->details], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -203,7 +198,6 @@
             <?php endif; ?>
 
             $('.side-body input[data-slug-origin]').each(function(i, el) {
-               $(this).css('visibility','hidden');
                 $(el).slugify();
             });
 

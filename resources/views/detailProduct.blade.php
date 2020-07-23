@@ -4,7 +4,7 @@
 $productfilters->load('translations');
 $sameproducts->load('translations');
 ?>
-@extends('layouts.app')
+@extends('laayoytss.master')
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('contents/library/slick/slick.css')}}"/>
     <!-- Add the new slick-theme.css if you want the default styling  -->
@@ -14,7 +14,7 @@ $sameproducts->load('translations');
 
 
 @section('content')
-@include('header')
+@include('frontend.header')
 @section('title',__("footer.tilte_us"))
     <div class="container bg-white">
         <div class="row mt-2">
@@ -242,8 +242,7 @@ $sameproducts->load('translations');
 <!--   tab of detail product     -->
 
     <script type="text/javascript" src="{{asset('contents/library/slick/slick.min.js')}}"></script>
-@include('ersal')
-@include('footer')
+@include('frontend.footer')
 
         <script type="text/javascript">
             function  showMessage()
@@ -269,8 +268,9 @@ $(document).ready(function () {
   //  $("#orginalimagezoomed").elevateZoom();
 
 
+
 //initiate the plugin and pass the id of the div containing gallery images
-    $("#orginalimagezoomed").elevateZoom({gallery:'thumbnailimageblock', cursor: "crosshair", galleryActiveClass: 'active', imageCrossfade: true,zoomWindowPosition:'<?php if(__('generic.is_rtl') == 'true') echo 10 ;else echo 2  ?>' });
+    $("#orginalimagezoomed").elevateZoom({gallery:'thumbnailimageblock', cursor: "crosshair", galleryActiveClass: 'active', imageCrossfade: true,zoomWindowPosition:10 });
 
 //pass the images to Fancybox
     $("#orginalimagezoomed").bind("click", function(e) {

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 @section('content')
 
-    @include('header')
+    @include('frontend.header')
     <input type="hidden" value="0" id="sumhidden">
     <div class="container bg-white mt-3">
         <div class="row justify-content-center">
@@ -179,8 +179,8 @@
         </div>
     </div>
 @endif
-    @include('ersal')
-    @include('footer')
+    <div style="margin-top: 160px;"></div>
+    @include('frontend.footer')
     <script type="text/javascript">
         function calculateSum(id) {
             var number = '#number'+id;
@@ -191,6 +191,6 @@
 
 
     </script>
-@section('title',__('generic.bag_buy') )
+{{--@section('title',__('generic.bag_buy') )--}}
 @endsection
 

@@ -16,7 +16,6 @@ if(session()->has('locale') )
 {
     App::setLocale(session('locale'));
 }
-
 $root->load('translations');
 $catagories->load('translations');
 ?>
@@ -27,7 +26,7 @@ $catagories->load('translations');
     <div class="row">
         <div  class="col-2">
             <div class="">
-            <a href="/" title="{{__('generic.logo')}}" >
+            <a href="/" title="لوگو" >
                 <img src="{{asset('images/shortcutIcon.png')}}" alt="{{__('generic.logo')}}"  class="img-fluid my-auto"/>
                 </a>
             </div>
@@ -100,9 +99,7 @@ $catagories->load('translations');
 
      	<!-- navbar -->
         <ul class="navbar-nav nav-pills">
-            @php
 
-            @endphp
             @foreach($root as $item)
 
         	<li class="nav-item dropdown position-static">

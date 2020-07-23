@@ -1,9 +1,7 @@
 <ol class="dd-list">
 
 <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php
-       // echo($item->children)    ;
-        ?>
+
     <li class="dd-item" data-id="<?php echo e($item->id); ?>">
         <div class="pull-right item_actions">
             <div class="btn btn-sm btn-danger pull-right delete" data-id="<?php echo e($item->id); ?>">

@@ -17,7 +17,7 @@ $filterValues->load('translations');
 <h3 class="text-success">{{__('product.filter_help')}}</h3>
 
     @foreach($filters as $filter)
-        <div class="container-fluid"  style="font-size: large;border-style: solid;border-color:#0c5460;border-width: 7px ">
+        <div class="container-fluid"  style="font-size: large;border-style: solid;border-color:#0c5460;border-width: 1px ">
 
                 <div class=" row" >
                     <div class="col-sm-12">

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Contactus;
 use App\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +25,7 @@ class messageController extends Controller
      */
     public function create()
     {
-        $contac_us = Contactus::all();
-        return view('contact-us',['contact_us' => $contac_us]);
+        return view('contact-us');
     }
 
     /**

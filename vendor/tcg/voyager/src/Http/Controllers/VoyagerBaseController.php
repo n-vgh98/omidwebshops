@@ -255,7 +255,7 @@ class VoyagerBaseController extends Controller
             'defaultSearchKey',
             'usesSoftDeletes',
             'showSoftDeleted',
-            'showCheckboxColumn',
+            'showCheckboxColumn'
 
         ));
 
@@ -1382,12 +1382,7 @@ return 1;
         if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
             $model = $model->withTrashed();
         }
-        if($slug == 'categories')
-        {
-            $results = $model->orderBy($dataType->order_column, $dataType->order_direction)->get();
-        }
-        else
-             $results = $model->orderBy($dataType->order_column, $dataType->order_direction)->get();
+        $results = $model->orderBy($dataType->order_column, $dataType->order_direction)->get();
 
         $display_column = $dataType->order_display_column;
 
@@ -1417,25 +1412,18 @@ return 1;
         $this->authorize('edit', app($dataType->model_name));
 
         $model = app($dataType->model_name);
-        if($slug == 'categories')
-        {
-            $this->order_item($request ,$model);
-        }
-        else
-        {
-            $order = json_decode($request->input('order'));
-            $column = $dataType->order_column;
-            foreach ($order as $key => $item) {
-                if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
-                    $i = $model->withTrashed()->findOrFail($item->id);
-                } else {
-                    $i = $model->findOrFail($item->id);
-                }
-                $i->$column = ($key + 1);
-                $i->save();
-            }
-        }
 
+        $order = json_decode($request->input('order'));
+        $column = $dataType->order_column;
+        foreach ($order as $key => $item) {
+            if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
+                $i = $model->withTrashed()->findOrFail($item->id);
+            } else {
+                $i = $model->findOrFail($item->id);
+            }
+            $i->$column = ($key + 1);
+            $i->save();
+        }
     }
 
     public function action(Request $request)
@@ -1541,37 +1529,5 @@ return 1;
 
         // No result found, return empty array
         return response()->json([], 404);
-    }
-    public function order_item(Request $request , $model)
-    {
-        $menuItemOrder = json_decode($request->input('order'));
-
-        $this->orderMenu($menuItemOrder, null , $model);
-    }
-
-    private function orderMenu(array $menuItems, $parentId, $model)
-    {
-
-        foreach ($menuItems as $index => $menuItem) {
-            $item = $model->findOrFail($menuItem->id);
-            $item->order = $index + 1;
-            $item->parent_id = $parentId;
-            $item->save();
-
-            if (isset($menuItem->children)) {
-                $this->orderMenu($menuItem->children, $item->id,$model);
-                $file = fopen('item.txt','a+');
-                fwrite($file,$item->id.PHP_EOL);
-                fclose($file);
-            }
-            else
-
-            {
-                $file = fopen('item.txt','a+');
-                fwrite($file,"n".PHP_EOL);
-                fclose($file);
-            }
-
-        }
     }
 }

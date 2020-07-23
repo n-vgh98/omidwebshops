@@ -26,8 +26,6 @@ return [
     'editProductContinue'  => 'ویرایش درباره محصول',
     'fqas'                 => 'سوال متداول',
     'pasokh_user_message'  => 'پاسخ به سؤال' ,
-    'about-us'              => 'درباره ما' ,
-    'contact-us'              =>  'تماس با ما' ,
 
 
 ];
