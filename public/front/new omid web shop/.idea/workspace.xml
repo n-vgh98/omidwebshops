@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/omidwebshop-1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -76,6 +76,7 @@
       <workItem from="1595192260852" duration="1670000" />
       <workItem from="1595317012863" duration="1880000" />
       <workItem from="1595545194627" duration="28000" />
+      <workItem from="1596002024505" duration="3163000" />
     </task>
     <servers />
   </component>
