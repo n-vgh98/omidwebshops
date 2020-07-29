@@ -105,9 +105,60 @@ $catagories->load('translations');
                 <div class="col-lg-1"></div>
 
                 <div class="col-xl-2 col-lg-3 p-0 text-center">
-                    <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">
-                        <h6>محصولات و خدمات</h6>
-                    </button>
+                    <!--                        <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">-->
+                    <!--                            <h6>محصولات و خدمات</h6>-->
+                    <!--                        </button>-->
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
+                        @foreach($root as $item)
+                        <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
+
+                            <a @if($item->name == __('generic.home')) href="/" @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
+{{--                            <a href="#">تجهیزات حمام و دستشویی</a>--}}
+{{--                            <a href="#">تهیه ی و نگهداری نوشیدنی</a>--}}
+                            @php
+                                $id = $item->id;
+
+                                $cat1 = $catagories->filter(function ($value,$key) use($id){
+                                               return $value->parent_id == $id;
+                                });
+                                $countItemCate1 = $cat1->count() ;
+                                if($countItemCate1 == 0)
+                                    $col = 12;
+                                else
+                                      $col = (12 / $countItemCate1);
+                            @endphp
+                            @if($countItemCate1 > 0)
+
+
+                                <div class="dropdown-menu w-100 dropdown-menu-right mt-n2" >
+                                    <div class="container-fluid">
+                                        <div class="row ">
+                                            @foreach($cat1 as $itemcat1)
+                                                <div class="col-{{$col}} p-1">
+                                                    <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}" style="text-decoration: none"><h6 class="dropdown-header text-center">{{$itemcat1->name}}</h6></a>
+                                                    <div class="dropdown-divider"></div>
+                                                    @php
+                                                        $id = $itemcat1->id;
+                                                      $cat2 = $catagories->filter(function ($value,$key) use($id){
+                                                                       return $value->parent_id == $id;
+                                                                                  });
+                                                    @endphp
+                                                    @foreach($cat2 as $cat2)
+                                                        <a class="dropdown-item  text-center"  href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>
+                                                    @endforeach
+
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @endforeach
+                        </div>
+
+                    </li>
                 </div>
                 <div class="col-2 p-0 text-center">
                     <button type="button" class="btnmenu ">
@@ -128,64 +179,66 @@ $catagories->load('translations');
 </div>
 
 <!--    menu-->
-<div class="container hiddenitem " id="listMenu">
-    <div class="row rtlElement boxshadowLIST withePIC borderMENU" id="borderList" style=" display: block;background-image:url('front/pic/3.jpg'); ">
-        @foreach($root as $item)
-        <div class="col-lg-3 text-right bgList p-0 pt-2">
-            <a class="colorList m-0" @if($item->name == __('generic.home')) href="/" @else href="/product/catagory/{{$item->name}}" @endif>
-                <h6 class=" h6colorList " onclick="hiddenItem1()">{{ $item->getTranslatedAttribute('name') }}</h6>
-            </a>
-            <br/>
-            @php
-                $id = $item->id;
+{{--<div class="container hiddenitem " id="listMenu">--}}
+{{--    <div class="row rtlElement boxshadowLIST withePIC borderMENU" id="borderList" style=" display: block;background-image:url('front/pic/3.jpg'); ">--}}
+{{--        --}}
+{{--        --}}
+{{--        --}}
+{{--        --}}
+{{--        @foreach($root as $item)--}}
+{{--        <div class="col-lg-3 text-right bgList p-0 pt-2">--}}
+{{--            <a class="colorList m-0" @if($item->name == __('generic.home')) href="/" @else href="/product/catagory/{{$item->name}}" @endif>--}}
+{{--                <h6 class=" h6colorList " onclick="hiddenItem1()">{{ $item->getTranslatedAttribute('name') }}</h6>--}}
+{{--            </a>--}}
+{{--            <br/>--}}
+{{--            @php--}}
+{{--                $id = $item->id;--}}
 
-                $cat1 = $catagories->filter(function ($value,$key) use($id){
-                               return $value->parent_id == $id;
-                });
-                $countItemCate1 = $cat1->count() ;
-                if($countItemCate1 == 0)
-                    $col = 12;
-                else
-                      $col = (12 / $countItemCate1);
-            @endphp
-        </div>
-            @if($countItemCate1 > 0)
-                <div class="col-lg-9 p-0">
-                    <div class="row" id="Items1" style="display: none">
-                         <div class="row">
-                             @foreach($cat1 as $itemcat1)
-                                  <div class="col-lg-4 m-0 p-2 menu2Border">
-                                     <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}" class=" m-0 ">
-                                         <h6 class="h6colorList2">{{$itemcat1->name}}</h6>
-                                     </a>
-                                     <br/>
-                                        @php
-                                        $id = $itemcat1->id;
-                                        $cat2 = $catagories->filter(function ($value,$key) use($id){
-                                        return $value->parent_id == $id;
-                                        });
-                                        @endphp
-                                  </div>
-                                      @foreach($cat2 as $cat2)
-                                         <div class="col-lg-4 m-0 p-2 menu2Border ">
-                                             <a class=" m-0 " href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">
-                                                <h6 class="h6colorList2">{{$cat2->name}}</h6>
-                                             </a>
-                                              <br/>
-                                         </div>
-                                      @endforeach
-                             @endforeach
-                         </div>
-                    </div>
-                </div>
+{{--                $cat1 = $catagories->filter(function ($value,$key) use($id){--}}
+{{--                               return $value->parent_id == $id;--}}
+{{--                });--}}
+{{--                $countItemCate1 = $cat1->count() ;--}}
+{{--                if($countItemCate1 == 0)--}}
+{{--                    $col = 12;--}}
+{{--                else--}}
+{{--                      $col = (12 / $countItemCate1);--}}
+{{--            @endphp--}}
+{{--        </div>--}}
+{{--            @if($countItemCate1 > 0)--}}
+{{--                <div class="col-lg-9 p-0">--}}
+{{--                    <div class="row" id="Items1" style="display: none">--}}
+{{--                         <div class="row">--}}
+{{--                             @foreach($cat1 as $itemcat1)--}}
+{{--                                  <div class="col-lg-4 m-0 p-2 menu2Border">--}}
+{{--                                     <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}" class=" m-0 ">--}}
+{{--                                         <h6 class="h6colorList2">{{$itemcat1->name}}</h6>--}}
+{{--                                     </a>--}}
+{{--                                     <br/>--}}
+{{--                                        @php--}}
+{{--                                        $id = $itemcat1->id;--}}
+{{--                                        $cat2 = $catagories->filter(function ($value,$key) use($id){--}}
+{{--                                        return $value->parent_id == $id;--}}
+{{--                                        });--}}
+{{--                                        @endphp--}}
+{{--                                  </div>--}}
+{{--                                      @foreach($cat2 as $cat2)--}}
+{{--                                         <div class="col-lg-4 m-0 p-2 menu2Border ">--}}
+{{--                                             <a class=" m-0 " href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">--}}
+{{--                                                <h6 class="h6colorList2">{{$cat2->name}}</h6>--}}
+{{--                                             </a>--}}
+{{--                                              <br/>--}}
+{{--                                         </div>--}}
+{{--                                      @endforeach--}}
+{{--                             @endforeach--}}
+{{--                         </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                @endif
+{{--                @endif--}}
 
-@endforeach
-    </div>
-</div>
-
-
+{{--@endforeach--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 

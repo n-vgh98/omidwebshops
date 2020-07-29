@@ -100,6 +100,22 @@ $catagories->load('translations');
      	<!-- navbar -->
         <ul class="navbar-nav nav-pills">
 
+
+            <div class="col-xl-2 col-lg-3 p-0 text-center">
+                <!--                        <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">-->
+                <!--                            <h6>محصولات و خدمات</h6>-->
+                <!--                        </button>-->
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
+                    <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image: url('./pic/3.jpg');background-size: cover;background-repeat: no-repeat;">
+                        <a href="#">لوازم بزرگ آشپزخانه</a>
+                        <a href="#">تجهیزات حمام و دستشویی</a>
+                        <a href="#">تهیه ی و نگهداری نوشیدنی</a>
+                    </div>
+                </li>
+            </div>
+
+
             @foreach($root as $item)
 
         	<li class="nav-item dropdown position-static">
