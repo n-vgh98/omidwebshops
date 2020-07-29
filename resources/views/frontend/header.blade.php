@@ -109,10 +109,10 @@ $catagories->load('translations');
                     <!--                            <h6>محصولات و خدمات</h6>-->
                     <!--                        </button>-->
 
-                    <li class="dropdown">
+                    <div class="dropdown divLiE">
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
-                        @foreach($root as $item)
                         <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
+                            @foreach($root as $item)
 
                             <a @if($item->name == __('generic.home')) href="/" @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
 {{--                            <a href="#">تجهیزات حمام و دستشویی</a>--}}
@@ -158,7 +158,7 @@ $catagories->load('translations');
                             @endforeach
                         </div>
 
-                    </li>
+                    </div>
                 </div>
                 <div class="col-2 p-0 text-center">
                     <button type="button" class="btnmenu ">
