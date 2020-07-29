@@ -105,14 +105,14 @@ $catagories->load('translations');
                 <!--                        <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">-->
                 <!--                            <h6>محصولات و خدمات</h6>-->
                 <!--                        </button>-->
-                <li class="dropdown">
+                <div class="dropdown divLi">
                     <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
                     <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image: url('./pic/3.jpg');background-size: cover;background-repeat: no-repeat;">
                         <a href="#">لوازم بزرگ آشپزخانه</a>
                         <a href="#">تجهیزات حمام و دستشویی</a>
                         <a href="#">تهیه ی و نگهداری نوشیدنی</a>
                     </div>
-                </li>
+                </div>
             </div>
 
 
