@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-top: 192px;"></div>
+    <div style="height: 25%;"></div>
 
     @include('frontend.footer')
 @endsection

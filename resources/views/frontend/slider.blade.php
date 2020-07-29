@@ -74,7 +74,7 @@ $count = $sliders->count();
         <div class="col-lg-3 cardPishnahadRoz">
             <div class="container-float ">
                 <div class="row shadowBaxs  m-0">
-                    <h5 class="col-lg-12 colorLOGIN m-0 pishnahadROOz">پیشنهاد روز</h5>
+                    <h5 class="col-lg-12 colorLOGIN m-0 pishnahadROOz">محبوب ترین ها</h5>
 
                     <div id="carouselExampleSlidesOnly" class="carousel slide witheCartPishnahadeROZ"
                          data-ride="carousel">

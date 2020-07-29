@@ -423,7 +423,7 @@ $newests->load('translations');
 
         <div class="row shadowBaxs porforoshtarinha mr-0 ml-0">
             <div class="col-lg-12 p-0">
-                <div class="d-block colorCreate khodePorfroshtarinha"><h5>محبوب ترین ها</h5></div>
+                <div class="d-block colorCreate khodePorfroshtarinha"><h5>جدیدترین محصولات</h5></div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner mt-2 mb-2">
                         <div class="carousel-item active">

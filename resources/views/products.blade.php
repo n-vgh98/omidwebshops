@@ -140,6 +140,7 @@
             </div>
         </div>
     </div>
+    @include('frontend.footer')
     <!--
     <div class="mt-3 bg-white">
         <ul class="pagination justify-content-center">
@@ -151,17 +152,36 @@
         </ul>
     </div>
     -->
-    @include('frontend.footer')
+
     @else
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-6">
-                   <div class="jumbotron bg-info mt-5">
-                       <p class="text-dark text-center ">محصولی در این دسته بندی وجود ندارد</p>
-                   </div>
+        {{--<div class="container" >--}}
+            {{--<div class="row justify-content-center" style="direction: ltr !important;">--}}
+                {{--<div class="col-6">--}}
+                   {{--<div class="jumbotron bg-info mt-5">--}}
+                       {{--<p class="text-dark text-center ">محصولی در این دسته بندی وجود ندارد</p>--}}
+                   {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="container" >
+            <div class="card text-center" style="height: 250px; width: 800px;margin-right:130px; margin-top: 50px;">
+                <div class="card-header">
+                    اطلاعیه
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">محصولی در این دسته بندی وجود ندارد</h5>
+                    <p class="card-text">با عرض پوزش از شما کاربر عزیز. در این دسته بندی به زودی محصولات جدید قرار میگیرد.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    2روز پیش
                 </div>
             </div>
         </div>
+        <div style="margin-bottom: 25%;"></div>
+            <div style="direction: ltr; width: 100%;">
+            @include('frontend.footer')
+            </div>
+
         @endif
 
 
