@@ -633,7 +633,7 @@
 
 /* The sidepanel menu */
 .sidepanel {
-    height: 550px; /* Specify a height */
+    height: 410px; /* Specify a height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
@@ -677,6 +677,13 @@
     color: white;
     /*padding: 10px 15px;*/
     border: none;
+    transform:rotate(90deg);
+    background-color: rgba(147, 36, 36, 0.56);
+    border-radius: 15px 15px 0px 0px;
+    /*height: 450px;*/
+    position: fixed;
+    margin-left: -9%;
+    margin-top: 10%;
 }
 
 .openbtn:hover {
