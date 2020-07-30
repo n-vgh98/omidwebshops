@@ -163,6 +163,7 @@
                 {{--</div>--}}
             {{--</div>--}}
         {{--</div>--}}
+        {{--safheye bdune mahsul--}}
         <div class="container" >
             <div class="card text-center" style="height: 250px; width: 800px;margin-right:130px; margin-top: 50px;">
                 <div class="card-header">
