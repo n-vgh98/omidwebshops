@@ -2,7 +2,7 @@
 use TCG\Voyager\Models\Category;
 $catagories = Category::all();
 
-$root = $catagories->filter(function ($value,$key){
+$root = $catagories->filter(function ($value, $key) {
     return $value->parent_id == null;
 });
 $root = $root->sortBy('order');
@@ -12,8 +12,7 @@ $root = $root->sortBy('order');
 ?>
 {{--  set language --}}
 <?php
-if(session()->has('locale') )
-{
+if (session()->has('locale')) {
     App::setLocale(session('locale'));
 }
 $root->load('translations');
@@ -29,66 +28,110 @@ $catagories->load('translations');
         <div class="col-lg-4">
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-7 s-toggler <?php if(__('generic.is_rtl') == 'true') echo 'ltr' ;else echo 'rtl' ?> ">
-                        <p><a href="{{url('fa')}}" style="color: white;">فارسی</a></p>
-                        <p><a href="{{url('en')}}" style="color: white;">English</a></p>
-                        <input type="hidden" name="option-choose" id="toggleInput">
-                        <div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>
+                <div
+                    class="col-lg-7 s-toggler <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?> ">
+                    <p><a href="{{url('fa')}}" style="color: white;">فارسی</a></p>
+                    <p><a href="{{url('en')}}" style="color: white;">English</a></p>
+                    <input type="hidden" name="option-choose" id="toggleInput">
+                    <div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>
                 </div>
             </div>
             <div class="row faseleSabadkharidBeBala">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4 p-0">
                     <a href="/sabadKharid">
-                    <button type="button" class="btn   m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i>
-                        <span class="badge badge-pill badge-success " style="z-index: 5;">{{(session('numCart')) ?? '0'}}</span>
-                            <i class="icon ion-ios-cart-outline" style="font-size: 60px;color: rgb(0,0,0);width: 60px;"></i>
-                        <span style="color: white;"> {{__('generic.bag_cart')}}
+                        <button type="button" class="btn   m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i>
+                            <span class="badge badge-pill badge-success "
+                                  style="z-index: 5;">{{(session('numCart')) ?? '0'}}</span>
+                            <i class="icon ion-ios-cart-outline"
+                               style="font-size: 60px;color: rgb(0,0,0);width: 60px;"></i>
+                            <span style="color: white;"> {{__('generic.bag_cart')}}
                         </span>
-                    </button>
+                        </button>
                     </a>
                 </div>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-2 text-right p-0">
+                <div class="col-lg-4 text-right p-0">
                     <div>
                         @if(\Illuminate\Support\Facades\Auth::check())
 
                             {{-- --------------------  drop down menu  --}}
 
-                            <div class="dropdown  profile" role="presentation">
+                            <div class="dropdown  profile" role="presentation" style="
+                                        border: solid 1px darkblue;
+                                        border-radius: 45px;
+                                        background-color: #0e4d92;
+                                    ">
 
-                                <a class="dropdown-toggle no-arrow" data-toggle="dropdown" aria-expanded="true" href="#">
-                                    <span class="d-none d-lg-inline  text-secondary small">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
-                                    <img class="border rounded-circle img-profile" width="60px0" height="60px" src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->avatar)}}">
+                                <a class="dropdown-toggle no-arrow" data-toggle="dropdown" aria-expanded="true"
+                                   href="#">
+                                    <span
+                                        class="d-none d-lg-inline  text-secondary small"
+                                        style="color: white!important; font-weight: bold;">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+                                    <img class="border rounded-circle img-profile" width="60px" height="60px"
+                                         style="Border-radius:0px 7px 0px 7px!important;"
+                                         src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->avatar)}}">
                                 </a>
-                                <div class="dropdown-menu shadow   dropdown-menu-animated  border-secondary " role="menu" style="z-index: 111111111" id="profileBlock">
+                                <div class="dropdown-menu shadow   dropdown-menu-animated  border-secondary "
+                                     role="menu" style="z-index: 111111111" id="profileBlock">
                                     <a class="dropdown-item text-right" role="presentation" href="{{url('profile')}}">
                                         <i class="fas fa-user fa-sm fa-fw  text-gray-400"></i>&nbsp;{{__('generic.profile')}}
                                     </a>
                                     <a class="dropdown-item text-right" role="presentation" href="{{url('/')}}">
                                         <i class="fas fa-home  fa-sm fa-fw  text-gray-400"></i>&nbsp;{{__('generic.home')}}
                                     </a>
-                                    <a class="dropdown-item text-right" role="presentation" href="{{url('sabadKharid')}}"><i class="fas fa-shopping-basket fa-sm fa-fw text-gray-400"></i>&nbsp; {{__('generic.bag_cart')}}</a>
+                                    <a class="dropdown-item text-right" role="presentation"
+                                       href="{{url('sabadKharid')}}"><i
+                                            class="fas fa-shopping-basket fa-sm fa-fw text-gray-400"></i>&nbsp; {{__('generic.bag_cart')}}
+                                    </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-right text-danger" role="presentation" href="{{route('logout')}}"><i class="fas fa-sign-out-alt fa-sm fa-fw  text-gray-400"></i>&nbsp;{{__('generic.exit')}}</a>
+                                    <a class="dropdown-item text-right text-danger" role="presentation"
+                                       href="{{route('logout')}}"><i
+                                            class="fas fa-sign-out-alt fa-sm fa-fw  text-gray-400"></i>&nbsp;{{__('generic.exit')}}
+                                    </a>
                                 </div>
                             </div>
-                            @else
-                             <button type="button" class="btn colorLOGIN sizLogin1"><a href="{{route('login')}}" style="color: white;">{{__('generic.login')}}</a> </button>
-                            @endif
+                        @else
+                            <div class="row">
+                                <button type="button" class="col-lg-6 btn colorLOGIN sizLogin1">
+                                    <a href="{{route('login')}}" style="color: white;">
+                                        {{__('generic.login')}}
+                                    </a>
+                                </button>
+                                <div class="col-lg-6 text-left p-0" id="divVorod">
+                                    <button type="button" class="btn colorCreate sizLogin2">
+                                        <a href="{{route('login')}}" style="color: white;">{{__('generic.login')}}</a>
+                                    </button>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
-                <div class="col-lg-2 text-left p-0">
-                    <button type="button" class="btn colorCreate sizLogin2"><a href="{{route('login')}}" style="color: white;">{{__('generic.login')}}</a> </button>
-                </div>
+
             </div>
         </div>
         <div class="col-lg-6 align-items-center mt-auto mb-auto">
             <div class="row p-0">
-                <form class="form-inline" action="{{url('search')}}" method="post">
+                <form class="form-inline text-center" action="{{url('search')}}" method="post">
                     @csrf
-                    <input class="col-lg-12 form-control mt-auto btnSearch hSearch" type="search" style="width: 550px;" placeholder="{{__('generic.search')}}"  name="valueSearch" aria-label="Search">
+                    <button class="col-lg-2 buttnSearch hSearch"
+                            style="border: solid 1px gray !important;
+                           border-radius: 45px 0px 0px 45px;
+                           padding: 4%!important;
+                           border-right:none!important;">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                    <input class="col-lg-10 form-control mt-auto btnSearch hSearch" type="search"
+                           style="
+                               width: 550px;
+                               margin-top: 0!important;
+                               border-radius:0px 45px 45px 0px !important;
+                               border-left:none !important;"
+
+                           placeholder="{{__('generic.search')}} "
+                           name="valueSearch" aria-label="Search">
                     {{--<input type="submit" class="btn btn-primary" name="btnSearch" value="{{__('generic.search')}}">--}}
+
                 </form>
             </div>
         </div>
@@ -111,50 +154,56 @@ $catagories->load('translations');
 
                     <div class="dropdown divLiE">
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
-                        <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
+                        <div class="dropdown-content shadowBaxs andazeTagAHa"
+                             style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
                             @foreach($root as $item)
 
-                            <a @if($item->name == __('generic.home')) href="/" @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
-{{--                            <a href="#">تجهیزات حمام و دستشویی</a>--}}
-{{--                            <a href="#">تهیه ی و نگهداری نوشیدنی</a>--}}
-                            @php
-                                $id = $item->id;
+                                <a @if($item->name == __('generic.home')) href="/"
+                                   @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
+                                {{--                            <a href="#">تجهیزات حمام و دستشویی</a>--}}
+                                {{--                            <a href="#">تهیه ی و نگهداری نوشیدنی</a>--}}
+                                @php
+                                    $id = $item->id;
 
-                                $cat1 = $catagories->filter(function ($value,$key) use($id){
-                                               return $value->parent_id == $id;
-                                });
-                                $countItemCate1 = $cat1->count() ;
-                                if($countItemCate1 == 0)
-                                    $col = 12;
-                                else
-                                      $col = (12 / $countItemCate1);
-                            @endphp
-                            @if($countItemCate1 > 0)
+                                    $cat1 = $catagories->filter(function ($value,$key) use($id){
+                                                   return $value->parent_id == $id;
+                                    });
+                                    $countItemCate1 = $cat1->count() ;
+                                    if($countItemCate1 == 0)
+                                        $col = 12;
+                                    else
+                                          $col = (12 / $countItemCate1);
+                                @endphp
+                                @if($countItemCate1 > 0)
 
 
-                                <div class="dropdown-menu w-100 dropdown-menu-right mt-n2" >
-                                    <div class="container-fluid">
-                                        <div class="row ">
-                                            @foreach($cat1 as $itemcat1)
-                                                <div class="col-{{$col}} p-1">
-                                                    <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}" style="text-decoration: none"><h6 class="dropdown-header text-center">{{$itemcat1->name}}</h6></a>
-                                                    <div class="dropdown-divider"></div>
-                                                    @php
-                                                        $id = $itemcat1->id;
-                                                      $cat2 = $catagories->filter(function ($value,$key) use($id){
-                                                                       return $value->parent_id == $id;
-                                                                                  });
-                                                    @endphp
-                                                    @foreach($cat2 as $cat2)
-                                                        <a class="dropdown-item  text-center"  href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>
-                                                    @endforeach
+                                    <div class="dropdown-menu w-100 dropdown-menu-right mt-n2">
+                                        <div class="container-fluid">
+                                            <div class="row ">
+                                                @foreach($cat1 as $itemcat1)
+                                                    <div class="col-{{$col}} p-1">
+                                                        <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}"
+                                                           style="text-decoration: none"><h6
+                                                                class="dropdown-header text-center">{{$itemcat1->name}}</h6>
+                                                        </a>
+                                                        <div class="dropdown-divider"></div>
+                                                        @php
+                                                            $id = $itemcat1->id;
+                                                          $cat2 = $catagories->filter(function ($value,$key) use($id){
+                                                                           return $value->parent_id == $id;
+                                                                                      });
+                                                        @endphp
+                                                        @foreach($cat2 as $cat2)
+                                                            <a class="dropdown-item  text-center"
+                                                               href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>
+                                                        @endforeach
 
-                                                </div>
-                                            @endforeach
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
+                                @endif
                             @endforeach
                         </div>
 
@@ -162,12 +211,14 @@ $catagories->load('translations');
                 </div>
                 <div class="col-2 p-0 text-center">
                     <button type="button" class="btnmenu ">
-                       <a class="nav-link" href="/contact-us" style="color: white;padding-top: 0;">{{__('generic.contact_us')}}</a>
+                        <a class="nav-link" href="/contact-us"
+                           style="color: white;padding-top: 0;">{{__('generic.contact_us')}}</a>
                     </button>
                 </div>
                 <div class="col-2 p-0 text-center">
                     <button type="button" class="btnmenu ">
-                        <a class="nav-link" href="/about-us" style="color: white;padding-top: 0;">{{__('generic.about_us')}}</a>
+                        <a class="nav-link" href="/about-us"
+                           style="color: white;padding-top: 0;">{{__('generic.about_us')}}</a>
                     </button>
                 </div>
                 <div class="col-lg-4"></div>
@@ -241,192 +292,188 @@ $catagories->load('translations');
 {{--</div>--}}
 
 
-
-
-                            {{--@endforeach--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--@endif--}}
-
-        {{--@endforeach--}}
+{{--@endforeach--}}
 {{--</div>--}}
 {{--</div>--}}
-            {{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem2()">تجهیزات حمام و--}}
-                    {{--دستشویی</h6></a>--}}
-            {{--<br/>--}}
-            {{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem3()">تهیه ی و نگهداری--}}
-                    {{--نوشیدنی</h6></a>--}}
-            {{--<br/>--}}
-            {{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem4()">آماده سازی غذا</h6></a>--}}
-            {{--<br/>--}}
-            {{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem5()">لوازم منزل</h6></a>--}}
+{{--</div>--}}
+{{--@endif--}}
 
-            {{--<div class="col-lg-9 p-0">--}}
-                {{--<div class="row" id="Items1" style="display: none">--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-lg-4 m-0 p-2 menu2Border ">--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                            {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                            {{--<br/>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+{{--@endforeach--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem2()">تجهیزات حمام و--}}
+{{--دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem3()">تهیه ی و نگهداری--}}
+{{--نوشیدنی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem4()">آماده سازی غذا</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem5()">لوازم منزل</h6></a>--}}
+
+{{--<div class="col-lg-9 p-0">--}}
+{{--<div class="row" id="Items1" style="display: none">--}}
+{{--<div class="row">--}}
+{{--<div class="col-lg-4 m-0 p-2 menu2Border ">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
 {{--@endforeach--}}
 
 {{--</div>--}}
 {{--</div>--}}
 
 
-                    {{--<div class="{{$col}}-lg-4 m-0 p-2 menu2Border ">--}}
-                        {{----}}
-                        {{----}}
-                        {{----}}
-                    {{--</div>--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--@endif                        --}}{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
+{{--<div class="{{$col}}-lg-4 m-0 p-2 menu2Border ">--}}
+{{----}}
+{{----}}
+{{----}}
+{{--</div>--}}
+{{--@endforeach--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--@endif                        --}}{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
 
-                        {{--@foreach($cat2 as $cat2)--}}
-                    {{--<div class="col-lg-4 m-0 p-2 menu2Border ">--}}
-                        {{--<a class=" m-0 " href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">--}}
-                            {{--<h6 class="h6colorList2">{{$cat2->name}}</h6>--}}
-                        {{--</a>--}}
-                        {{--<br/>--}}
-                        {{--@endforeach--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
-                        {{--<br/>--}}
-                    {{--</div>--}}
-                        {{--@endforeach--}}
-                {{--</div>--}}
+{{--@foreach($cat2 as $cat2)--}}
+{{--<div class="col-lg-4 m-0 p-2 menu2Border ">--}}
+{{--<a class=" m-0 " href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">--}}
+{{--<h6 class="h6colorList2">{{$cat2->name}}</h6>--}}
+{{--</a>--}}
+{{--<br/>--}}
+{{--@endforeach--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--@endforeach--}}
+{{--</div>--}}
 
-            {{--</div>--}}
-
-
+{{--</div>--}}
 
 
-            {{--<div class="row " id="Items2" style="display: none">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                        {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
-                        {{--<br/>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+{{--<div class="row " id="Items2" style="display: none">--}}
+{{--<div class="row">--}}
+{{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--<div class="col-lg-4 m-0 p-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--</div>--}}
 
-            {{--</div>--}}
-            {{--<div class="row " id="Items3" style="display: none">--}}
-                {{--<div class="col-lg-4 m-2 menu2Border">--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
-                    {{--<br/>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="row " id="Items4" style="display: none">--}}
-                {{--<div class="col-lg-4 m-2 menu2Border">--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
-                    {{--<br/>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="row " id="Items5" style="display: none">--}}
-                {{--<div class="col-lg-4 m-2 menu2Border">--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
-                    {{--<br/>--}}
-                    {{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
-                    {{--<br/>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-            {{--@endforeach--}}
+{{--</div>--}}
+{{--<div class="row " id="Items3" style="display: none">--}}
+{{--<div class="col-lg-4 m-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="row " id="Items4" style="display: none">--}}
+{{--<div class="col-lg-4 m-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="row " id="Items5" style="display: none">--}}
+{{--<div class="col-lg-4 m-2 menu2Border">--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
+{{--<br/>--}}
+{{--<a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>--}}
+{{--<br/>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--@endforeach--}}
 
-    {{--</div>--}}
+{{--</div>--}}
 {{--</div>--}}
 
 <!--    menu-->
