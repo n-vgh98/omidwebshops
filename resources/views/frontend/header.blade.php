@@ -25,11 +25,10 @@ $catagories->load('translations');
 <!-- header   pc  -->
 <div class="container-fluid bgElemanWhite">
     <div class="row PaddingTopMenu paddingHeader1">
-        <div class="col-lg-4">
+        <div class="col-xl-4 col-lg-5 p-0">
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div
-                    class="col-lg-7 s-toggler <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?> ">
+                <div class="col-lg-7 s-toggler <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?> ">
                     <p><a href="{{url('fa')}}" style="color: white;">فارسی</a></p>
                     <p><a href="{{url('en')}}" style="color: white;">English</a></p>
                     <input type="hidden" name="option-choose" id="toggleInput">
@@ -40,7 +39,7 @@ $catagories->load('translations');
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4 p-0">
                     <a href="/sabadKharid">
-                        <button type="button" class="btn   m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i>
+                        <button type="button" class="btn m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i>
                             <span class="badge badge-pill badge-success "
                                   style="z-index: 5;">{{(session('numCart')) ?? '0'}}</span>
                             <i class="icon ion-ios-cart-outline"
@@ -54,21 +53,14 @@ $catagories->load('translations');
                 <div class="col-lg-4 text-right p-0">
                     <div>
                         @if(\Illuminate\Support\Facades\Auth::check())
-
                             {{-- --------------------  drop down menu  --}}
-
-                            <div class="dropdown  profile" role="presentation" style="
-                                        border: solid 1px darkblue;
-                                        border-radius: 45px;
-                                        background-color: #0e4d92;
-                                    ">
-
+                            <div class="dropdown  profile dropdownLogin" role="presentation" >
                                 <a class="dropdown-toggle no-arrow" data-toggle="dropdown" aria-expanded="true"
                                    href="#">
                                     <span
                                         class="d-none d-lg-inline  text-secondary small"
                                         style="color: white!important; font-weight: bold;">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
-                                    <img class="border rounded-circle img-profile" width="60px" height="60px"
+                                    <img class="border rounded-circle img-profile dropdown2Login"
                                          style="Border-radius:0px 7px 0px 7px!important;"
                                          src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->avatar)}}">
                                 </a>
@@ -107,27 +99,16 @@ $catagories->load('translations');
                         @endif
                     </div>
                 </div>
-
             </div>
         </div>
-        <div class="col-lg-6 align-items-center mt-auto mb-auto">
+        <div class="col-xl-6 col-lg-5 align-items-center mt-auto mb-auto">
             <div class="row p-0">
-                <form class="form-inline text-center" action="{{url('search')}}" method="post">
+                <form class="form-inline text-right" action="{{url('search')}}" method="post">
                     @csrf
-                    <button class="col-lg-2 buttnSearch hSearch"
-                            style="border: solid 1px gray !important;
-                           border-radius: 45px 0px 0px 45px;
-                           padding: 4%!important;
-                           border-right:none!important;">
+                    <button class="col-lg-2 buttnSearch hSearch hhSearch">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
-                    <input class="col-lg-10 form-control mt-auto btnSearch hSearch" type="search"
-                           style="
-                               width: 550px;
-                               margin-top: 0!important;
-                               border-radius:0px 45px 45px 0px !important;
-                               border-left:none !important;"
-
+                    <input class="col-lg-10 form-control mt-auto btnSearch hSearch hhhSearch" type="search"
                            placeholder="{{__('generic.search')}} "
                            name="valueSearch" aria-label="Search">
                     {{--<input type="submit" class="btn btn-primary" name="btnSearch" value="{{__('generic.search')}}">--}}
@@ -135,7 +116,7 @@ $catagories->load('translations');
                 </form>
             </div>
         </div>
-        <div class="col-lg-2 text-center">
+        <div class="col-xl-2 col-lg-2 text-center">
             <img class="sizeLogo" href="#" src="{{asset('front/jpg/logo.jpg')}}"/>
         </div>
     </div>
