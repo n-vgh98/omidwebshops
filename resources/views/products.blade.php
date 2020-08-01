@@ -43,7 +43,6 @@
                                             }
                                         }
                                         ?>
-            {{--" >--}}
                         {{--</div>--}}
                 {{--</div>--}}
 
@@ -85,7 +84,7 @@
                     {{--@endisset--}}
                 {{--</form>--}}
 
-                {{--<!----}}
+                {{--<!---->}}
                {{--<div class="dastebandi my-5">--}}
                    {{--<h4>دسته بندی ها</h4>--}}
                    {{--<div class="list-group">--}}
@@ -96,48 +95,234 @@
                {{--</div>--}}
                 {{---->--}}
             {{--</div>--}}
-            <div class="col-sm-10 col-8">
-                @if($products->count()>0)
 
-                    <ul class="breadcrumb justify-content-lg-start">
-                        <li class="breadcrumb-item  px-1"><a href="/"><span class="fa fa-home ml-1"></span>{{__('generic.home')}}</a></li>
-                        @isset($catagory)
-                        <li class="breadcrumb-item px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}">{{$cat1_translated}}</a></li>
-                        @if($catagory[0]['cat2'] !=NULL)
-                            <li class="breadcrumb-item   px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}/catagory/{{$catagory[0]['cat2']}}">{{$cat2_translated}}</a></li>
-                        @endif
-                        @if($catagory[0]['cat3'] !=NULL)
-                        <li class="breadcrumb-item   px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}/catagory/{{$catagory[0]['cat2']}}/catagory/{{$catagory[0]['cat3']}}">{{$cat3_translated}}</a></li>
-                        @endif
-                            @endisset
-                    </ul>
-                <div class="d-flex bg-white flex-wrap justify-content-start">
-                  @foreach($products as $pro)
-                    <div class="m-2">
-                        <div class="card rounded-0 productSimiler " >
-                            <a  href="/detailProduct/{{$pro->id}}"  class="text-decoration-none ">
 
-                                <div class="text-right card-content "><img class="img-fluid  d-block mx-auto"   src="{{asset('storage/products/'.($pro->productimages()->first())['image']  )}}">
-                                    <h5 class="text-center p-1">{{$pro->getTranslatedAttribute('name')}} </h5>
-                                    <div class="btn-wrapper text-center">
-                                        <span class="text-center text-danger">
-                                             {{__('generic.price')}} : {{number_format($pro->price)}} {{__('generic.vahed_pool')}}</span>
-                                            @if($pro->available >0)
 
-                                        <div class="text-success">
-                                            <img src="{{asset('storage/exists.png')}}">
-                                        </div>
-                                            @else
-                                               <div> <span class="text-danger">{{__('generic.not_available')}}</span></div>
+
+
+            {{--new card--}}
+            <div class="cantainer-flut">
+                <div class="row">
+                    {{--<div class="col-lg-1">--}}
+                        {{--<!--                        menu filter-->--}}
+                        {{--<div id="mySidepanel" class="sidepanel">--}}
+                            {{--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>--}}
+                            {{--<br/>--}}
+                            {{--<h6 class="colorFooter text-center">فیلتر و جست و جوی هوشمند</h6>--}}
+
+                            {{--<form method="post" class="p-2" style="direction: ltr">--}}
+                                {{--<div class=" my-3 " style="border: solid; padding: 2%;color: white;">--}}
+                                    {{--<fieldset>--}}
+                                        {{--<legend style="border-bottom: solid white 1px">برند</legend>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="coding" name="interest" value="coding">--}}
+                                            {{--<label for="coding">پارس خزر</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="lg" name="interest" value="music">--}}
+                                            {{--<label for="lg">lg</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="samsung" name="interest" value="music">--}}
+                                            {{--<label for="samsung">samsung</label>--}}
+                                        {{--</div>--}}
+                                    {{--</fieldset>--}}
+                                {{--</div>--}}
+                                {{--<div class=" my-3 " style="border: solid; padding: 2%;color: white;">--}}
+                                    {{--<fieldset>--}}
+                                        {{--<legend style="border-bottom: solid white 1px">رنگ</legend>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="yellow" name="interest" value="coding">--}}
+                                            {{--<label for="yellow">زرد</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="white" name="interest" value="music">--}}
+                                            {{--<label for="white">سفید</label>--}}
+                                        {{--</div>--}}
+                                        {{--<div>--}}
+                                            {{--<input type="checkbox" id="red" name="interest" value="music">--}}
+                                            {{--<label for="red">قرمز</label>--}}
+                                        {{--</div>--}}
+                                    {{--</fieldset>--}}
+                                {{--</div>--}}
+
+                                {{--<button type="button" class="btn btn-primary "><i class="fa fa-search" aria-hidden="true"></i>--}}
+                                    {{--جست و--}}
+                                    {{--جو--}}
+                                {{--</button>--}}
+
+                            {{--</form>--}}
+                            {{--<!--                            <a href="#">About</a>-->--}}
+                            {{--<!--                            <a href="#">Services</a>-->--}}
+                            {{--<!--                            <a href="#">Clients</a>-->--}}
+                            {{--<!--                            <a href="#">Contact</a>-->--}}
+                        {{--</div>--}}
+
+                        {{--<button class="openbtn" onclick="openNav()"><i class="fa fa-search" aria-hidden="true"></i>--}}
+                            {{--فیلتر و جست و جوی هوشمند--}}
+                        {{--</button>--}}
+                        {{--<!--                        menu filter-->--}}
+                    {{--</div>--}}
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-8">
+                        @if($products->count()>0)
+
+                            <ul class="breadcrumb justify-content-lg-start">
+                                <li class="breadcrumb-item  px-1"><a href="/"><span class="fa fa-home ml-1"></span>{{__('generic.home')}}</a></li>
+                                @isset($catagory)
+                                    <li class="breadcrumb-item px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}">{{$cat1_translated}}</a></li>
+                                    @if($catagory[0]['cat2'] !=NULL)
+                                        <li class="breadcrumb-item   px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}/catagory/{{$catagory[0]['cat2']}}">{{$cat2_translated}}</a></li>
+                                    @endif
+                                    @if($catagory[0]['cat3'] !=NULL)
+                                        <li class="breadcrumb-item   px-1"><a href="/product/catagory/{{$catagory[0]['cat1']}}/catagory/{{$catagory[0]['cat2']}}/catagory/{{$catagory[0]['cat3']}}">{{$cat3_translated}}</a></li>
+                                    @endif
+                                @endisset
+                            </ul>
+
+                    {{--<div class="col-lg-10">--}}
+                        <div class="row">
+                            @foreach($products as $pro)
+                                <a  href="/detailProduct/{{$pro->id}}"  class="text-decoration-none ">
+                                    <div class="col-lg-3 p-2">
+                                        <div class="card shadowBaxs">
+                                            <img class="card-img-top" src="{{asset('storage/products/'.($pro->productimages()->first())['image']  )}}"
+                                                 alt="Card image">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{$pro->getTranslatedAttribute('name')}}</h5>
+                                                <p class="card-text"> {{__('generic.price')}} : {{number_format($pro->price)}} {{__('generic.vahed_pool')}}</p>
+                                                <a href="/detailProduct/{{$pro->id}}" class="btn btn-primary">افزودن به سبد خرید</a>
+                                                @if($pro->available <0)
+                                                    <div> <span class="text-danger">{{__('generic.not_available')}}</span></div>
                                                 @endif
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            @endforeach
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-3 p-2">--}}
+                                {{--<div class="card shadowBaxs">--}}
+                                    {{--<img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"--}}
+                                         {{--alt="Card image">--}}
+                                    {{--<div class="card-body">--}}
+                                        {{--<h5 class="card-title">ماشین لباس شویی</h5>--}}
+                                        {{--<p class="card-text">قیمت : 13.000.000 تومان</p>--}}
+                                        {{--<a href="#" class="btn btn-primary">افزودن به سبد خرید</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
                     </div>
-                @endforeach
+                    <div class="col-lg-1"></div>
                 </div>
             </div>
+
+            {{--end new card--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{--<div class="d-flex bg-white flex-wrap justify-content-start">--}}
+                  {{--@foreach($products as $pro)--}}
+                    {{--<div class="m-2">--}}
+                        {{--<div class="card rounded-0 productSimiler " >--}}
+                            {{--<a  href="/detailProduct/{{$pro->id}}"  class="text-decoration-none ">--}}
+
+                                {{--<div class="text-right card-content "><img class="img-fluid  d-block mx-auto"   src="{{asset('storage/products/'.($pro->productimages()->first())['image']  )}}">--}}
+                                    {{--<h5 class="text-center p-1">{{$pro->getTranslatedAttribute('name')}} </h5>--}}
+                                    {{--<div class="btn-wrapper text-center">--}}
+                                        {{--<span class="text-center text-danger">--}}
+                                             {{--{{__('generic.price')}} : {{number_format($pro->price)}} {{__('generic.vahed_pool')}}</span>--}}
+                                            {{--@if($pro->available >0)--}}
+
+                                        {{--<div class="text-success">--}}
+                                            {{--<img src="{{asset('storage/exists.png')}}">--}}
+                                        {{--</div>--}}
+                                            {{--@else--}}
+                                               {{--<div> <span class="text-danger">{{__('generic.not_available')}}</span></div>--}}
+                                                {{--@endif--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--@endforeach--}}
+                </div>
         </div>
     </div>
     @include('frontend.footer')
@@ -153,7 +338,7 @@
     </div>
     -->
 
-    @else
+
         {{--<div class="container" >--}}
             {{--<div class="row justify-content-center" style="direction: ltr !important;">--}}
                 {{--<div class="col-6">--}}
@@ -164,8 +349,9 @@
             {{--</div>--}}
         {{--</div>--}}
         {{--safheye bdune mahsul--}}
-        <div class="container" >
-            <div class="card text-center" style="height: 250px; width: 800px;margin-right:130px; margin-top: 50px;">
+        @else
+        <div class="container">
+            <div class="card text-center" style="height: 250px; width: 800px;margin-right:200px; margin-top: 50px;">
                 <div class="card-header">
                     اطلاعیه
                 </div>
@@ -177,11 +363,12 @@
                     2روز پیش
                 </div>
             </div>
+            <div style="margin-bottom: 20%;"></div>
         </div>
-        <div style="margin-bottom: 25%;"></div>
-            <div style="direction: ltr; width: 100%;">
+        <div style="direction: ltr; width:135%;">
             @include('frontend.footer')
-            </div>
+        </div>
+
 
         @endif
 

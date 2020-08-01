@@ -92,7 +92,7 @@ $catagories->load('translations');
                                 </button>
                                 <div class="col-lg-6 text-left p-0" id="divVorod">
                                     <button type="button" class="btn colorCreate sizLogin2">
-                                        <a href="{{route('login')}}" style="color: white;">{{__('generic.login')}}</a>
+                                        <a href="{{route('register')}}" style="color: white;">ثبت نام</a>
                                     </button>
                                 </div>
                             </div>

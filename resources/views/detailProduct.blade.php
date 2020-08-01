@@ -237,6 +237,7 @@ $sameproducts->load('translations');
             @endforeach
         </div>
     </div>
+</div>
 
 </div>
 <!--   tab of detail product     -->

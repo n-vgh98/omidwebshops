@@ -412,188 +412,289 @@ $newests->load('translations');
             {{--</div>--}}
         {{--</div>--}}
 
+        {{--most populur--}}
+
         <div class="row colorLOGIN marginTOPbaner">
+            @if(count($mostpopulars) > 0)
             <div class="col-lg-6 pt-3 pb-3">
-                <img class="sizeBaner" src="{{asset('front/pic/baner.jpg')}}">
+                <a href="/detailProduct/{{$mostpopulars[0]->product_id}}">
+                    <img class="sizeBaner" src="{{asset('storage/'.$mostpopulars[0]->image)}}">
+                    {{--<button class="btn btn-primary btn-sm active" type="button">{{__('generic.view')}}</button>--}}
+                </a>
             </div>
+            @endif
+            @if(count($mostpopulars) > 1)
             <div class="col-lg-6 pt-3 pb-3">
-                <img class="sizeBaner" src="{{asset('front/pic/baner2.jpg')}}">
+                <a href="/detailProduct/{{$mostpopulars[1]->product_id}}">
+                    <img class="sizeBaner" src="{{asset('storage/'.$mostpopulars[1]->image)}}">
+                    {{--<button class="btn btn-primary btn-sm active" type="button">--}}{{--{{__('generic.view')}}</button>--}}
+                </a>
             </div>
+            @endif
         </div>
+        @foreach($mostpopulars as $mp)
+            @php $i++;if($i ==2) break; @endphp
+        @endforeach
+{{--end most populur--}}
 
         <div class="row shadowBaxs porforoshtarinha mr-0 ml-0">
             <div class="col-lg-12 p-0">
-                <div class="d-block colorCreate khodePorfroshtarinha"> <h5>جدیدترین محصولات </h5> </div>
+                <div class="d-block colorCreate khodePorfroshtarinha"> <h5>{{__('generic.newest')}} </h5> </div>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner mt-2 mb-2">
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="col-lg-1"></div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
+                                <div class="col-lg-10">
+                                    <div class="row">
+                                        @for($i=0 ; $i < 6 ;$i++)
+                                            <div class="col-lg-2 paddingScrolers">
+                                                <a  href="/detailProduct/{{$newests[$i]->id}}"  class="text-decoration-none ">
+                                                    <div class="card" style="width: 100% !important;">
+                                                        <img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">
+                                                        <div class="card-body">
+                                                            <p class="card-title cardTagP">{{$newests[$i]->name}}</p>
+                                                            <p>   {{__('generic.price')}} : {{number_format($newests[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                                            <a href="/sabadKharid" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                                           aria-hidden="true"></i></a>
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        @endfor
                                     </div>
                                 </div>
                                 <div class="col-lg-1"></div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+
+
+
+
+
+
+
+
+                        <div class="carousel-item ">
                             <div class="row">
                                 <div class="col-lg-1"></div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
+                                <div class="col-lg-10">
+                                    <div class="row">
+                                        @for($i=0 ; $i < 6 ;$i++)
+                                            <div class="col-lg-2 paddingScrolers">
+                                                @if($newests[$i]->id)
+                                                <a href="/detailProduct/{{$newests[$i]->id}}" class="text-decoration-none ">
+                                                    <div class="card" style="width: 100% !important;">
+                                                        <img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">
+                                                        <div class="card-body">
+                                                            <p class="card-title cardTagP">{{$newests[$i]->getTranslatedAttribute('name')}}</p>
+                                                            <p>   {{__('generic.price')}} : {{number_format($newests[$i]->price)}} {{__('generic.vahed_pool')}}</p>
+                                                            <a href="/sabadKharid" class="btn btn-primary d-block">
+                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                            </a>
+                                                            @if($newests[$i]->available < 0)
+                                                                <div> <span class="text-danger">{{__('generic.not_available')}}</span></div>
+                                                            @endif
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                    @endif
+                                            </div>
+                                        @endfor
                                     </div>
                                 </div>
                                 <div class="col-lg-1"></div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-lg-1"></div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 paddingScrolers">
-                                    <div class="card" style="width: 100% !important;">
-                                        <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                        <div class="card-body">
-                                            <p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>
-                                            <a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                           aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-1"></div>
-                            </div>
-                        </div>
+
+
+
+                                    {{--@for($i=4 ; $i < 8 ;$i++)--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--@if($newests[$i]->id)--}}
+                                        {{--<a  href="/detailProduct/{{$newests[$i]->id}}"  class="text-decoration-none ">--}}
+                                            {{--<div class="card" style="width: 100% !important;">--}}
+                                                {{--<img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">--}}
+                                                {{--<div class="card-body">--}}
+                                                    {{--<p class="card-title cardTagP">{{$newests[$i]->getTranslatedAttribute('name')}}</p>--}}
+                                                    {{--<p>{{__('generic.price')}} : {{number_format($newests[$i]->price)}} {{__('generic.vahed_pool')}}</p>--}}
+                                                    {{--<a href="/sabadKharid" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                                   {{--aria-hidden="true"></i></a>--}}
+                                                    {{--@if($newests[$i]->available >0)--}}
+
+                                                        {{--<div class="text-success">--}}
+                                                            {{--<img src="{{asset('storage/exists.png')}}">--}}
+                                                        {{--</div>--}}
+                                                    {{--@else--}}
+                                                        {{--<div> <span class="text-danger">{{__('generic.not_available')}}</span></div>--}}
+                                                    {{--@endif--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</a>--}}
+                                        {{--@endif--}}
+                                {{--</div>--}}
+                                    {{--@endfor--}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-1"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="carousel-item">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-lg-1"></div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-1"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="carousel-item">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-lg-1"></div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-2 paddingScrolers">--}}
+                                    {{--<div class="card" style="width: 100% !important;">--}}
+                                        {{--<img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">--}}
+                                        {{--<div class="card-body">--}}
+                                            {{--<p class="card-title cardTagP">پنکه رومیزی دمنده مدل Haleh</p>--}}
+                                            {{--<a href="#" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"--}}
+                                                                                           {{--aria-hidden="true"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-lg-1"></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -606,6 +707,7 @@ $newests->load('translations');
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     {{--@include('frontend.footer')--}}
