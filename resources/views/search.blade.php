@@ -4,7 +4,7 @@
 @section('content')
     @include('frontend.header')
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="direction: rtl;">
         <div class="row">
             <div class="empty my-5">
 
