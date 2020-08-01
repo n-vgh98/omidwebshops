@@ -110,6 +110,7 @@ $catagories->load('translations');
                     </button>
                     <input class="col-lg-10 form-control mt-auto btnSearch hSearch hhhSearch" type="search"
                            placeholder="{{__('generic.search')}} "
+                           style="border-radius: 0px 45px 45px 0px !important;"
                            name="valueSearch" aria-label="Search">
                     {{--<input type="submit" class="btn btn-primary" name="btnSearch" value="{{__('generic.search')}}">--}}
 
