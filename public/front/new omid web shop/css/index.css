@@ -257,7 +257,7 @@
     }
 }
 .btnSearch{
-    border-radius: 45px !important;
+    /*border-radius: 45px !important;*/
     border-color: gray !important;
     direction: rtl;
 }

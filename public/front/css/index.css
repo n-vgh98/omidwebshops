@@ -308,7 +308,7 @@
 
     .hhSearch {
         border: solid 1px gray !important;
-        border-radius: 45px 0px 0px 45px;
+        border-radius: 45px 0px 0px 45px !important;
         padding: 4% !important;
         border-right: none !important;
     }
