@@ -5,9 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use  App\Productimage;
 use App\Mostpopular;
+use App\OfferOfDay;
 use test\Mockery\ReturnTypeObjectTypeHint;
 use TCG\Voyager\Traits\Translatable ;
 
+/**
+ * @method static orderBy(string $string, string $string1)
+ */
 class Product extends Model
 {
     use Translatable ;
@@ -34,6 +38,10 @@ class Product extends Model
    {
        return "{$this->id}-{$this->name}-{$this->price}-{$this->catagory1}";
    }
+    public function OfferOfDay()
+    {
+        Return $this->hasOne('App\OfferOfDay');
+    }
 
 
 }

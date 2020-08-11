@@ -15,7 +15,7 @@ class Payment extends Model
      private  $amount = 0;
      private  $factorNumber = "FactorNumber (optional)";
      private  $description = "Description (optional)";
-    protected  $redirect ='http://shop-laravel2lang.com/processAfterPay';
+    protected  $redirect ='http//127.0.0.1:8000/processAfterPay';
     public function __construct(array $attributes = [])
     {
        // parent::__construct($attributes);
