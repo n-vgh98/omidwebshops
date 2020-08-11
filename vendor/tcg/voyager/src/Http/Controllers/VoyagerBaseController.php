@@ -6,6 +6,7 @@ use App\Filter;
 use App\Filtervalue;
 use App\Http\Controllers\Upload;
 use App\Mostpopular;
+use App\OfferOfDay;
 use App\Product;
 use App\Productfilter;
 use App\Productimage;
@@ -840,6 +841,19 @@ return 1;
         $obj->save();
       //  exit('');
     }
+
+    //add offer_day
+    public function storeOfferproduct($request)
+    {
+        $obj = new OfferOfDay();
+        $obj->product_id = $request->input('product_id');
+        echo $obj->product_id;
+        $obj->image = 'offer-of-days/'.$request->imge;
+        $obj->save();
+        //  exit('');
+    }
+
+
     public function store(Request $request)
     {
         $slug = $this->getSlug($request);
