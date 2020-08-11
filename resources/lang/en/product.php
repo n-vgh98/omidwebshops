@@ -21,7 +21,7 @@ return
     'images'                => 'images' ,
     'persent'               =>'persent',
     'comment_features'      => 'Enter each feature in one line.' ,
-    'select_mostpopular_product' => 'Select For Most Popular ' ,
+    'select_mostpopular_product' => 'Select For Most Mahboobtarin ha ' ,
     'next'                  => 'Next' ,
     'select_image_for_mostpopular' =>'Select Image for Mostpopular' ,
     'is_sure'                => 'Is Sure' ,

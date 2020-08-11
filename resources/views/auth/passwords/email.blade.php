@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 
-@section('content')
-@include('header')
 @section('title',__('passwords.rest_password'))
 @section('content')
+    @include('frontend.header')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -49,6 +48,5 @@
 </div>
 
 
-@include('ersal')
-@include('footer')
+    @include('frontend.footer')
 @endsection

@@ -98,7 +98,7 @@ return [
     'error_in_pay'           => 'Error In Pay' ,
     'transaction_repetive'   =>'This Transaction Done Already' ,
     'thanks_send_message'    => 'Thanks. Your message sent.' ,
-    'most_populars'          => ' Most Popular' ,
+    'most_populars'          => ' Most Mahboobtarin ha' ,
     'compelete_buy'          => 'Complete Order' ,
     'message_complete_buy'   => 'Status of Order Cahnge To Complete' ,
     'saved_addres'           => 'Address Saved' ,
