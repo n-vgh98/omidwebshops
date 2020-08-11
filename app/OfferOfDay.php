@@ -5,10 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Product;
 
-/**
- * @method static orderBy(string $string, string $string1)
- */
-class Mostpopular extends Model
+
+class OfferOfDay extends Model
 {
     public function product()
     {

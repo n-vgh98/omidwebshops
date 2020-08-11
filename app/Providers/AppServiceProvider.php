@@ -41,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
 
         // action to confirm user comment
         Voyager::addAction(\App\Action\ConfirmComment::class);
+        //action for offerofday
+        Voyager::addAction(\App\Action\OfferOfDay::class);
 
         $country  = new langController();
         //$country = $country->country();
