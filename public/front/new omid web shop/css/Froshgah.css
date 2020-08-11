@@ -1,0 +1,887 @@
+/*PPPPPPPPCCCCCCC index*/
+/*PPPPPPPPCCCCCCC index*/
+/*PPPPPPPPCCCCCCC index*/
+.rtlElement{
+    direction: rtl;
+}
+@media (min-width:768px) and (max-width: 1024px) {
+    .sizeLogo{
+        width: 100px;
+    }
+
+    /*css far&en*/
+
+    .s-toggler{
+        width: 190px;
+        height: 28px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18,83,155,0.15);
+        position: relative;
+    }
+
+    .s-toggler p{
+        color: white;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 21px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1){
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2){
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box{
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 83px;
+        height: 21px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover{
+        background: #0f8afd;
+    }
+
+    .option-box:active{
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled{
+        left:calc(100% - 99px);
+    }
+
+    .s-toggler-toggled p:nth-child(1){
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2){
+        color: white !important;
+    }
+
+    /*css far&en*/
+
+    .sizLogin2{
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 45px;
+        text-align: center;
+
+    }
+    .sizLogin1{
+        border-radius: 66px 0px 0px 66px !important;
+        width: 53px;
+        height: 45px;
+        text-align: center;
+
+    }
+    .sizeSabadKharid{
+        border-radius: 66px !important;
+        height: 45px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+    .btnmenu{
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+    .btnSafheASLI{
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+    .cardPishnahadRoz{
+        margin-top: 13px !important;
+        border-radius: 25px;
+    }
+    .brdrRdius{
+        height: 377px;
+        border-radius: 15px !important;
+    }
+    .cardTagP{
+        font-size: small;
+    }
+    .fontSizeKHadamat{
+        font-size: smaller;
+    }
+    .witheInestagram{
+        width: 28px;
+        margin-top: 196% !important;
+    }
+
+    /*mo-arfi mahsolat*/
+    /*mo-arfi mahsolat*/
+
+    .ghalebMoarfi{
+        border: 1px solid dimgray;
+    }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+        background-color: transparent;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+
+
+
+    div.wrapper{
+        float:left; /* important */
+        position:relative;
+    }
+    div.description{
+        position:absolute; /* absolute position (so we can position it where we want)*/
+        bottom:0px; /* position will be on bottom */
+        left:0px;
+        width:100%;
+        /* styling bellow */
+        background-color:darkred;
+        color:white;
+        opacity:0.6; /* transparency */
+        text-align:right;
+    }
+    p.description_content{
+        padding:10px;
+        margin:0px;
+        font-weight:700;
+        font-size: 20px;
+    }
+    /*mo-arfi mahsolat*/
+    /*mo-arfi mahsolat*/
+}
+@media (min-width: 1050px) {
+    .sizeLogo{
+        width: 150px;
+    }
+
+
+    /*css far&en*/
+
+    .s-toggler{
+        width: 222px;
+        height: 35px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18,83,155,0.15);
+        position: relative;
+    }
+
+    .s-toggler p{
+        color: white;
+        font-family: Roboto;
+        font-size: 18px;
+        line-height: 21px;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1){
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2){
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box{
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 98px;
+        height: 25px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover{
+        background: #0f8afd;
+    }
+
+    .option-box:active{
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled{
+        left:calc(100% - 110px);
+    }
+
+    .s-toggler-toggled p:nth-child(1){
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2){
+        color: white !important;
+    }
+
+    /*css far&en*/
+
+    .sizLogin2 {
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 61px;
+        text-align: center;
+    }
+    .sizLogin1{
+        border-radius: 66px 0px 0px 66px !important;
+        width: 61px;
+        height: 61px;
+        text-align: center;
+    }
+    .sizeSabadKharid{
+        border-radius: 66px !important;
+        height: 61px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+
+    .hSearch{
+        height: 61px;
+    }
+    .btnmenu{
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+    .btnSafheASLI{
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+    .cardPishnahadRoz{
+        margin-top: 17px !important;
+        border-radius: 25px !important;
+    }
+    .brdrRdius{
+        height: 465px;
+        border-radius: 15px !important;
+    }
+    .witheInestagram{
+        width: 40px;
+        margin-top: 55% !important;
+    }
+
+    /*mo-arfi mahsolat*/
+    /*mo-arfi mahsolat*/
+
+    .ghalebMoarfi{
+        border: 1px solid dimgray;
+    }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    .imgForoshgah{
+        width:300px !important;
+        height:200px !important;
+    }
+
+
+    div.wrapper{
+        float:left; /* important */
+        position:relative;
+    }
+    div.description{
+        position:absolute; /* absolute position (so we can position it where we want)*/
+        bottom:0px; /* position will be on bottom */
+        left:0px;
+        width:100%;
+        /* styling bellow */
+        background-color:darkred;
+        color:white;
+        opacity:0.6; /* transparency */
+        text-align:right;
+    }
+    p.description_content{
+        padding:10px;
+        margin:0px;
+        font-weight:700;
+        font-size: 20px;
+    }
+    /*mo-arfi mahsolat*/
+    /*mo-arfi mahsolat*/
+}
+.btnSearch{
+    border-color: gray !important;
+    direction: rtl;
+}
+
+.paddingHeader1{
+    border-bottom: solid;
+    border-color: darkblue;
+    padding-bottom: 2px;
+}
+.colorLOGIN{
+    background-color: #4a6f97;
+    color: white;
+}
+.colorCreate{
+    background-color: #0e4d92;
+    color: white;
+}
+.faseleSabadkharidBeBala{
+    margin-top: 5% !important;
+}
+
+.bgMenu{
+    background-color: #4a6f97;
+}
+.bgList{
+    background-color: #0e4d92;
+    font-size: 0px;
+    border-radius: 0px 0px 9px 0px;
+}
+.colorList{
+    color: white;
+    font-size: smaller !important;
+    margin-block-start: 0 !important;
+}
+.h6colorList{
+    padding: 2%;
+    text-align: right;
+}
+.h6colorList:hover{
+    background-color: white;
+    color: darkred;
+}
+.h6colorList2{
+    color: darkblue;
+}
+.boxshadowLIST{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.hiddenitem{
+    display: none;
+}
+
+.withePIC{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.borderMENU{
+    border-top: 3px solid darkblue;
+    border-right: 3px solid darkblue;
+    border-radius: 10px 0px 10px 10px;
+}
+.menu2Border{
+    text-align: center;
+    font-size: 0px;
+}
+
+.bgElemanWhite{
+    background-color: white;
+}
+.PaddingTopMenu{
+    padding-top: 1% !important;
+}
+.cardRadius1{
+    border-radius: 0px 0px 25px 25px !important;
+}
+.imgSCROLER{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.shadowBaxs{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.pishnahadROOz{
+    padding-top: 1%;
+    padding-bottom: 3%;
+    border-radius: 10px 10px 0px 0px;
+}
+.witheCartPishnahadeROZ{
+    width: 100%;
+}
+.khadamatcss{
+    width: 50px;
+}
+.matginKHadamat{
+    margin-top: 2%;
+}
+.khadamatPading{
+    padding: 1%;
+}
+.paddingScrolers{
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+}
+.porforoshtarinha{
+    border-radius: 15px !important;
+    margin-top: 2%;
+}
+.khodePorfroshtarinha{
+    border-radius: 15px 15px 0px 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.sizeBaner{
+    width: 100%;
+    border-radius: 10px;
+}
+.sizeBaner:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.footerAdress{
+    padding-right: 7% !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}
+.marginTOPbaner{
+    margin-top: 2%;
+}
+.colorFooter{
+    color: white;
+}
+.marginFOOTER{
+    margin-top: 2%;
+}
+/*PPPPPPPPCCCCCCC index*/
+/*PPPPPPPPCCCCCCC index*/
+/*PPPPPPPPCCCCCCC index*/
+
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+
+.MBsizeLogo{
+    width: 92px;
+    margin-top: 6%;
+    padding-left: 20%;
+}
+.MBs-toggler{
+    width: 250px;
+    height: 100px;
+    background: #0e4d92;
+    border-radius: 8px;
+    transition: 250ms ease;
+    box-shadow: 0px 4px 8px rgba(18,83,155,0.15);
+    position: relative;
+}
+.MBs-toggler p{
+    color: white;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 5;
+    pointer-events: none;
+    transition: 250ms ease;
+}
+.MBs-toggler p:nth-child(1){
+    left: 28px;
+}
+.MBs-toggler p:nth-child(2){
+    right: 28px;
+    color: #bdbdbd;
+}
+.MBoption-box{
+    background: #2c97fa;
+    border-radius: 6px;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 111px;
+    height: 85px;
+    left: 8px;
+    transition: 250ms ease;
+    cursor: pointer;
+}
+.MBoption-box:hover{
+    background: #0f8afd;
+}
+.MBoption-box:active{
+    transform: translateY(-50%) scale(0.98);
+}
+.MBoption-box-toggled{
+    left: calc(100% - 119px);
+}
+.MBs-toggler-toggled p:nth-child(1){
+    color: #bdbdbd !important;
+}
+.MBs-toggler-toggled p:nth-child(2){
+    color: white !important;
+}
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+
+/*filterha*/
+/*filterha*/
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 410px; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #0e4d92; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    /*font-size: 20px;*/
+    cursor: pointer;
+    background-color: #4a6f97;
+    color: white;
+    /*padding: 10px 15px;*/
+    border: none;
+    transform:rotate(90deg);
+    background-color: rgba(147, 36, 36, 0.56);
+    border-radius: 15px 15px 0px 0px;
+    /*height: 450px;*/
+    position: fixed;
+    margin-left: -9%;
+    margin-top: 10%;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/*filterha*/
+/*filterha*/
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+/*.modal-content {*/
+/*    background-color: #fefefe;*/
+/*    margin: 5px auto; !* 15% from the top and centered *!*/
+/*    border: 1px solid #888;*/
+/*    width: 80%; !* Could be more or less, depending on screen size *!*/
+/*}*/
+
+/* The Close Button */
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/*formlogin*/
+/*formlogin*/
+/*formlogin*/
+
+* {box-sizing: border-box}
+
+/* style the container */
+.container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 0 30px 0;
+}
+
+/* style inputs and link buttons */
+input,
+.btn1vorodi {
+    /*width: 100%;*/
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+}
+.styleForcol5{
+    text-align: center;
+    display: inline-flex;
+}
+input:hover,
+.btn:hover {
+    opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+    background-color: #3B5998;
+    color: white;
+}
+
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Two-column layout */
+.colemoun {
+    float: left;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* vertical line */
+.vl {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #7d1a1a;
+    background-color: #7d1a1a;
+    font-size:xx-large;
+    height: 115px;
+    width: 50px;
+    padding: 12% 15% 8% 4%;
+    border-radius: 45px;
+}
+
+/* text inside the vertical line */
+.inner {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+    display: none;
+}
+
+/* bottom container */
+.bottom-container {
+    text-align: center;
+    /*background-color: #666;*/
+    border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+    .col {
+        width: 100%;
+        margin-top: 0;
+    }
+    /* hide the vertical line */
+    .vl {
+        display: none;
+    }
+    /* show the hidden text on small screens */
+    .hide-md-lg {
+        display: block;
+        text-align: center;
+    }
+}
+.marginLogin{
+    margin-top: 2%;
+}
+/*formlogin*/
+/*formlogin*/
+/*formlogin*/
+

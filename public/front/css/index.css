@@ -1,0 +1,559 @@
+.rtlElement {
+    direction: rtl;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sizeLogo {
+        width: 100px;
+    }
+
+    /*css far&en*/
+    .s-toggler {
+        width: 190px;
+        height: 28px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18, 83, 155, 0.15);
+        position: relative;
+    }
+
+    .s-toggler p {
+        color: white;
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 21px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1) {
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2) {
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box {
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 83px;
+        height: 21px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover {
+        background: #0f8afd;
+    }
+
+    .option-box:active {
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled {
+        left: calc(100% - 99px);
+    }
+
+    .s-toggler-toggled p:nth-child(1) {
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2) {
+        color: white !important;
+    }
+
+    /*css far&en*/
+    .sizLogin2 {
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 45px;
+        text-align: center;
+
+    }
+
+    .sizLogin1 {
+        border-radius: 66px 0px 0px 66px !important;
+        width: 53px;
+        height: 45px;
+        text-align: center;
+
+    }
+
+    .sizeSabadKharid {
+        border-radius: 66px !important;
+        height: 45px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+
+    .btnmenu {
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+
+    .btnSafheASLI {
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+
+    .cardPishnahadRoz {
+        margin-top: 13px !important;
+        border-radius: 25px;
+    }
+
+    .brdrRdius {
+        height: 377px;
+        border-radius: 15px !important;
+    }
+
+    .cardTagP {
+        font-size: small;
+    }
+
+    .fontSizeKHadamat {
+        font-size: smaller;
+    }
+
+    .witheInestagram {
+        width: 28px;
+        margin-top: 196% !important;
+    }
+
+    .dropdownLogin {
+        border: solid 1px darkblue;
+        border-radius: 45px;
+        background-color: #0e4d92;
+    }
+
+    .dropdown2Login {
+        width: 35px;
+        height: 35px;
+        margin-right: 4%;
+        margin-top: 3%;
+    }
+
+    .hhSearch {
+        border: solid 1px gray !important;
+        border-radius: 45px 0px 0px 45px;
+        padding: 2% !important;
+        border-right: none !important;
+    }
+
+    .hSearch {
+        height: 43px;
+    }
+    .hhhSearch{
+        width: 450px!important;
+        margin-top: 0!important;
+        border-radius:0px 45px 45px 0px !important;
+        border-left:none !important;"
+    }
+}
+
+@media (min-width: 1050px) {
+    .sizeLogo {
+        width: 150px;
+    }
+
+    /*css far&en*/
+    .s-toggler {
+        width: 222px;
+        height: 35px;
+        background: #0e4d92;
+        border-radius: 8px;
+        transition: 250ms ease;
+        box-shadow: 0px 4px 8px rgba(18, 83, 155, 0.15);
+        position: relative;
+    }
+
+    .s-toggler p {
+        color: white;
+        font-family: Roboto;
+        font-size: 18px;
+        line-height: 21px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+        pointer-events: none;
+        transition: 250ms ease;
+    }
+
+    .s-toggler p:nth-child(1) {
+        left: 28px;
+    }
+
+    .s-toggler p:nth-child(2) {
+        right: 28px;
+        color: #bdbdbd;
+    }
+
+    .option-box {
+        background: #2c97fa;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 98px;
+        height: 25px;
+        left: 8px;
+        transition: 250ms ease;
+        cursor: pointer;
+    }
+
+    .option-box:hover {
+        background: #0f8afd;
+    }
+
+    .option-box:active {
+        transform: translateY(-50%) scale(0.98);
+    }
+
+    .option-box-toggled {
+        left: calc(100% - 110px);
+    }
+
+    .s-toggler-toggled p:nth-child(1) {
+        color: #dbdbdb !important;
+    }
+
+    .s-toggler-toggled p:nth-child(2) {
+        color: white !important;
+    }
+
+    /*css far&en*/
+    .sizLogin2 {
+        border-radius: 0px 66px 66px 0px !important;
+        width: 75px;
+        height: 61px;
+        text-align: center;
+    }
+
+    .sizLogin1 {
+        border-radius: 66px 0px 0px 66px !important;
+        width: 61px;
+        height: 61px;
+        text-align: center;
+    }
+
+    .sizeSabadKharid {
+        border-radius: 66px !important;
+        height: 61px;
+        padding: 7% 30% !important;
+        margin-top: 10% !important;
+        background-color: #0e4d92 !important;
+        color: white !important;
+    }
+
+    .hSearch {
+        height: 61px;
+    }
+
+    .btnmenu {
+        background-color: #4a6f97;
+        color: white;
+        border: none;
+    }
+
+    .btnSafheASLI {
+        background-color: #0e4d92;
+        color: white;
+        border: none;
+    }
+
+    .cardPishnahadRoz {
+        margin-top: 17px !important;
+        border-radius: 25px !important;
+    }
+
+    .brdrRdius {
+        height: 465px;
+        border-radius: 15px !important;
+    }
+
+    .witheInestagram {
+        width: 40px;
+        margin-top: 55% !important;
+    }
+
+    .dropdownLogin {
+        border: solid 1px darkblue;
+        border-radius: 45px;
+        background-color: #0e4d92;
+    }
+
+    .dropdown2Login {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hhSearch {
+        border: solid 1px gray !important;
+        border-radius: 45px 0px 0px 45px !important;
+        padding: 4% !important;
+        border-right: none !important;
+    }
+    .hhhSearch{
+        width: 630px!important;
+        margin-top: 0!important;
+        border-radius:0px 45px 45px 0px !important;
+        border-left:none !important;"
+    }
+}
+
+.btnSearch {
+    border-color: gray !important;
+    direction: rtl;
+}
+
+.paddingHeader1 {
+    border-bottom: solid;
+    border-color: darkblue;
+    padding-bottom: 2px;
+}
+
+.colorLOGIN {
+    background-color: #4a6f97;
+    color: white;
+}
+
+.colorCreate {
+    background-color: #0e4d92;
+    color: white;
+}
+
+.faseleSabadkharidBeBala {
+    margin-top: 5% !important;
+}
+
+.bgMenu {
+    background-color: #4a6f97;
+}
+
+.bgList {
+    background-color: #0e4d92;
+    font-size: 0px;
+    border-radius: 0px 0px 9px 0px;
+}
+
+.colorList {
+    color: white;
+    font-size: smaller !important;
+    margin-block-start: 0 !important;
+}
+
+.h6colorList {
+    padding: 2%;
+    text-align: right;
+}
+
+.h6colorList:hover {
+    background-color: white;
+    color: darkred;
+}
+
+.h6colorList2 {
+    color: darkblue;
+}
+
+.boxshadowLIST {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.hiddenitem {
+    display: none;
+}
+
+.withePIC {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.borderMENU {
+    border-top: 3px solid darkblue;
+    border-right: 3px solid darkblue;
+    border-radius: 10px 0px 10px 10px;
+}
+
+.menu2Border {
+    text-align: center;
+    font-size: 0px;
+}
+
+.bgElemanWhite {
+    background-color: white;
+}
+
+.PaddingTopMenu {
+    padding-top: 1% !important;
+}
+
+.cardRadius1 {
+    border-radius: 0px 0px 25px 25px !important;
+}
+
+.imgSCROLER {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.shadowBaxs {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.pishnahadROOz {
+    padding-top: 1%;
+    padding-bottom: 3%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.witheCartPishnahadeROZ {
+    width: 100%;
+}
+
+.khadamatcss {
+    width: 50px;
+}
+
+.matginKHadamat {
+    margin-top: 2%;
+}
+
+.khadamatPading {
+    padding: 1%;
+}
+
+.paddingScrolers {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+.porforoshtarinha {
+    border-radius: 15px !important;
+    margin-top: 2%;
+}
+
+.khodePorfroshtarinha {
+    border-radius: 15px 15px 0px 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.sizeBaner {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sizeBaner:hoFbtnSearchver {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.footerAdress {
+    padding-right: 7% !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}
+
+.marginTOPbaner {
+    margin-top: 2%;
+}
+
+.colorFooter {
+    color: white;
+}
+
+.marginFOOTER {
+    margin-top: 2%;
+}
+
+/*new menu*/
+
+/*ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    background-color: #333;*/
+/*}*/
+
+divLiE {
+    float: left;
+}
+
+divLiE a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    /*padding: 14px 16px;*/
+    text-decoration: none;
+    padding-bottom: 6%;
+}
+
+divLiE a:hover, .dropdown:hover .dropbtn {
+    background-color: #0e4d92;
+    color: black;
+}
+
+divLiE.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: -webkit-box;
+    text-align: left;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.andazeTagAHa {
+    width: 700px;
+    height: auto;
+    border-radius: 15px 0px 15px 15px;
+    margin-right: 6%;
+}
+

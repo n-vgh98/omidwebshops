@@ -1,4 +1,3 @@
-
 @extends('voyager::master')
 
 @section('content')
@@ -7,7 +6,6 @@ if(session()->has('locale'))
     {
         \Illuminate\Support\Facades\App::setLocale(session('locale'));
     }
-    App::setLocale('en');
 @endphp
     <div class="page-content">
         <h1 class="text-center">{{__('voyager::compass.welcome')}}</h1>

@@ -74,7 +74,6 @@ class VoyagerMenuController extends Controller
 
     public function update_item(Request $request)
     {
-
         $id = $request->input('id');
         $data = $this->prepareParameters(
             $request->except(['id'])

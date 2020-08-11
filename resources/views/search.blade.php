@@ -1,10 +1,10 @@
 
-@extends('layouts.app')
+@extends('laayoytss.master')
 @section('title', $catagory[0]['cat1'] ?? '')
 @section('content')
-    @include('header')
+    @include('frontend.header')
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="direction: rtl;">
         <div class="row">
             <div class="empty my-5">
 
@@ -63,8 +63,7 @@
             </div>
         </div>
         @endif
-    @include('ersal')
-    @include('footer')
+    @include('frontend.footer')
     <script type="text/javascript">
         $(document).ready(function () {
             $(':checkbox').change(function () {

@@ -18,12 +18,13 @@ Route::get('/badboy', function () {
 });
 // set languge
 
-
-
-Route::get('/', function () {
-    return view('index');
-
+//
+Route::get('/', function (){
+    return view('frontend.index');
 });
+//Route::get('/', function () {
+//    return view('index');
+//});
 
 Route::get('import-export','ExcelController@ImportExport');
 Route::post('importUser','ExcelController@importUser');
@@ -34,7 +35,10 @@ Route::get('exportFactor','ExcelController@exportFactor');
 
 Route::get('/detailProduct/{id}','productController@getProduct')->where('id','[0-9]+');
 
-Route::get('about-us','aboutusController@index');
+Route::get('about-us',function(){
+    return view('about-us');
+
+});
 Route::get('contact-us','messageController@create');
 Route::post('/sendMessage','messageController@store');
 Route::get('arayeshi',function(){
@@ -1224,10 +1228,6 @@ Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     echo "cache cleared".$exitCode;
     // return what you want
-});
-Route::get('/forget-locale',function (){
-    session()->forget('locale');
-    return "session local is cleared and session local is  :" . session('locale');
 });
 Route::get('/test', function() {
   return view('test.test');

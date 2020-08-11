@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="<?php echo e(\Illuminate\Support\Facades\App::getLocale()); ?>" dir="<?php echo e(__('voyager::generic.is_rtl') == 'true' ? 'rtl' : 'ltr'); ?>">
 <head>
@@ -17,6 +16,9 @@
     <?php else: ?>
         <link rel="shortcut icon" href="<?php echo e(Voyager::image($admin_favicon)); ?>" type="image/png">
     <?php endif; ?>
+
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="<?php echo e(voyager_asset('css/app.css')); ?>">
 
@@ -26,13 +28,7 @@
         <link rel="stylesheet" href="<?php echo e(voyager_asset('css/rtl.css')); ?>">
         <link rel="stylesheet" href="<?php echo e(asset('style/voyagervodystyle.css')); ?>">
     <?php endif; ?>
-<?php
-if(session()->has('locale') )
-{
-    App::setLocale(session('locale'));
 
-}
-?>
     <!-- Few Dynamic Styles -->
     <style type="text/css">
         .voyager .side-menu .navbar-header {

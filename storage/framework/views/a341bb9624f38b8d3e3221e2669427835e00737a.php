@@ -4,6 +4,8 @@
             \Illuminate\Support\Facades\App::setLocale(session('locale'));
 
         }
+         foreach($catagories as $cat1)
+         //   echo $cat1->id ." and value is : ".$cat1->name ." and traslate is :". $cat1->getTranslatedAttribute('name')."<br>";
 
 ?>
 <?php $__env->startSection('page_title', __('voyager::generic.viewing').' '.$dataType->getTranslatedAttribute('display_name_plural')); ?>

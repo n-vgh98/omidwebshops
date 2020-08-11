@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Froshgah.css"/>
+    <link rel="stylesheet" href="fontawesome-free-5.13.1-web/css/all.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>froshgah</title>
+</head>
+<body class="bgsafheAsli">
+<!--PPPPPPPPCCCCCCCC-->
+<!--PPPPPPPPCCCCCCCC-->
+<!--PPPPPPPPCCCCCCCC-->
+
+<div class="d-none d-lg-block m-0 p-0">
+
+    <!-- header   pc  -->
+    <!--ghesmat logo-->
+    <div class="container-fluid bgElemanWhite">
+        <div class="row PaddingTopMenu paddingHeader1">
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-7 s-toggler">
+                        <p>فارسی</p>
+                        <p>English</p>
+                        <input type="hidden" name="option-choose" id="toggleInput">
+                        <div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>
+                    </div>
+                </div>
+                <div class="row faseleSabadkharidBeBala">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4 p-0">
+                        <button type="button" class="btn   m-0 sizeSabadKharid"><i class="fas fa-cart-arrow-down"></i>
+                            سبد
+                            خرید
+                        </button>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-2 text-right p-0">
+                        <button type="button" onclick="document.getElementById('login01').style.display='block'"
+                                class="btn colorLOGIN sizLogin1">ورود
+                        </button>
+
+                        <!-- The Modal -->
+                        <div id="login01" class="modal"><span
+                            onclick="document.getElementById('login01').style.display='none'"
+                            class="close" style="font-size: 48px;" title="Close Modal">&times;</span>
+
+                            <!-- Modal Content -->
+                            <!--                            منو لوگین-->
+                            <div class="container d-none d-lg-block d-xl-none"
+                                 style="background-image: url('./pic/Untitled3.png');">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h2 style="text-align:center;color: white">وارد شوید</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-5 styleForcol5 rtlElement">
+                                            <div class="colemoun">
+                                                <a href="#" style="width: 100%" class="fb btn1vorodi shadowBaxs">
+                                                    ورود با Facebook <i class="fa fa-facebook-f"></i>
+                                                </a>
+                                                <a href="#" style="width: 100%" class="google btn1vorodi shadowBaxs">
+                                                    ورود با Google <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 marginLogin">
+                                            <!--                                            <div class="vl">-->
+                                            <!--                                                <span class="pt-1 pl-2 pr-2 mt-4" style="color: white">یا</span>-->
+                                            <!--                                            </div>-->
+                                        </div>
+                                        <div class="col-lg-5 styleForcol5 rtlElement">
+                                            <div class="colemoun m-0">
+                                                <!--                                                <div class="hide-md-lg">-->
+                                                <!--                                                    <p>Or sign in manually:</p>-->
+                                                <!--                                                </div>-->
+
+                                                <input style="width: 100%" class="shadowBaxs" type="text"
+                                                       name="username" placeholder="نام کاربری" required>
+                                                <input style="width: 100%" class="shadowBaxs marginLogin"
+                                                       type="password" name="password" placeholder="رمز عبور" required>
+                                                <input style="width: 100%" class="shadowBaxs marginLogin" type="submit"
+                                                       value="ورود">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="container d-none d-xl-block"
+                                 style="background-image: url('./pic/Untitled4.png');">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h2 style="text-align:center;color: white">وارد شوید</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-5 styleForcol5 rtlElement">
+                                            <div class="colemoun">
+                                                <a href="#" style="width: 100%" class="fb btn1vorodi shadowBaxs">
+                                                    ورود با Facebook <i class="fa fa-facebook-f"></i>
+                                                </a>
+                                                <a href="#" style="width: 100%" class="google btn1vorodi shadowBaxs">
+                                                    ورود با Google <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 marginLogin">
+                                            <!--                                            <div class="vl">-->
+                                            <!--                                                <span class="pt-1 pl-2 pr-2 mt-4" style="color: white">یا</span>-->
+                                            <!--                                            </div>-->
+                                        </div>
+                                        <div class="col-lg-5 styleForcol5 rtlElement">
+                                            <div class="colemoun m-0">
+                                                <!--                                                <div class="hide-md-lg">-->
+                                                <!--                                                    <p>Or sign in manually:</p>-->
+                                                <!--                                                </div>-->
+
+                                                <input style="width: 100%" class="shadowBaxs" type="text"
+                                                       name="username" placeholder="نام کاربری" required>
+                                                <input style="width: 100%" class="shadowBaxs marginLogin"
+                                                       type="password" name="password" placeholder="رمز عبور" required>
+                                                <input style="width: 100%" class="shadowBaxs marginLogin" type="submit"
+                                                       value="ورود">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <!--                            منو لوگین-->
+
+                            <div class="bottom-container">
+                                <div class="row">
+                                    <div class="colemoun">
+                                        <a href="#" style="color:white" class="btn1vorodi">ثبت نام</a>
+                                    </div>
+                                    <div class="colemoun">
+                                        <a href="#" style="color:white" class="btn1vorodi">رمز خود را فراموش کرده
+                                            ام؟</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2 text-left p-0">
+                        <button type="button" class="btn colorCreate sizLogin2">ثبت نام</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 align-items-center mt-auto mb-auto">
+                <div class="row p-0">
+                    <input class="col-lg-12 form-control mt-auto btnSearch hSearch" type="search"
+                           placeholder="جست و جو محصولات ..." aria-label="Search">
+                </div>
+            </div>
+            <div class="col-lg-2 text-center">
+                <a href="index.html"><img class="sizeLogo" src="jpg/logo.jpg"/></a>
+            </div>
+        </div>
+    </div>
+    <!--ghesmat logo-->
+
+    <!--menu aval-->
+    <div class="container-fluid">
+        <div class="row rtlElement bgMenu">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-xl-2 col-lg-3 p-0 text-center">
+                        <button type="button" class="btnmenu" id="btnMahsolat" onclick="showControl()">
+                            <h6>محصولات و خدمات</h6>
+                        </button>
+                    </div>
+                    <div class="col-lg-5 text-right">
+
+                    </div>
+
+                    <div class="col-lg-1"></div>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="row text-left">
+                    <div class="col-6 p-0 text-left">
+                        <button type="button" class="btnmenu ">
+                            <h6>درباره ی ما</h6>
+                        </button>
+                    </div>
+                    <div class="col-6 p-0 text-center">
+                        <button type="button" class="btnmenu ">
+                            <h6>ارتباط با ما</h6>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--menu aval-->
+
+    <!--    menu dovom-->
+    <div class="container hiddenitem " id="listMenu">
+        <div class="row rtlElement boxshadowLIST withePIC borderMENU" id="borderList"
+             style="background-image:url('pic/3.jpg'); ">
+            <div class="col-lg-3 text-right bgList p-0 pt-2">
+                <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem1()">لوازم بزرگ
+                    آشپزخانه</h6></a>
+                <br/>
+                <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem2()">تجهیزات حمام و
+                    دستشویی</h6></a>
+                <br/>
+                <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem3()">تهیه ی و نگهداری
+                    نوشیدنی</h6></a>
+                <br/>
+                <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem4()">آماده سازی غذا</h6>
+                </a>
+                <br/>
+                <a href="#" class="colorList m-0 "><h6 class=" h6colorList " onclick="hiddenItem5()">لوازم منزل</h6></a>
+            </div>
+            <div class="col-lg-9 p-0">
+                <div class="row" id="Items1" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-4 m-0 p-2 menu2Border ">
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                        </div>
+                        <div class="col-lg-4 m-0 p-2 menu2Border ">
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم بزرگ آشپزخانه</h6></a>
+                            <br/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row " id="Items2" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-4 m-0 p-2 menu2Border">
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                        </div>
+                        <div class="col-lg-4 m-0 p-2 menu2Border">
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                        </div>
+                        <div class="col-lg-4 m-0 p-2 menu2Border">
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                            <a href="#" class=" m-0 "><h6 class="h6colorList2">تجهیزات حمام و دستشویی</h6></a>
+                            <br/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row " id="Items3" style="display: none">
+                    <div class="col-lg-4 m-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">تهیه ی و نگهداری نوشیدنی</h6></a>
+                        <br/>
+                    </div>
+                </div>
+                <div class="row " id="Items4" style="display: none">
+                    <div class="col-lg-4 m-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">آماده سازی غذا</h6></a>
+                        <br/>
+                    </div>
+                </div>
+                <div class="row " id="Items5" style="display: none">
+                    <div class="col-lg-4 m-2 menu2Border">
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                        <br/>
+                        <a href="#" class=" m-0 "><h6 class="h6colorList2">لوازم منزل</h6></a>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    menu dovom-->
+    <!-- header   pc  -->
+
+    <!--    mo-arfi mahsolat-->
+    <!--    mo-arfi mahsolat-->
+    <!--    mo-arfi mahsolat-->
+
+    <!--    <div class="container-flout">-->
+    <!--        <div class="row ghalebMoarfi m-2">-->
+    <!--            <div class="col-lg-3 p-2 ">-->
+    <!--                <div class="flip-card shadowBaxs shadowBaxs">-->
+    <!--                    <div class="flip-card-inner">-->
+    <!--                        <div class="flip-card-front">-->
+    <!--                            <div class='wrapper'>-->
+    <!--                                &lt;!&ndash; محل تصویر &ndash;&gt;-->
+    <!--                                <img src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Avatar" class="imgForoshgah">-->
+    <!--                                <div class='description'>-->
+    <!--                                    &lt;!&ndash; نمایش متن مدنظر &ndash;&gt;-->
+    <!--                                    <p class='description_content'>20% off</p>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="flip-card-back">-->
+    <!--                            <br/>-->
+    <!--                            <h5>ماشین لباس شویی</h5>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <del style="color: red;">قیمت : 14.000.000 تومان</del>-->
+    <!--                            <p>قیمت : 13.000.000 تومان</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 p-2">-->
+    <!--                <div class="flip-card shadowBaxs">-->
+    <!--                    <div class="flip-card-inner">-->
+    <!--                        <div class="flip-card-front">-->
+    <!--                            <img src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Avatar" class="imgForoshgah">-->
+    <!--                        </div>-->
+    <!--                        <div class="flip-card-back" style="background-color: #444444;color: white;">-->
+    <!--                            <br/>-->
+    <!--                            <h5>ماشین لباس شویی</h5>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <p>اتمام موجودی</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 p-2">-->
+    <!--                <div class="flip-card shadowBaxs">-->
+    <!--                    <div class="flip-card-inner">-->
+    <!--                        <div class="flip-card-front">-->
+    <!--                            <img src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Avatar" class="imgForoshgah">-->
+    <!--                        </div>-->
+    <!--                        <div class="flip-card-back">-->
+    <!--                            <br/>-->
+    <!--                            <h5>ماشین لباس شویی</h5>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <p>قیمت : 13.000.000 تومان</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 p-2">-->
+    <!--                <div class="flip-card ">-->
+    <!--                    <div class="flip-card-inner">-->
+    <!--                        <div class="flip-card-front">-->
+    <!--                            <img src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Avatar" class="imgForoshgah">-->
+    <!--                        </div>-->
+    <!--                        <div class="flip-card-back">-->
+    <!--                            <br/>-->
+    <!--                            <h5>ماشین لباس شویی</h5>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <br/>-->
+    <!--                            <p>قیمت : 13.000.000 تومان</p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-3 p-2">-->
+    <!--                <div class="flip-card shadowBaxs">-->
+    <!--                    <div class="flip-card-inner">-->
+    <!--                        <div class="flip-card-front">-->
+    <!--                            <img src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Avatar" class="imgForoshgah">-->
+    <!--                        </div>-->
+    <!--                        <div class="flip-card-back">-->
+    <!--                            <br/>-->
+    <!--                            <h5>ماشین لباس شویی</h5>-->
+    <!--                            <br/>-->
+
+    <!--                            <p>قیمت : 13.000.000 تومان</p>-->
+    <!--                            <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+
+
+    <!--            <hr/>-->
+
+
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card shadowBaxs">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card ">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-2 p-2">-->
+    <!--                <div class="card ">-->
+    <!--                    <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png" alt="Card image">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h5 class="card-title">ماشین لباس شویی</h5>-->
+    <!--                        <p class="card-text">قیمت : 13.000.000 تومان</p>-->
+    <!--                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    mo-arfi mahsolat-->
+    <!--    mo-arfi mahsolat-->
+    <!--    mo-arfi mahsolat-->
+
+
+    <div class="cantainer-flut">
+        <div class="row">
+            <div class="col-lg-1">
+                <!--                        menu filter-->
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <br/>
+                    <h6 class="colorFooter text-center">فیلتر و جست و جوی هوشمند</h6>
+
+                    <form method="post" class="p-2" style="direction: ltr">
+                        <div class=" my-3 " style="border: solid; padding: 2%;color: white;">
+                            <fieldset>
+                                <legend style="border-bottom: solid white 1px">برند</legend>
+                                <div>
+                                    <input type="checkbox" id="coding" name="interest" value="coding">
+                                    <label for="coding">پارس خزر</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="lg" name="interest" value="music">
+                                    <label for="lg">lg</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="samsung" name="interest" value="music">
+                                    <label for="samsung">samsung</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class=" my-3 " style="border: solid; padding: 2%;color: white;">
+                            <fieldset>
+                                <legend style="border-bottom: solid white 1px">رنگ</legend>
+                                <div>
+                                    <input type="checkbox" id="yellow" name="interest" value="coding">
+                                    <label for="yellow">زرد</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="white" name="interest" value="music">
+                                    <label for="white">سفید</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="red" name="interest" value="music">
+                                    <label for="red">قرمز</label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <button type="button" class="btn btn-primary "><i class="fa fa-search" aria-hidden="true"></i>
+                            جست و
+                            جو
+                        </button>
+
+                    </form>
+                    <!--                            <a href="#">About</a>-->
+                    <!--                            <a href="#">Services</a>-->
+                    <!--                            <a href="#">Clients</a>-->
+                    <!--                            <a href="#">Contact</a>-->
+                </div>
+
+                <button class="openbtn" onclick="openNav()"><i class="fa fa-search" aria-hidden="true"></i>
+                    فیلتر و جست و جوی هوشمند
+                </button>
+                <!--                        menu filter-->
+            </div>
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-2">
+                        <div class="card shadowBaxs">
+                            <img class="card-img-top" src="http://omidwebshop.ir/storage/products/mashin1590992069.png"
+                                 alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">ماشین لباس شویی</h5>
+                                <p class="card-text">قیمت : 13.000.000 تومان</p>
+                                <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="container-fluid marginTOPbaner shadowBaxs 	d-none d-lg-block d-xl-none">
+    <div class="row " style="background-image: url('pic/Untitled.png')">
+        <div class="col-lg-5 text-right footerAdress">
+            <h4>:فروشگاه اینترنتی لوازم خانگی</h4>
+            <h6>شرکت ما فعالیت خود را از سال 1383 شروع کرده و یکی از موفق ترین فروشگاه ها در زمینه فروش لوازم خانگی
+                می باشد.</h6>
+        </div>
+        <div class="col-lg-7 ">
+            <div class="row rtlElement marginFOOTER">
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6> خدمات ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">ورود - ثبت نام</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> راهنمای خرید</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> مشاوره تلفنی</a></p>
+                </div>
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6>شناخت ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">درباره ما</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter">تماس با ما</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter">سؤالات متداول</a></p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <a href="#" class="col-lg-2"><img src="pic/instagram1.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/teleram.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/whatsapp.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/facebook.svg" class="witheInestagram"/></a>
+                        <div class="col-lg-1"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid marginTOPbaner shadowBaxs  d-none d-xl-block">
+    <div class="row " style="background-image: url('pic/Untitled2.png')">
+        <div class="col-lg-5 text-right footerAdress">
+            <h4>:فروشگاه اینترنتی لوازم خانگی</h4>
+            <h6>شرکت ما فعالیت خود را از سال 1383 شروع کرده و یکی از موفق ترین فروشگاه ها در زمینه فروش لوازم خانگی
+                می باشد.</h6>
+        </div>
+        <div class="col-lg-7 ">
+            <div class="row rtlElement marginFOOTER">
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6> خدمات ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">ورود - ثبت نام</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> راهنمای خرید</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter"> مشاوره تلفنی</a></p>
+                </div>
+                <div class="col-lg-3 colorFooter text-right">
+                    <h6>شناخت ما</h6>
+                    <p class="m-0"><a href="#" class="colorFooter">درباره ما</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter">تماس با ما</a></p>
+                    <p class="m-0"><a href="#" class="colorFooter">سؤالات متداول</a></p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <a href="#" class="col-lg-2"><img src="pic/instagram1.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/teleram.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/whatsapp.svg" class="witheInestagram"/></a>
+                        <a href="#" class="col-lg-2"><img src="pic/facebook.svg" class="witheInestagram"/></a>
+                        <div class="col-lg-1"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+
+<!--PPPPPPPPCCCCCCCC-->
+<!--PPPPPPPPCCCCCCCC-->
+<!--PPPPPPPPCCCCCCCC-->
+
+</body>
+<script>
+    // filterha
+    // filterha
+    // filterha
+
+    /* Set the width of the sidebar to 250px (show it) */
+    function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
+        document.getElementById("mySidepanel").style.marginTop = "5%";
+        document.getElementById("mySidepanel").style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+        document.getElementById("mySidepanel").style.borderRadius = "15px";
+    }
+
+    /* Set the width of the sidebar to 0 (hide it) */
+    function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+    }
+
+    // filterha
+    // filterha
+    // filterha
+
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+
+    function MBtoggleToggler(elm, MBinputID) {
+        const MBinput = document.getElementById(MBinputID);
+        elm.classList.toggle('MBoption-box-toggled');
+        elm.parentElement.classList.toggle('MBs-toggler-toggled');
+        if (elm.classList.contains('MBoption-box-toggled')) {
+            MBinput.value = 'option2';
+        } else {
+            MBinput.value = 'option1';
+        }
+    }
+
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    // محصولات و خدمات
+    let listMenu = document.getElementById("listMenu");
+    let btnMahsolat = document.getElementById("btnMahsolat");
+    let showORhidden = false;
+    showControl = () => {
+        showORhidden = !showORhidden;
+        console.log(showORhidden);
+        if (showORhidden === true) {
+            console.log("block");
+            listMenu.style.display = "block";
+            btnMahsolat.style.border = "darkblue";
+            btnMahsolat.style.backgroundColor = "darkblue";
+        } else {
+            console.log("none");
+            listMenu.style.display = "none";
+            btnMahsolat.style.border = "#4a6f97";
+            btnMahsolat.style.backgroundColor = "#4a6f97";
+        }
+    }
+    // محصولات و خدمات
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+    let showControlItem1 = false;
+    let showControlItem2 = false;
+    let showControlItem3 = false;
+    let showControlItem4 = false;
+    let showControlItem5 = false;
+
+    function hiddenItem1() {
+
+        if (showControlItem1 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem2 = showControlItem1;
+        showControlItem3 = showControlItem1;
+        showControlItem4 = showControlItem1;
+        showControlItem5 = showControlItem1;
+        showControlItem1 = !showControlItem1;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem2() {
+
+        if (showControlItem2 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items2").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+        }
+        showControlItem3 = showControlItem2;
+        showControlItem4 = showControlItem2;
+        showControlItem1 = showControlItem2;
+        showControlItem5 = showControlItem2;
+        showControlItem2 = !showControlItem2;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem3() {
+
+        if (showControlItem3 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem4 = showControlItem3;
+        showControlItem1 = showControlItem3;
+        showControlItem2 = showControlItem3;
+        showControlItem5 = showControlItem3;
+        showControlItem3 = !showControlItem3;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem4() {
+        if (showControlItem4 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem1 = showControlItem4;
+        showControlItem2 = showControlItem4;
+        showControlItem3 = showControlItem4;
+        showControlItem5 = showControlItem4;
+        showControlItem4 = !showControlItem4;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    function hiddenItem5() {
+        if (showControlItem5 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem1 = showControlItem5;
+        showControlItem2 = showControlItem5;
+        showControlItem3 = showControlItem5;
+        showControlItem4 = showControlItem5;
+        showControlItem5 = !showControlItem5;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+
+
+    function toggleToggler(elm, inputID) {
+        const input = document.getElementById(inputID);
+        elm.classList.toggle('option-box-toggled');
+        elm.parentElement.classList.toggle('s-toggler-toggled');
+        if (elm.classList.contains('option-box-toggled')) {
+            input.value = 'option2';
+        } else {
+            input.value = 'option';
+        }
+    }
+
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+
+</script>
+
+</html>

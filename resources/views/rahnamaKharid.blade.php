@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 @section('title','راهنمای خرید')
 @section('content')
-@include('header')
+@include('frontend.header')
 
 <div class="container bg-white border">
     <div class="row">
@@ -51,7 +51,6 @@
         </div>
     </div>
 </div>
-    @include('ersal')
-    @include('footer')
+    @include('frontend.footer')
 @endsection
 

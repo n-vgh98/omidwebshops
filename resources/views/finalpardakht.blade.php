@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 
 @section('content')
-    @include('header')
+    @include('frontend.header')
 
 
     @if($errors)
@@ -99,8 +99,7 @@
 
 
 
-    @include('ersal')
-    @include('footer')
+    @include('frontend.footer')
 @section('title',__('generic.bag_buy'))
 @endsection
 

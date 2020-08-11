@@ -1,9 +1,7 @@
 <ol class="dd-list">
 
 @foreach ($items as $item)
-        <?php
-       // echo($item->children)    ;
-        ?>
+
     <li class="dd-item" data-id="{{ $item->id }}">
         <div class="pull-right item_actions">
             <div class="btn btn-sm btn-danger pull-right delete" data-id="{{ $item->id }}">

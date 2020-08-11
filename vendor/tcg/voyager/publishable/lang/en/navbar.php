@@ -25,8 +25,6 @@ return [
     'editProductContinue'  => 'Edit About Product',
     'fqas'                 => 'Frequent queston' ,
     'pasokh_user_message'  => 'Replay to ' ,
-    'about-us'              =>  'About us' ,
-    'contact-us'              =>  'Contact us' ,
 
 
 ];
