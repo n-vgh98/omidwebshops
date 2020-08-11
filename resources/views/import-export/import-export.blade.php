@@ -1,5 +1,4 @@
-
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 @section('title','export')
 @section('content')
@@ -41,4 +40,5 @@
         </div>
     </div>
 </div>
+@include('frontend.footer')
 @endsection

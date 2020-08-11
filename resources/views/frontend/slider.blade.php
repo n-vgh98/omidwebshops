@@ -1,6 +1,8 @@
 <?php
 $sliders = App\Slider::all();
 $count = $sliders->count();
+$mostpopulars = App\Mostpopular::orderBy('Order','Asc')->take(5)->get();
+$i = 0;
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -67,7 +69,12 @@ $count = $sliders->count();
             </div>
         </div>
 
+<!--    --><?php
 
+//$newests = App\Product::orderBy('Order','desc')->take(12)->get();
+//$i = 0;
+//$newests->load('translations');
+//?>
 
 
 
@@ -78,34 +85,68 @@ $count = $sliders->count();
 
                     <div id="carouselExampleSlidesOnly" class="carousel slide witheCartPishnahadeROZ"
                          data-ride="carousel">
+
                         <div class="carousel-inner cardRadius1">
+
                             <div class="carousel-item active">
+
                                 <div class="card" style="width: 100% !important;">
-                                    <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
+                                    @for($i=0 ; $i < 1 ;$i++)
+                                    <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                    <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
                                     <div class="card-body">
-                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
-                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
+                                        <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                        <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                        <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
                                     </div>
+                                    </a>
+                                        @endfor
+                                </div>
+
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="width: 100% !important;">
+                                    @for($i=1 ; $i < 2 ;$i++)
+                                    <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                        <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
+                                        <div class="card-body">
+                                            <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                            <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                            <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
+                                        </div>
+                                    </a>
+                                        @endfor
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="card" style="width: 100% !important;">
-                                    <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                    <div class="card-body">
-                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
-                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
-                                    </div>
+                                    @for($i=2 ; $i <3 ;$i++)
+                                    <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                        <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
+                                        <div class="card-body">
+                                            <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                            <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                            <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
+                                        </div>
+                                    </a>
+                                        @endfor
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="card" style="width: 100% !important;">
-                                    <img class="card-img-top" src="{{asset('front/pic/cart1.jpg')}}" alt="Card image">
-                                    <div class="card-body">
-                                        <h6 class="card-title">پنکه رومیزی دمنده مدل Haleh</h6>
-                                        <a href="#" class="btn btn-primary">افزودن به سبد خرید</a>
-                                    </div>
+                                    @for($i=3 ; $i <4 ;$i++)
+                                        <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                            <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
+                                            <div class="card-body">
+                                                <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                                <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                                <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
+                                            </div>
+                                        </a>
+                                    @endfor
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

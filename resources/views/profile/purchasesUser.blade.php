@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 @section('profile_assets')
 <link href="{{ asset('style/profile/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
 <script src="{{asset('style/profile/script.min.js')}}"></script>
 @endsection
 @section('content')
-@include('header')
+    @include('frontend.header')
 
 <div  class="mt-3">
     <div id="wrapper">
@@ -70,8 +70,7 @@
 </div>
 
 
-@include('ersal')
-@include('footer')
+@include('frontend.footer')
 @section('title',__('generic.pershuse'))
 
 @endsection

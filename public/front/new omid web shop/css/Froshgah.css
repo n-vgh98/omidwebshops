@@ -8,6 +8,22 @@
     .sizeLogo{
         width: 100px;
     }
+    /* Style the button that is used to open the sidepanel */
+    .openbtn {
+        /*font-size: 20px;*/
+        cursor: pointer;
+        background-color: #4a6f97;
+        color: white;
+        /*padding: 10px 15px;*/
+        border: none;
+        transform:rotate(90deg);
+        background-color: rgba(147, 36, 36, 0.56);
+        border-radius: 15px 15px 0px 0px;
+        /*height: 450px;*/
+        position: fixed;
+        margin-left: -9%;
+        margin-top: 10%;
+    }
 
     /*css far&en*/
 
@@ -214,7 +230,22 @@
     .sizeLogo{
         width: 150px;
     }
-
+    /* Style the button that is used to open the sidepanel */
+    .openbtn {
+        /*font-size: 20px;*/
+        cursor: pointer;
+        background-color: #4a6f97;
+        color: white;
+        /*padding: 10px 15px;*/
+        border: none;
+        transform:rotate(90deg);
+        background-color: rgba(147, 36, 36, 0.56);
+        border-radius: 15px 15px 0px 0px;
+        /*height: 450px;*/
+        position: fixed;
+        margin-left: -6.5%;
+        margin-top: 10%;
+    }
 
     /*css far&en*/
 
@@ -668,22 +699,7 @@
     margin-left: 50px;
 }
 
-/* Style the button that is used to open the sidepanel */
-.openbtn {
-    /*font-size: 20px;*/
-    cursor: pointer;
-    background-color: #4a6f97;
-    color: white;
-    /*padding: 10px 15px;*/
-    border: none;
-    transform:rotate(90deg);
-    background-color: rgba(147, 36, 36, 0.56);
-    border-radius: 15px 15px 0px 0px;
-    /*height: 450px;*/
-    position: fixed;
-    margin-left: -9%;
-    margin-top: 10%;
-}
+
 
 .openbtn:hover {
     background-color: #444;
@@ -885,3 +901,220 @@ input[type=submit]:hover {
 /*formlogin*/
 /*formlogin*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+
+/*.MBsizeLogo {*/
+/*    width: 92px;*/
+/*    margin-top: 6%;*/
+/*    padding-left: 20%;*/
+/*}*/
+/* pars&en*/
+/* pars&en*/
+/* pars&en*/
+.MBs-toggler {
+    /*width: 480px;*/
+    height: 75px;
+    background: white;
+    border-radius: 8px;
+    transition: 250ms ease;
+    /*box-shadow: 0px 4px 8px rgba(18, 83, 155, 0.15);*/
+    position: relative;
+}
+
+.MBs-toggler p {
+    color: white;
+    font-family: Roboto;
+    font-size: 3.5rem;
+    line-height: 21px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 5;
+    pointer-events: none;
+    transition: 250ms ease;
+}
+
+.MBs-toggler p:nth-child(1) {
+    left: 58px;
+}
+
+.MBs-toggler p:nth-child(2) {
+    right: 58px;
+    color: #bdbdbd;
+}
+
+.MBoption-box {
+    background: #2c97fa;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    height: 60px;
+    left: 8px;
+    transition: 250ms ease;
+    cursor: pointer;
+}
+
+.MBoption-box:hover {
+    background: #0f8afd;
+}
+
+.MBoption-box:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.MBoption-box-toggled {
+    left: calc(73% - 119px);
+}
+
+.MBs-toggler-toggled p:nth-child(1) {
+    color: #bdbdbd !important;
+}
+
+.MBs-toggler-toggled p:nth-child(2) {
+    color: white !important;
+}
+.MBborerBotte{
+    border-bottom: solid 2px #0e4d92;
+}
+/* pars&en*/
+/* pars&en*/
+/* pars&en*/
+.MBbackgcolorblueSabtenam{
+    background-color: #0e4d92;
+    color: white;
+}
+.MBbackgcolorbluelogin{
+    background-color: #4a6f97;
+    color: white;
+}
+.MBsearchHeader {
+    border-radius: 45px;
+    font-size: 250%;
+}
+.MBsabadKHarid{
+    border-radius: 45px;
+    font-size: 250%;
+    margin-top: 3rem;
+}
+.MBrowSabtenam{
+    direction: rtl;
+    height: 10%;
+    margin-top: 4%!important;
+    padding-left:6%!important;
+}
+.MBrowSabadKHarid{
+    direction: rtl;
+    height: 10%;
+    margin-top: 4%;
+    padding-left:6%!important;
+}
+
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 4rem;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size:15rem;
+}
+.MBspanMenu{
+    font-size: 4rem;
+    color: white;
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.MBrowMENU{
+    border-top: solid 0.25rem darkblue;
+}
+.MBertefaLofo{
+    height: 15.5rem;
+}
+.MBpading{
+    padding: 0.5rem 0 !important;
+}
+.MBsearchhh1{
+    width: inherit;
+    border-radius: 0px 45px 45px 0px;
+    font-size: 3rem;
+    border: none;
+    /*padding-left: 0px;*/
+}
+.MBsearchhh2{
+    width: inherit;
+    border-radius: 45px 0px 0px 45px;
+    font-size: 2.5rem;
+    padding: 0.400rem .75rem !important;
+}
+.MBwitheInestagram{
+    width: 5rem;
+    padding: 1rem;
+}
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/
+/*MMMOOBBIIILLLL index*/

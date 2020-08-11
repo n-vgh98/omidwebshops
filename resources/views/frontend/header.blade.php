@@ -19,7 +19,82 @@ $root->load('translations');
 $catagories->load('translations');
 ?>
 
+<!--header mobile-->
+<div class="container d-block d-lg-none">
+    <div class="row" style="display: block !important;">
+        <div class="col-xs-12 MBborerBotte">
+            <div class="row " style="display: block !important;">
+                <div class="MBs-toggler d-block">
+                    <p>فارسی</p>
+                    <p>English</p>
+                    <input type="hidden" name="MBoption-choose" id="MBtoggleInput">
+                    <div onclick="MBtoggleToggler(this,'MBtoggleInput')" class="MBoption-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-block d-lg-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row MBrowSabtenam">
+                    <div class="col-md-1"></div>
+                    <button type="button" class="col-md-4 btn MBsearchHeader MBbackgcolorblueSabtenam">ثبت نام</button>
+                    <div class="col-md-2"></div>
+                    <button type="button" class="col-md-4 btn MBsearchHeader MBbackgcolorbluelogin">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row MBrowSabadKHarid">
+                    <button type="button" class="col-md-12 btn MBsabadKHarid MBbackgcolorblueSabtenam">سبد خرید</button>
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <img class="MBertefaLofo" src="http://omidwebshop.ir/front/jpg/logo.jpg"/>
+            </div>
+        </div>
+        <!--        //menu and search-->
+        <div class="row MBbackgcolorbluelogin MBrowMENU">
+            <div class="col-md-10">
+                <div class="row" style="direction: rtl;">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8 p-0 m-0 text-left MBpading">
+                        <input type="search" class="MBsearchhh1" placeholder="  جست و جو...">
+                    </div>
+                    <div class="col-md-2 p-0 m-0 text-right MBpading">
+                        <button type="button" class="btn MBsearchhh2"><i class="fas fa-search"></i></button>
+                    </div>
 
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <!-- The overlay -->
+                <div id="myNav" class="overlay">
+
+                    <!-- Button to close the overlay navigation -->
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <!-- Overlay content -->
+                    <div class="overlay-content">
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Clients</a>
+                        <a href="#">Contact</a>
+                    </div>
+
+                </div>
+
+                <!-- Use any element to open/show the overlay navigation menu -->
+                <span class="MBspanMenu" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            </div>
+        </div>
+        <!--        //menu and search-->
+    </div>
+</div>
+<!--header mobile-->
 
 
 <!-- header   pc  -->

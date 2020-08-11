@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('laayoytss.master')
 
 @section('content')
+    @include('frontend.header')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,4 +26,5 @@
         </div>
     </div>
 </div>
+    @include('frontend.footer')
 @endsection

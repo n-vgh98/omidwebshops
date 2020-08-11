@@ -72,3 +72,25 @@
     </div>
 </div>
 <!--footer-->
+<!--footer mobile-->
+<div class="container-flout">
+    <div class="MBbackgcolorbluelogin">
+        <div class="row m-0 p-0">
+            <div class="col-md-2 text-center p-0"></div>
+            <a href="https://www.instagram.com" class="col-md-2 text-center p-1"><img src="http://omidwebshop.ir/front/pic/instagram1.svg" class="MBwitheInestagram"></a>
+            <a href="https://www.telegram.com" class="col-md-2 text-center p-1"><img src="http://omidwebshop.ir/front/pic/teleram.svg" class="MBwitheInestagram"></a>
+            <a href="https://web.whatsapp.com/" class="col-md-2 text-center p-1"><img src="http://omidwebshop.ir/front/pic/whatsapp.svg" class="MBwitheInestagram"></a>
+            <a href="https://www.facebook.com" class="col-md-2 text-center p-1"><img src="http://omidwebshop.ir/front/pic/facebook.svg" class="MBwitheInestagram"></a>
+            <div class="col-md-2 text-center p-0"></div>
+        </div>
+        <div class="row MBbackgcolorblueSabtenam">
+            <div class="col-md-1"></div>
+            <span class="col-md-10" style="font-size: 2rem;padding: 1rem;direction: rtl">
+                :فروشگاه اینترنتی لوازم خانگی
+                شرکت ما فعالیت خود را از سال 1383 شروع کرده و یکی از موفق ترین فروشگاه ها در زمینه فروش لوازم خانگی می باشد.
+            </span>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+<!--footer mobile-->

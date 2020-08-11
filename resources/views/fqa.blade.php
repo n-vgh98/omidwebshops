@@ -2,7 +2,7 @@
 @section('content')
 @include('frontend.header')
 @section('title',__('generic.fqa'))
-<div class="container bg-white border">
+<div class="container bg-white border" style="direction: rtl; text-align: initial; padding-top: 5%;">
     <div class="row">
         <div class="col-12">
             <div class="fqa">
@@ -11,7 +11,7 @@
                 </h2>
                 @if(count($fqa) > 0)
                    @foreach($fqa as  $f)
-                       <div>
+                       <div class="p-5 text-center">
                            {!! $f->getTranslatedAttribute('question') !!}
                        </div>
                     <div>
