@@ -1,6 +1,7 @@
 <?php
 $sliders = App\Slider::all();
 $count = $sliders->count();
+
 $mostpopulars = App\Mostpopular::orderBy('Order','Asc')->take(5)->get();
 $i = 0;
 ?>

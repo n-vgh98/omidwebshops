@@ -142,6 +142,11 @@ abstract class Controller extends BaseController
             $data->product_id = $request->product_id;
 
         }
+        if($slug == 'offer-of-days')
+        {
+            $data->product_id = $request->product_id;
+
+        }
 
         $data->save();
 
