@@ -73,7 +73,7 @@
 </div>
 <!--footer-->
 <!--footer mobile-->
-<div class="container-flout">
+<div class="container-flout d-block d-lg-none">
     <div class="MBbackgcolorbluelogin">
         <div class="row m-0 p-0">
             <div class="col-md-2 text-center p-0"></div>
