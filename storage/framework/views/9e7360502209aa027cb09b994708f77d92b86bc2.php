@@ -95,4 +95,4 @@
 
 </script>
 
-<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\xampp\htdocs\shop-laravel\resources\views/addmostpopular.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\xampp\htdocs\shop-laravel\resources\views/addoffer_of_day.blade.php ENDPATH**/ ?>

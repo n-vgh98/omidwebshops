@@ -24,9 +24,9 @@ $catagories->load('translations');
     <div class="row" style="display: block !important;">
         <div class="col-xs-12 MBborerBotte">
             <div class="row " style="display: block !important;">
-                <div class="MBs-toggler d-block">
-                    <p>فارسی</p>
-                    <p>English</p>
+                <div class="MBs-toggler d-block"  <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?>>
+                    <p><a href="{{url('fa')}}" style="color: white;">فارسی</a></p>
+                    <p><a href="{{url('en')}}" style="color: white;">English</a></p>
                     <input type="hidden" name="MBoption-choose" id="MBtoggleInput">
                     <div onclick="MBtoggleToggler(this,'MBtoggleInput')" class="MBoption-box"></div>
                 </div>
@@ -40,15 +40,17 @@ $catagories->load('translations');
             <div class="col-md-7">
                 <div class="row MBrowSabtenam">
                     <div class="col-md-1"></div>
-                    <button type="button" class="col-md-4 btn MBsearchHeader MBbackgcolorblueSabtenam">ثبت نام</button>
+                    <button type="button" class="col-md-4 btn MBsearchHeader MBbackgcolorblueSabtenam"><a href="{{route('register')}}" style="color: white;">ثبت نام</a> </button>
                     <div class="col-md-2"></div>
                     <button type="button" class="col-md-4 btn MBsearchHeader MBbackgcolorbluelogin">
-                        <i class="fas fa-sign-in-alt"></i>
+                        <a href="{{route('login')}}" style="color: white;"> <i class="fas fa-sign-in-alt"></i></a>
                     </button>
                     <div class="col-md-1"></div>
                 </div>
                 <div class="row MBrowSabadKHarid">
+                    <a href="/sabadKharid">
                     <button type="button" class="col-md-12 btn MBsabadKHarid MBbackgcolorblueSabtenam">سبد خرید</button>
+                    </a>
                 </div>
             </div>
             <div class="col-md-5 text-center">
@@ -98,7 +100,7 @@ $catagories->load('translations');
 
 
 <!-- header   pc  -->
-<div class="container-fluid bgElemanWhite">
+<div class="container-fluid bgElemanWhite d-none d-lg-block">
     <div class="row PaddingTopMenu paddingHeader1">
         <div class="col-xl-4 col-lg-5 p-0">
             <div class="row">
@@ -211,8 +213,7 @@ $catagories->load('translations');
 
                     <div class="dropdown divLiE">
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
-                        <div class="dropdown-content shadowBaxs andazeTagAHa"
-                             style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
+                        <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
                             @foreach($root as $item)
 
                                 <a @if($item->name == __('generic.home')) href="/"
@@ -233,33 +234,33 @@ $catagories->load('translations');
                                 @endphp
                                 @if($countItemCate1 > 0)
 
+                                   
+                                    {{--<div class="dropdown-menu w-100 dropdown-menu-right mt-n2">--}}
+                                        {{--<div class="container-fluid">--}}
+                                            {{--<div class="row ">--}}
+                                                {{--@foreach($cat1 as $itemcat1)--}}
+                                                    {{--<div class="col-{{$col}} p-1">--}}
+                                                        {{--<a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}"--}}
+                                                           {{--style="text-decoration: none"><h6--}}
+                                                                {{--class="dropdown-header text-center">{{$itemcat1->name}}</h6>--}}
+                                                        {{--</a>--}}
+                                                        {{--<div class="dropdown-divider"></div>--}}
+                                                        {{--@php--}}
+                                                            {{--$id = $itemcat1->id;--}}
+                                                          {{--$cat2 = $catagories->filter(function ($value,$key) use($id){--}}
+                                                                           {{--return $value->parent_id == $id;--}}
+                                                                                      {{--});--}}
+                                                        {{--@endphp--}}
+                                                        {{--@foreach($cat2 as $cat2)--}}
+                                                            {{--<a class="dropdown-item  text-center"--}}
+                                                               {{--href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>--}}
+                                                        {{--@endforeach--}}
 
-                                    <div class="dropdown-menu w-100 dropdown-menu-right mt-n2">
-                                        <div class="container-fluid">
-                                            <div class="row ">
-                                                @foreach($cat1 as $itemcat1)
-                                                    <div class="col-{{$col}} p-1">
-                                                        <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}"
-                                                           style="text-decoration: none"><h6
-                                                                class="dropdown-header text-center">{{$itemcat1->name}}</h6>
-                                                        </a>
-                                                        <div class="dropdown-divider"></div>
-                                                        @php
-                                                            $id = $itemcat1->id;
-                                                          $cat2 = $catagories->filter(function ($value,$key) use($id){
-                                                                           return $value->parent_id == $id;
-                                                                                      });
-                                                        @endphp
-                                                        @foreach($cat2 as $cat2)
-                                                            <a class="dropdown-item  text-center"
-                                                               href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>
-                                                        @endforeach
-
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
+                                                    {{--</div>--}}
+                                                {{--@endforeach--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 @endif
                             @endforeach
                         </div>

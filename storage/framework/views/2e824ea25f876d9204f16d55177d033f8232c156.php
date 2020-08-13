@@ -407,4 +407,4 @@ if(session()->has('locale'))
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\shop-laravel2lang\vendor\tcg\voyager\src/../resources/views/main.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('voyager::master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\shop-laravel2lang\vendor\tcg\voyager\src/../resources/views/index.blade.php ENDPATH**/ ?>

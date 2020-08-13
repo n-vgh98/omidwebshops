@@ -31,6 +31,9 @@ Route::post('importUser','ExcelController@importUser');
 Route::get('exportUser','ExcelController@exportUser');
 Route::post('importFactor','ExcelController@importFactor');
 Route::get('exportFactor','ExcelController@exportFactor');
+//mahboobtarinha
+
+Route::get('/popular','mahboobtarinsController@getProduct');
 
 
 Route::get('/detailProduct/{id}','productController@getProduct')->where('id','[0-9]+');
@@ -46,7 +49,7 @@ Route::get('arayeshi',function(){
 });
 Route::prefix('/product/catagory/')->group(function (){
     Route::get('{cat1}','productController@getAllProduct');
-    Route::get('{cat1}/catagory/{cat2}','productController@getAllProduct');
+    Route::get('{cat1}/catagory/{cat2}','productController@t');
     Route::get('{cat1}/catagory/{cat2}/catagory/{cat3}','productController@getAllProduct');
 });
 
@@ -438,6 +441,7 @@ Route::get('verified', function() {
 // encryption
 
 // encrypt default serializetion . if we dont use of serialization use encryptstring and decryption
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 Route::get('encrypt', function() {
     $r =  encrypt("hello world");
