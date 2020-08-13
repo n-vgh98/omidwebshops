@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c584b44a-637d-4c91-a0d3-b6b08245786e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ad/65/ad6538122986afc07151a5b43be0f9ff6ba642a0" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ad/65/ad6538122986afc07151a5b43be0f9ff6ba642a0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ad/65/ad6538122986afc07151a5b43be0f9ff6ba642a0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tcg/voyager/src/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tcg/voyager/src/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/tcg/voyager/src/Http/Controllers/VoyagerBaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/tcg/voyager/src/Http/Controllers/VoyagerBaseController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,8 @@
       <workItem from="1597127879666" duration="1069000" />
       <workItem from="1597149439595" duration="1830000" />
       <workItem from="1597177899488" duration="2624000" />
-      <workItem from="1597210595135" duration="702000" />
+      <workItem from="1597210595135" duration="1159000" />
+      <workItem from="1597216751476" duration="9021000" />
     </task>
     <task id="LOCAL-00001" summary="edit products">
       <created>1594037543924</created>
@@ -199,5 +198,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1597177199631" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1597314113960">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597314113960" />
   </component>
 </project>

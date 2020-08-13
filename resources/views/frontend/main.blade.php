@@ -79,20 +79,22 @@ $newests->load('translations');
                                 <div class="col-lg-10">
                                     <div class="row">
                                         @for($i=0 ; $i < 6 ;$i++)
-                                            <div class="col-lg-2 paddingScrolers">
-                                                <a  href="/detailProduct/{{$newests[$i]->id}}"  class="text-decoration-none ">
-                                                    <div class="card" style="width: 100% !important;">
-                                                        <img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">
-                                                        <div class="card-body">
-                                                            <p class="card-title cardTagP">{{$newests[$i]->name}}</p>
-                                                            <p>   {{__('generic.price')}} : {{number_format($newests[$i]->price)}} {{__('generic.vahed_pool')}} </p>
-                                                            <a href="/sabadKharid" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
-                                                                                                           aria-hidden="true"></i></a>
+                                            @if($i < count($newests) )
+                                                <div class="col-lg-2 paddingScrolers">
+                                                    <a  href="/detailProduct/{{$newests[$i]->id}}"  class="text-decoration-none ">
+                                                        <div class="card" style="width: 100% !important;">
+                                                            <img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">
+                                                            <div class="card-body">
+                                                                <p class="card-title cardTagP">{{$newests[$i]->name}}</p>
+                                                                <p>   {{__('generic.price')}} : {{number_format($newests[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                                                <a href="/sabadKharid" class="btn btn-primary d-block"><i class="fa fa-shopping-cart"
+                                                                                                               aria-hidden="true"></i></a>
 
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                                    </a>
+                                                </div>
+                                            @endif
                                         @endfor
                                     </div>
                                 </div>
@@ -106,7 +108,7 @@ $newests->load('translations');
                                     <div class="row">
                                         @for($i=6 ; $i < 12 ;$i++)
                                             <div class="col-lg-2 paddingScrolers">
-                                                @if($newests[$i]->id)
+                                                @if($i < count($newests) )
                                                 <a href="/detailProduct/{{$newests[$i]->id}}" class="text-decoration-none ">
                                                     <div class="card" style="width: 100% !important;">
                                                         <img class="card-img-top" src="{{asset('storage/products/'.($newests[$i]->productimages()->first())['image']  )}}" alt="Card image">
