@@ -92,6 +92,7 @@ $i = 0;
 
                                 <div class="card" style="width: 100% !important;">
                                     @for($i=0 ; $i < 1 ;$i++)
+                                        @if( count($mostpopulars) > $i)
                                     <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
                                     <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
                                     <div class="card-body">
@@ -100,6 +101,7 @@ $i = 0;
                                         <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
                                     </div>
                                     </a>
+                                    @endif
                                         @endfor
                                 </div>
 
@@ -107,34 +109,7 @@ $i = 0;
                             <div class="carousel-item">
                                 <div class="card" style="width: 100% !important;">
                                     @for($i=1 ; $i < 2 ;$i++)
-                                    <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
-                                        <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
-                                        <div class="card-body">
-                                            <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
-                                            <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
-                                            <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
-                                        </div>
-                                    </a>
-                                        @endfor
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card" style="width: 100% !important;">
-                                    @for($i=2 ; $i <3 ;$i++)
-                                    <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
-                                        <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
-                                        <div class="card-body">
-                                            <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
-                                            <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
-                                            <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
-                                        </div>
-                                    </a>
-                                        @endfor
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card" style="width: 100% !important;">
-                                    @for($i=3 ; $i <4 ;$i++)
+                                        @if (count($mostpopulars) > $i )
                                         <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
                                             <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
                                             <div class="card-body">
@@ -143,6 +118,39 @@ $i = 0;
                                                 <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
                                             </div>
                                         </a>
+                                        @endif
+                                        @endfor
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="width: 100% !important;">
+                                    @for($i=2 ; $i <3 ;$i++)
+                                        @if (count($mostpopulars) > $i )
+                                            <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                                <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                                    <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                                    <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
+                                                </div>
+                                            </a>
+                                        @endif
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card" style="width: 100% !important;">
+                                    @for($i=3 ; $i <4 ;$i++)
+                                        @if (count($mostpopulars) > $i )
+                                        <a  href="/detailProduct/{{$mostpopulars[$i]->product_id}}"  class="text-decoration-none ">
+                                            <img class="card-img-top" src="{{asset('storage/'.$mostpopulars[$i]->image)}}" alt="Card image">
+                                            <div class="card-body">
+                                                <h6 class="card-title">{{$mostpopulars[$i]->name}}</h6>
+                                                <p>   {{__('generic.price')}} : {{number_format($mostpopulars[$i]->price)}} {{__('generic.vahed_pool')}} </p>
+                                                <a href="/detailProduct/{{$mostpopulars[$i]->product_id}}" class="btn btn-primary">مشاهده</a>
+                                            </div>
+                                        </a>
+                                        @endif
                                     @endfor
                                 </div>
                             </div>
