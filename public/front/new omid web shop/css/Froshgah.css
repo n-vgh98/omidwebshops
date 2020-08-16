@@ -10,7 +10,7 @@
     }
     /* Style the button that is used to open the sidepanel */
     .openbtn {
-        /*font-size: 20px;*/
+        font-size: 1.25rem;
         cursor: pointer;
         background-color: #4a6f97;
         color: white;
@@ -21,8 +21,8 @@
         border-radius: 15px 15px 0px 0px;
         /*height: 450px;*/
         position: fixed;
-        margin-left: -9%;
-        margin-top: 10%;
+        margin-left: -11.75%;
+        margin-top: 14%;
     }
 
     /*css far&en*/
@@ -232,7 +232,7 @@
     }
     /* Style the button that is used to open the sidepanel */
     .openbtn {
-        /*font-size: 20px;*/
+        font-size: 1.5rem;
         cursor: pointer;
         background-color: #4a6f97;
         color: white;
@@ -243,8 +243,8 @@
         border-radius: 15px 15px 0px 0px;
         /*height: 450px;*/
         position: fixed;
-        margin-left: -6.5%;
-        margin-top: 10%;
+        margin-left: -10%;
+        margin-top: 11%;
     }
 
     /*css far&en*/
