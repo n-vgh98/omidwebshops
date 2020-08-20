@@ -105,11 +105,11 @@ $catagories->load('translations');
         <div class="col-xl-4 col-lg-5 p-0">
             <div class="row">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-7 s-toggler <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?> ">
-                    <p><a href="{{url('fa')}}" style="color: white;">فارسی</a></p>
-                    <p><a href="{{url('en')}}" style="color: white;">English</a></p>
+                <div class="languag col-lg-7 s-toggler  <?php if (__('generic.is_rtl') == 'true') echo 'ltr'; else echo 'rtl' ?>">
+                    <a href="{{url('fa')}}" style="color: white;padding: 20%;">فارسی</a>
+                    <a href="{{url('en')}}" style="color: white;">English</a>
                     <input type="hidden" name="option-choose" id="toggleInput">
-                    <div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>
+                    {{--<div onclick="toggleToggler(this,'toggleInput')" class="option-box"></div>--}}
                 </div>
             </div>
             <div class="row faseleSabadkharidBeBala">
@@ -215,11 +215,14 @@ $catagories->load('translations');
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
                         <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
                             @foreach($root as $item)
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        <div id="menu2Shomare1" class="tabcontent">
 
                                 <a @if($item->name == __('generic.home')) href="/"
                                    @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
-                                {{--                            <a href="#">تجهیزات حمام و دستشویی</a>--}}
-                                {{--                            <a href="#">تهیه ی و نگهداری نوشیدنی</a>--}}
+
                                 @php
                                     $id = $item->id;
 
@@ -233,35 +236,29 @@ $catagories->load('translations');
                                           $col = (12 / $countItemCate1);
                                 @endphp
                                 @if($countItemCate1 > 0)
-
-                                   
-                                    {{--<div class="dropdown-menu w-100 dropdown-menu-right mt-n2">--}}
-                                        {{--<div class="container-fluid">--}}
-                                            {{--<div class="row ">--}}
-                                                {{--@foreach($cat1 as $itemcat1)--}}
-                                                    {{--<div class="col-{{$col}} p-1">--}}
-                                                        {{--<a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}"--}}
-                                                           {{--style="text-decoration: none"><h6--}}
-                                                                {{--class="dropdown-header text-center">{{$itemcat1->name}}</h6>--}}
-                                                        {{--</a>--}}
-                                                        {{--<div class="dropdown-divider"></div>--}}
-                                                        {{--@php--}}
-                                                            {{--$id = $itemcat1->id;--}}
-                                                          {{--$cat2 = $catagories->filter(function ($value,$key) use($id){--}}
-                                                                           {{--return $value->parent_id == $id;--}}
-                                                                                      {{--});--}}
-                                                        {{--@endphp--}}
+                                                <div class="row">
+                                                    @foreach($cat1 as $itemcat1)
+                                                    <div class="col-lg-1"></div>
+                                                    <a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>
+                                                    <div class="col-lg-1"></div>
+                                                        @php
+                                                            $id = $itemcat1->id;
+                                                          $cat2 = $catagories->filter(function ($value,$key) use($id){
+                                                                           return $value->parent_id == $id;
+                                                                                      });
+                                                        @endphp
                                                         {{--@foreach($cat2 as $cat2)--}}
                                                             {{--<a class="dropdown-item  text-center"--}}
                                                                {{--href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>--}}
                                                         {{--@endforeach--}}
+                                                    @endforeach
+                                                </div>
 
-                                                    {{--</div>--}}
-                                                {{--@endforeach--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
+
                                 @endif
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
 
@@ -286,6 +283,220 @@ $catagories->load('translations');
 
     </div>
 </div>
+<script>
+    ////menu dovom
+    ////menu dovom
+    ////menu dovom
+
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+
+        // همه ی عناصر کلاس tabcontent را بگیر و hidden کن
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+
+        //  این عناصر را از کلاس  tablinks بگیر وکلاس اکتیو پاک کن
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        //کلاس اکتیو رو به لینکی که باز شده در تب اضافه کن
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    ////menu dovom
+    ////menu dovom
+    ////menu dovom
+
+
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+
+    function MBtoggleToggler(elm, MBinputID) {
+        const MBinput = document.getElementById(MBinputID);
+        elm.classList.toggle('MBoption-box-toggled');
+        elm.parentElement.classList.toggle('MBs-toggler-toggled');
+        if (elm.classList.contains('MBoption-box-toggled')) {
+            MBinput.value = 'option2';
+        } else {
+            MBinput.value = 'option1';
+        }
+    }
+
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+    //MMMOBILEEEEEE
+
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    // محصولات و خدمات
+    let listMenu = document.getElementById("listMenu");
+    let btnMahsolat = document.getElementById("btnMahsolat");
+    let showORhidden = false;
+    showControl = () => {
+        showORhidden = !showORhidden;
+        console.log(showORhidden);
+        if (showORhidden === true) {
+            console.log("block");
+            listMenu.style.display = "block";
+            btnMahsolat.style.border = "darkblue";
+            btnMahsolat.style.backgroundColor = "darkblue";
+        } else {
+            console.log("none");
+            listMenu.style.display = "none";
+            btnMahsolat.style.border = "#4a6f97";
+            btnMahsolat.style.backgroundColor = "#4a6f97";
+        }
+    }
+    // محصولات و خدمات
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+    let showControlItem1 = false;
+    let showControlItem2 = false;
+    let showControlItem3 = false;
+    let showControlItem4 = false;
+    let showControlItem5 = false;
+
+    function hiddenItem1() {
+
+        if (showControlItem1 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem2 = showControlItem1;
+        showControlItem3 = showControlItem1;
+        showControlItem4 = showControlItem1;
+        showControlItem5 = showControlItem1;
+        showControlItem1 = !showControlItem1;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem2() {
+
+        if (showControlItem2 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items2").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+        }
+        showControlItem3 = showControlItem2;
+        showControlItem4 = showControlItem2;
+        showControlItem1 = showControlItem2;
+        showControlItem5 = showControlItem2;
+        showControlItem2 = !showControlItem2;
+        //باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem3() {
+
+        if (showControlItem3 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+            document.getElementById("Items3").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem4 = showControlItem3;
+        showControlItem1 = showControlItem3;
+        showControlItem2 = showControlItem3;
+        showControlItem5 = showControlItem3;
+        showControlItem3 = !showControlItem3;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+
+    }
+
+    function hiddenItem4() {
+        if (showControlItem4 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "block";//اونی که می خوایم نمایش بدهد
+            document.getElementById("Items5").style.display = "none";
+        }
+        showControlItem1 = showControlItem4;
+        showControlItem2 = showControlItem4;
+        showControlItem3 = showControlItem4;
+        showControlItem5 = showControlItem4;
+        showControlItem4 = !showControlItem4;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    function hiddenItem5() {
+        if (showControlItem5 === true) {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "none";
+        } else {
+            document.getElementById("Items1").style.display = "none";
+            document.getElementById("Items2").style.display = "none";
+            document.getElementById("Items3").style.display = "none";
+            document.getElementById("Items4").style.display = "none";
+            document.getElementById("Items5").style.display = "block";//اونی که می خوایم نمایش بدهد
+        }
+        showControlItem1 = showControlItem5;
+        showControlItem2 = showControlItem5;
+        showControlItem3 = showControlItem5;
+        showControlItem4 = showControlItem5;
+        showControlItem5 = !showControlItem5;//باید حتما اونی که می خواد تغییر کند اخر قرار بگیرد
+    }
+
+    //انتقال ایتم منو اول به زیرمجموعه هاش
+
+
+    function toggleToggler(elm, inputID) {
+        const input = document.getElementById(inputID);
+        elm.classList.toggle('option-box-toggled');
+        elm.parentElement.classList.toggle('s-toggler-toggled');
+        if (elm.classList.contains('option-box-toggled')) {
+            input.value = 'option2';
+        } else {
+            input.value = 'option';
+        }
+    }
+
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+    //PPPCCC
+
+</script>
 
 <!--    menu-->
 {{--<div class="container hiddenitem " id="listMenu">--}}

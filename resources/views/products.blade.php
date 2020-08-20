@@ -38,8 +38,16 @@
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <br/>
                     <h6 class="colorFooter text-center">فیلتر و جست و جوی هوشمند</h6>
-
                     <form method="post" class="p-2" style="direction: ltr">
+                        <div class=" my-3 " style="border: solid; padding: 2%;color: white;">
+                            <label for="customrangeprice"> {{__('generic.price')}}</label>
+                            <div class="position-relative">
+                                <span class="position-absolute overflow-hidden rangelable" style="right:80%;top: 40%;font-size: small"> {{__('generic.vahed_pool')}}1</span>
+                                <span class="position-absolute rangelable" style="right:0;top: 40%;font-size: small">{{number_format(20000000)}}{{__('generic.vahed_pool')}}</span>
+
+                                <input class="custom-range" type="range" name="priceRange" id="customrangeprice" min="1" max="20000000" value="">
+                            </div>
+                        </div>
                         @isset($avalablefilter)
                             @foreach($avalablefilter as $af)
                         <div class=" my-3 " style="border: solid; padding: 2%;color: white;">

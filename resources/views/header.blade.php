@@ -160,8 +160,8 @@ $catagories->load('translations');
                                     @foreach($cat1 as $itemcat1)
                                         <div class="col-{{$col}} p-1">
                                             <a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}"
-                                               style="text-decoration: none"><h6
-                                                    class="dropdown-header text-center">{{$itemcat1->name}}</h6></a>
+                                               style="text-decoration: none">
+                                                <h6 class="dropdown-header text-center">{{$itemcat1->name}}</h6></a>
                                             <div class="dropdown-divider"></div>
                                             @php
                                                 $id = $itemcat1->id;
