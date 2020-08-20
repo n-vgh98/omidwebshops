@@ -215,50 +215,90 @@ $catagories->load('translations');
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
                         <div class="dropdown-content shadowBaxs andazeTagAHa" style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
                             @foreach($root as $item)
+
                                 <div class="row">
                                     <div class="col-lg-12">
+                                        @php
+                                            $id = $item->id;
 
+                                            $cat1 = $catagories->filter(function ($value,$key) use($id){
+                                                           return $value->parent_id == $id;
+                                            });
+                                            $countItemCate1 = $cat1->count() ;
+                                            if($countItemCate1 == 0)
+                                                $col = 12;
+                                            else
+                                                  $col = (12 / $countItemCate1);
+                                        @endphp
+                                        @if($countItemCate1 > 0)
                                         <div id="menu2Shomare1" class="tabcontent">
+                                            <div class="row">
+                                                @foreach($cat1 as $itemcat1)
+                                                <div class="col-lg-1"></div>
+                                                <a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>
+                                                <div class="col-lg-1"></div>
+                                                    @endforeach
+                                            </div>
+                                        </div>
+                                        @endif
+                                        <div class="tab">
+                                            <button class="tablinks" onmouseover="openCity(event, 'menu2Shomare1')">
+                                                <a @if($item->name == __('generic.home')) href="/"
+                                                @else href="/product/catagory/{{$item->name}}" @endif id="menu1dropdown"> {{ $item->getTranslatedAttribute('name') }}</a>
+                                            </button>
 
-                                <a @if($item->name == __('generic.home')) href="/"
-                                   @else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                @php
-                                    $id = $item->id;
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-lg-12">--}}
 
-                                    $cat1 = $catagories->filter(function ($value,$key) use($id){
-                                                   return $value->parent_id == $id;
-                                    });
-                                    $countItemCate1 = $cat1->count() ;
-                                    if($countItemCate1 == 0)
-                                        $col = 12;
-                                    else
-                                          $col = (12 / $countItemCate1);
-                                @endphp
-                                @if($countItemCate1 > 0)
-                                                <div class="row">
-                                                    @foreach($cat1 as $itemcat1)
-                                                    <div class="col-lg-1"></div>
-                                                    <a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>
-                                                    <div class="col-lg-1"></div>
-                                                        @php
-                                                            $id = $itemcat1->id;
-                                                          $cat2 = $catagories->filter(function ($value,$key) use($id){
-                                                                           return $value->parent_id == $id;
-                                                                                      });
-                                                        @endphp
+                                        {{--<div class="tab">--}}
+                                            {{--<button class="tablinks" onmouseover="openCity(event, 'menu2Shomare1')">--}}
+
+                                                {{--<a @if($item->name == __('generic.home')) href="/"--}}
+                                                   {{--@else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>--}}
+                                            {{--</button>--}}
+                                        {{--</div>--}}
+
+                                            {{--@php--}}
+                                                {{--$id = $item->id;--}}
+
+                                                {{--$cat1 = $catagories->filter(function ($value,$key) use($id){--}}
+                                                               {{--return $value->parent_id == $id;--}}
+                                                {{--});--}}
+                                                {{--$countItemCate1 = $cat1->count() ;--}}
+                                                {{--if($countItemCate1 == 0)--}}
+                                                    {{--$col = 12;--}}
+                                                {{--else--}}
+                                                      {{--$col = (12 / $countItemCate1);--}}
+                                            {{--@endphp--}}
+                                            {{--@if($countItemCate1 > 0)--}}
+                                                {{--<div class="row">--}}
+                                                    {{--<div id="menu2Shomare1" class="tabcontent">--}}
+                                                    {{--@foreach($cat1 as $itemcat1)--}}
+                                                    {{--<div class="col-lg-1"></div>--}}
+                                                    {{--<a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>--}}
+                                                    {{--<div class="col-lg-1"></div>--}}
+                                                        {{--@php--}}
+                                                            {{--$id = $itemcat1->id;--}}
+                                                          {{--$cat2 = $catagories->filter(function ($value,$key) use($id){--}}
+                                                                           {{--return $value->parent_id == $id;--}}
+                                                                                      {{--});--}}
+                                                        {{--@endphp--}}
                                                         {{--@foreach($cat2 as $cat2)--}}
                                                             {{--<a class="dropdown-item  text-center"--}}
                                                                {{--href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>--}}
                                                         {{--@endforeach--}}
-                                                    @endforeach
-                                                </div>
+                                                    {{--@endforeach--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
 
-                                @endif
-                                        </div>
-                                    </div>
-                                </div>
+                                             {{--@endif--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             @endforeach
                         </div>
 
@@ -289,7 +329,7 @@ $catagories->load('translations');
     ////menu dovom
 
     function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
+        var i, L, tablinks;
 
         // همه ی عناصر کلاس tabcontent را بگیر و hidden کن
         tabcontent = document.getElementsByClassName("tabcontent");
