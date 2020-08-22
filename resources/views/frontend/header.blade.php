@@ -231,7 +231,7 @@ $catagories->load('translations');
                                                   $col = (12 / $countItemCate1);
                                         @endphp
                                         @if($countItemCate1 > 0)
-                                        <div id="menu2Shomare1" class="tabcontent">
+                                        <div id="menu2Shomare<?php echo $loop->iteration ?>" class="tabcontent">
                                             <div class="row">
                                                 @foreach($cat1 as $itemcat1)
                                                 <div class="col-lg-1"></div>
@@ -242,7 +242,7 @@ $catagories->load('translations');
                                         </div>
                                         @endif
                                         <div class="tab">
-                                            <button class="tablinks" onmouseover="openCity(event, 'menu2Shomare1')">
+                                            <button class="tablinks" onmouseover="openCity(event, 'menu2Shomare<?php echo $loop->iteration ?>')">
                                                 <a @if($item->name == __('generic.home')) href="/"
                                                 @else href="/product/catagory/{{$item->name}}" @endif id="menu1dropdown"> {{ $item->getTranslatedAttribute('name') }}</a>
                                             </button>
@@ -341,7 +341,7 @@ $catagories->load('translations');
         //  این عناصر را از کلاس  tablinks بگیر وکلاس اکتیو پاک کن
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            tablinks[i].className = tablinks[i].className.replace("active", "");
         }
 
         //کلاس اکتیو رو به لینکی که باز شده در تب اضافه کن
