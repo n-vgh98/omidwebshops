@@ -219,8 +219,8 @@ $catagories->load('translations');
                         <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
                         <div class="dropdown-content shadowBaxs andazeTagAHa"
                              style="background-image:url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: no-repeat;">
-                            @foreach($root as $item)
 
+{{--یک حلقه foreach کامنت شد--}}
                                 <div class="row">
                                     <div class="col-lg-12">
 
@@ -336,7 +336,7 @@ $catagories->load('translations');
                                 {{--@endif--}}
                                 {{--</div>--}}
                                 {{--</div>--}}
-                            @endforeach
+
                         </div>
 
                     </div>
