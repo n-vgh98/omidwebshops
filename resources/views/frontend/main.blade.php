@@ -1,8 +1,3 @@
-{{--@extends('laayoytss.master')--}}
-
-
-{{--@section('content')--}}
-    {{--@include('frontend.header')--}}
 
 <?php
 

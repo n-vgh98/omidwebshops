@@ -216,7 +216,113 @@
                                 </div>
                             </div>
                             <!-- GET filters -->
+                            <!--search for filter -->
+                            {{--@if ($isServerSide)--}}
+                                <form method="get" class="form-search">
 
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <label>نام محصول :</label>
+                                                <div id="search-input">
+
+                                                    <div class="col-2">
+                                                        <select id="filter1" name="filtername" class=" select2 select2-hidden-accessible" aria-hidden="true">
+                                                            <option value="contains" @if($search->filter == "contains") selected @endif>شامل</option>
+                                                            <option value="equals" @if($search->filter == "equals") selected @endif>مساوی</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-group col-md-12">
+                                                        <input type="text" class="form-control" placeholder="{{ __('voyager::generic.search') }}" name="sname" value="{{ $searchnameproduct->value }}">
+                                                        <button class="btn btn-info btn-lg" type="submit">
+                                                            <i class="voyager-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> دسته بندی سطح 1</label>
+                                                <div id="search-input">
+                                                    <div class="col-2">
+                                                        <select id="catagory1" name="keycatagory1" class=" select2 select2-hidden-accessible" aria-hidden="true">
+                                                            <option value="all"  @if( (empty($searchcatagory1->key))) selected @endif>همه موارد</option>
+                                                            @foreach($catagories as $cat1)
+                                                                @if($cat1->parent_id ==null && $cat1->name !='صفحه اصلی')
+                                                                    <option value="{{$cat1->id}}"  @if($searchcatagory1->key == $cat1->id) selected @endif >{{$cat1->name}}</option>
+                                                                @endif
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="input-group col-md-12">
+                                                        <button class="btn btn-info btn-lg" type="submit">
+                                                            <i class="voyager-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label> دسته بندی سطح 2</label>
+                                                <div id="search-input">
+                                                    <div class="col-2">
+                                                        <select id="catagory2" name="keycatagory2" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
+                                                            @php
+                                                                $objid = $catagories->first();
+                                                                $id = $objid->id;
+                                                                $parentid = $objid->parent_id;
+                                                                $first=true;
+                                                            @endphp
+                                                            <option value="all"  @if( (empty($searchcatagory2->key))) selected @endif>همه موارد</option>
+                                                            @foreach($catagories as $cat2)
+
+                                                                @if($cat2->parent_id ==$id)
+                                                                    @php if($first) $id3 = $cat2->id;$first=false; @endphp
+                                                                    <option value="{{$cat2->id}}" @if($searchcatagory2->key == $cat2->id ) selected @endif>{{$cat2->name}}</option>
+                                                                @endif
+                                                            @endforeach
+
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="input-group col-md-12">
+                                                        <button class="btn btn-info btn-lg" type="submit">
+                                                            <i class="voyager-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label> دسته بندی سطح 3</label>
+                                                <div id="search-input">
+                                                    <div class="col-2">
+                                                        <select id="catagory3" name="keycatagory3" class="form-control select2 select2-hidden-accessible" aria-hidden="true">
+                                                            <option value="all"  @if( (empty($searchcatagory3->key))) selected @endif>همه موارد</option>
+                                                            @foreach($catagories as $cat3)
+                                                                @if($cat3->parent_id ==$id3)
+                                                                    <option value="{{$cat3->id}}" @if($searchcatagory3->key == $cat3->id ) selected @endif>{{$cat3->name}}</option>
+                                                                @endif
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="input-group col-md-12">
+                                                        <button class="btn btn-info btn-lg" type="submit">
+                                                            <i class="voyager-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if (Request::has('sort_order') && Request::has('order_by'))
+                                                <input type="hidden" name="sort_order" value="{{ Request::get('sort_order') }}">
+                                                <input type="hidden" name="order_by" value="{{ Request::get('order_by') }}">
+                                            @endif
+                                        </div>
+                                    </div>
+                                </form>
+                        {{--@endif--}}
+                            <!-- end search for filter -->
                             <div class="col-md-12 ">
 
                                @include('filters')

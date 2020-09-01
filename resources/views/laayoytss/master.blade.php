@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('front/css/index.css')}}">
-    <link rel="stylesheet" href="{{asset('front/new omid web shop/css/Froshgah.css')}}"/>
+    {{--<link rel="stylesheet" href="{{asset('front/new omid web shop/css/Froshgah.css')}}"/>--}}
     <link rel="stylesheet" href="{{asset('front/fontawesome-free-5.13.1-web/css/all.css')}}"/>
     <!--    <link rel="stylesheet"href="fontawesome-free-5.13.1-web/js/all.js"/>-->
+    <link rel="shortcut icon" href="{{asset('images/faivIcon.png')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

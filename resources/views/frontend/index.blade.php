@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('frontend.header')
+@include('frontend.headerjadid')
 @include('frontend.slider')
 @include('frontend.main')
 @include('frontend.footer')

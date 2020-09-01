@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/css1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header class="header">
+	<h1 id="demo">Mouse over me</h1>
+	
+	</header>
+
+	
+	<nav>
+	<ul class="ulSupMenu">
+	<li class="liSupMenu" id="dropdown" onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)"><a  href="#" >محصولات و خدمات</a></li>
+	<li class="liSupMenu"><a href="#">تماس با ما</a></li>
+	<li class="liSupMenu"><a href="#">درباره ما</a></li>
+	</ul>
+<!--
+<button class="li1"><a id="dropdown" href="#" >محصولات و خدمات</a></button>
+	<button class="li1"><a href="#">تماس با ما</a></button>
+	<button class="li1"><a href="#">درباره ما</a></button>
+-->
+	</nav>
+	<nav class="dropdown-content" id="submenuId" onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
+		
+	<nav class="nav2SubMenu">
+	<ul class="ul2SubMenu">
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item1</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item2</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item3</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item4</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item5</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this)" onMouseOut="mouseOut2(this)"><a href="#">item6</a></li>
+		
+	</ul>
+	
+	</nav>
+	<nav class="nav3SubMenu" id="nav3SubMenuId">
+	<ul class="ul2SubMenu">
+	
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item1</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item2</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item3</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item4</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item5</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item6</a></li>
+		
+	</ul>
+	
+	</nav>
+	
+<nav class="nav3SubMenu" id="nav4SubMenuId">
+	<ul class="ul2SubMenu">
+		
+	<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item1</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item2</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item3</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item4</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item5</a></li>
+		
+		<li class="li2SubMenu" onMouseOver="mouseOver2(this);mouseOver3(this)" onMouseOut="mouseOut2(this);mouseOut3(this)"><a href="#">item6</a></li>
+		
+		
+	</ul>
+	
+	</nav>
+	
+	
+	
+	</nav>
+	
+	
+	
+	
+	
+<aside class="sidbar">Content for  class "sidbar" Goes Here</aside>
+<article class="content">Content for  class "content" Goes Here</article>
+<footer class="footer">Content for  class "footer" Goes Here</footer>
+	
+	
+	
+	<script>
+function mouseOver() {
+  document.getElementById("submenuId").style.display = "block";
+}
+
+function mouseOut() {
+  document.getElementById("submenuId").style.display = "none";
+}
+function mouseOver2() {
+  document.getElementById("nav3SubMenuId").style.display = "block";
+}
+
+function mouseOut2() {
+  document.getElementById("nav3SubMenuId").style.display = "none";
+}
+function mouseOver3() {
+  document.getElementById("nav4SubMenuId").style.display = "block";
+}
+
+function mouseOut3() {
+  document.getElementById("nav4SubMenuId").style.display = "none";
+}
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
