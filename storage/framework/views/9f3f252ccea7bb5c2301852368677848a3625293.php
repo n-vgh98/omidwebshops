@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="admin login">
     <title>Admin - <?php echo e(Voyager::setting("admin.title")); ?></title>
+    <link rel="shortcut icon" href="<?php echo e(asset('images/faivIcon.png')); ?>">
     <link rel="stylesheet" href="<?php echo e(voyager_asset('css/app.css')); ?>">
     <?php if(__('voyager::generic.is_rtl') == 'true'): ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">

@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
     <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo e(asset('images/faivIcon.png')); ?>">
     <?php $admin_favicon = Voyager::setting('admin.icon_image', ''); ?>
     <?php if($admin_favicon == ''): ?>
-        <link rel="shortcut icon" href="<?php echo e(voyager_asset('images/logo-icon.png')); ?>" type="image/png">
+        <link rel="shortcut icon" href="<?php echo e(voyager_asset('images/faivIcon.png')); ?>" type="image/png">
     <?php else: ?>
         <link rel="shortcut icon" href="<?php echo e(Voyager::image($admin_favicon)); ?>" type="image/png">
     <?php endif; ?>

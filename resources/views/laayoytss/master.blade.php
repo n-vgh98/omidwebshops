@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('front/css/index.css')}}">
-    {{--<link rel="stylesheet" href="{{asset('front/new omid web shop/css/Froshgah.css')}}"/>--}}
     <link rel="stylesheet" href="{{asset('front/fontawesome-free-5.13.1-web/css/all.css')}}"/>
     <!--    <link rel="stylesheet"href="fontawesome-free-5.13.1-web/js/all.js"/>-->
     <link rel="shortcut icon" href="{{asset('images/faivIcon.png')}}">

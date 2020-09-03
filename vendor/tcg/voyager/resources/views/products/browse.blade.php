@@ -435,8 +435,8 @@
                 var selectedindexcatagory2 = $(this).val();
              if(selectedindexcatagory2 !='all')
              {
-                 console.log("selected index catgory2 is "+selectedindexcatagory2);
-                 var cat2 =<?php echo $catagories ;?>;
+                 console.log("selected index catgory2 is " +selectedindexcatagory2);
+                 var cat2 = <?php echo $catagories ;?>;
                  var option = "<option value=\"all\" selected>همه موارد</option>";
                  if(selectedindexcatagory2) {
                      console.log("selected index catgory2 is not null");

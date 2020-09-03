@@ -49,7 +49,7 @@ Route::get('arayeshi',function(){
 });
 Route::prefix('/product/catagory/')->group(function (){
     Route::get('{cat1}','productController@getAllProduct');
-    Route::get('{cat1}/catagory/{cat2}','productController@t');
+    Route::get('{cat1}/catagory/{cat2}','productController@getAllProduct');
     Route::get('{cat1}/catagory/{cat2}/catagory/{cat3}','productController@getAllProduct');
 });
 

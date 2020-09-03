@@ -215,13 +215,17 @@ $catagories->load('translations');
                     <!--                            <h6>محصولات و خدمات</h6>-->
                     <!--                        </button>-->
 
-                    <div class="dropdown divLiE">
-                        <a href="javascript:void(0)" class="dropbtn">محصولات و خدمات</a>
-                        <div class="dropdown-content shadowBaxs andazeTagAHa"
-                             style="background-image: url('{{asset('front/pic/3.jpg')}}');background-size: cover;background-repeat: round;">
-                              @foreach($root as $item)
-                                    <div class="row">
-                                        <div class="col-lg-12">
+
+                    <nav class="nav-area">
+                        <ul>
+                            <li><a href="javascript:void(0)">محصولات و خدمات</a>
+                                <ul>
+                                    @foreach($root as $item)
+                                        <li>
+                                            <a @if($item->name == __('generic.home')) href="/"
+                                               @else href="/product/catagory/{{$item->name}}" @endif>
+                                                {{ $item->getTranslatedAttribute('name') }}
+                                            </a>
                                             @php
                                                 $id = $item->id;
 
@@ -235,83 +239,31 @@ $catagories->load('translations');
                                                       $col = (12 / $countItemCate1);
                                             @endphp
                                             @if($countItemCate1 > 0)
+                                                <ul>
+                                                    @foreach($cat1 as $itemcat1)
+                                                        <li><a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>
+                                                            @php
+                                                                $id = $itemcat1->id;
+                                                              $cat2 = $catagories->filter(function ($value,$key) use($id){
+                                                                               return $value->parent_id == $id;
+                                                                                          });
+                                                            @endphp
+                                                            <ul>
+                                                                @foreach($cat2 as $cat2)
+                                                                    <li><a href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a></li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
 
-                                            <div id="menu2Shomare<?php echo $loop->iteration ?>" class="tabcontent">
-                                                        <div class="row">
-                                                            @foreach($cat1 as $itemcat1)
-                                                                <div class="col-lg-1"></div>
-                                                                <a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">
-                                                                   {{$itemcat1->name}}</a>
-                                                                <div class="col-lg-1"></div>
-                                                            @endforeach
-                                                        </div>
-                                            </div>
-                                              @endif
-                                            <div class="tab">
-                                                <button class="tablinks" onmouseover="openCity(event, 'menu2Shomare<?php echo $loop->iteration ?>')">
-                                                    <a @if($item->name == __('generic.home')) href="/"
-                                                       @else href="/product/catagory/{{$item->name}}" @endif id="menu1dropdown">
-                                                        {{--  {{$item->name --}}
-                                                        {{ $item->getTranslatedAttribute('name') }}
-                                                    </a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                     </div>
-                               @endforeach
-                            </div>
-                    </div>
-
-
-                                {{--<div class="row">--}}
-                                {{--<div class="col-lg-12">--}}
-
-                                {{--<div class="tab">--}}
-                                {{--<button class="tablinks" onmouseover="openCity(event, 'menu2Shomare1')">--}}
-
-                                {{--<a @if($item->name == __('generic.home')) href="/"--}}
-                                {{--@else href="/product/catagory/{{$item->name}}" @endif >{{ $item->getTranslatedAttribute('name') }}</a>--}}
-                                {{--</button>--}}
-                                {{--</div>--}}
-
-                                {{--@php--}}
-                                {{--$id = $item->id;--}}
-
-                                {{--$cat1 = $catagories->filter(function ($value,$key) use($id){--}}
-                                {{--return $value->parent_id == $id;--}}
-                                {{--});--}}
-                                {{--$countItemCate1 = $cat1->count() ;--}}
-                                {{--if($countItemCate1 == 0)--}}
-                                {{--$col = 12;--}}
-                                {{--else--}}
-                                {{--$col = (12 / $countItemCate1);--}}
-                                {{--@endphp--}}
-                                {{--@if($countItemCate1 > 0)--}}
-                                {{--<div class="row">--}}
-                                {{--<div id="menu2Shomare1" class="tabcontent">--}}
-                                {{--@foreach($cat1 as $itemcat1)--}}
-                                {{--<div class="col-lg-1"></div>--}}
-                                {{--<a class="col-lg-10 menu2Asli" href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}">{{$itemcat1->name}}</a>--}}
-                                {{--<div class="col-lg-1"></div>--}}
-                                {{--@php--}}
-                                {{--$id = $itemcat1->id;--}}
-                                {{--$cat2 = $catagories->filter(function ($value,$key) use($id){--}}
-                                {{--return $value->parent_id == $id;--}}
-                                {{--});--}}
-                                {{--@endphp--}}
-                                {{--@foreach($cat2 as $cat2)--}}
-                                {{--<a class="dropdown-item  text-center"--}}
-                                {{--href="/product/catagory/{{$item->name}}/catagory/{{$itemcat1->name}}/catagory/{{$cat2->name}}">{{$cat2->name}}</a>--}}
-                                {{--@endforeach--}}
-                                {{--@endforeach--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-
-
-                                {{--@endif--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="col-2 p-0 text-center">
                     <button type="button" class="btnmenu ">

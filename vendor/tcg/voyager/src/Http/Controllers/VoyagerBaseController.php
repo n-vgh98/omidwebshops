@@ -639,27 +639,28 @@ class VoyagerBaseController extends Controller
 
         //$newproduct->nahvehEstefadeh = $request->nahvehEstefadeh;
         //$newproduct->featuers = $request->featuers;
-        Productfilter::where('product_id',$newproduct->id)->delete();
+
+//        Productfilter::where('product_id',$newproduct->id)->delete();
 
        // $newproduct->available = $request->available;
         //$res = $newproduct->save();
-        $filterindatabase = Filter::all();
-        if(isset($request->filter)){
-            foreach ($request->filter as $r)
-            {
-                $objfilter = new Productfilter();
-                $obj = $filterindatabase->firstWhere('id',$r);
-                $objfilter->filterName = $obj->name;
-                $objfilter->slug = $obj->slug;
-                if(! $request->{$r})
-                {
-                   return 'error';
-
-                }
-                $objfilter->filterValue = $request->{$r};
-                $newproduct->productfilters()->save($objfilter);
-            }
-        }//end fo foreach for filters
+//        $filterindatabase = Filter::all();
+//        if(isset($request->filter)){
+//            foreach ($request->filter as $r)
+//            {
+//                $objfilter = new Productfilter();
+//                $obj = $filterindatabase->firstWhere('id',$r);
+//                $objfilter->filterName = $obj->name;
+//                $objfilter->slug = $obj->slug;
+//                if(! $request->{$r})
+//                {
+//                   return 'error';
+//
+//                }
+//                $objfilter->filterValue = $request->{$r};
+//                $newproduct->productfilters()->save($objfilter);
+//            }
+//        }//end fo foreach for filters
 
 
         // -------------- resize image an upload with upload classs
