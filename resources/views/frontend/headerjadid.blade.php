@@ -24,9 +24,9 @@ $catagories->load('translations');
 
 </head>
 <body>
-<nav class="nav-area">
+<nav class="nav-area p-0 m-0">
     <ul>
-        <li><a href="javascript:void(0)">محصولات و خدمات</a>
+        <li class="p-0 m-0"><a class="p-0 m-0" href="javascript:void(0)">محصولات و خدمات</a>
             <ul>
                 @foreach($root as $item)
                     <li>
