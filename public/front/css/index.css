@@ -1359,7 +1359,7 @@ a{
     color:#fff;
     display:block;
     padding: 4% 0%;
-    width: 125%;
+    /* width: 125%; */
 }
 
 .nav-area ul li:hover a{
@@ -1369,7 +1369,7 @@ a{
 .nav-area ul ul{
     position:absolute;
     padding:0;
-    min-width:160px;
+    min-width:200px;
     display:none;
     top:100%;
     right:0px;
@@ -1387,8 +1387,15 @@ a{
 .nav-area ul ul ul{
     top:0;
     right:100%;
+    width: 300px !important;
+    text-align: right;
 }
 .nav-area ul ul ul li:hover a{
     background:#34495a;
+    width: 300px !important;
 }
+.nav-area ul ul ul a{
+    padding-right: 2%;
+}
+
 /*end new menu*/
