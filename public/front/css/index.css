@@ -1338,9 +1338,9 @@ input[type=submit]:hover {
 a{
     font-size:15px;
 }
-.nav-area{
+/* .nav-area{
     background:#4169E1;
-}
+} */
 .nav-area:after{
     content: '';
     clear:both;
@@ -1357,8 +1357,9 @@ a{
 .nav-area ul li a{
     text-decoration:none;
     color:#fff;
-    padding:15px 20px;
     display:block;
+    padding: 4% 0%;
+    width: 125%;
 }
 
 .nav-area ul li:hover a{
